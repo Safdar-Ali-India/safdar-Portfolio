@@ -1,0 +1,40 @@
+{
+  "name": "portfolio3.0",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tsparticles/engine": "^3.3.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.3.0",
+    "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.10",
+    "clsx": "^2.1.0",
+    "framer-motion": "^11.0.8",
+    "next": "^14.2.4",
+    "next-themes": "^0.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.0.1",
+    "react-tsparticles": "^2.12.2",
+    "sharp": "^0.33.2",
+    "tailwind-merge": "^2.2.1",
+    "tsparticles": "^3.3.0",
+    "yarn": "^1.22.21"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.24",
+    "@types/react": "18.2.63",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "5.4.2"
+  }
+}

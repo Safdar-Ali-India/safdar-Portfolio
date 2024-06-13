@@ -1,0 +1,432 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import logo from '../assets/logo.jpeg'
+import Image from "next/image";
+
+import { motion } from "framer-motion";
+import Contact from "../components/Contact";
+import Testimonials from "../components/Testimonials";
+
+import img1 from '../assets/img1.png';
+
+import { SparklesCore } from "../components/ui/sparkles";
+
+const marqueeVariants = {
+  animate: {
+    x: [0, -1035],
+    transition: {
+      x: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 11,
+        ease: "linear",
+      },
+    },
+  },
+};
+
+const GithubLink = "https://github.com/ArjunCodess";
+const InstagramLink = "https://www.instagram.com/arjuncodess/";
+const DevLink = "https://dev.to/arjuncodess";
+const TwitterLink = "https://twitter.com/arjuncodess";
+const LinkTree = "https://linktr.ee/ArjunCodess";
+
+const PROJECTS = [
+  {
+    imgLink: img1,
+    year: '2024',
+    title: "PalettePro: The Color Palette Generator",
+    subT: "Upload an image, and it will extract hex color names and generate palettes for your creative projects.",
+    liveCode: "https://github.com/ArjunCodess/palettepro",
+    liveLink: "https://palettepro.vercel.app/",
+  },
+];
+
+let BLOGS = [
+  {
+    date: "Jan 2024",
+    title: "14 Things To Check Before Deploying a Website 👨‍💻🔥",
+    reactions: "570+ Reactions",
+    subTitle:
+      "Dropping a website out into the wild web is a big deal, so making sure every last detail is tightened up first is key...",
+    link: "https://dev.to/arjuncodess/14-things-to-check-before-deploying-a-website-49ee",
+  },
+  {
+    date: "Jan 2024",
+    title: "🌟 The Ultimate Developer's Toolkit 👨‍💻",
+    reactions: "294+ Reactions",
+    subTitle:
+      "I always felt a bit lost when I was starting on my programming journey. It's true — it was a very frustrating experience. Maybe you're feeling a little frustrated, too!...",
+    link: "https://dev.to/arjuncodess/the-ultimate-developers-toolkit-4a7f",
+  },
+  {
+    date: "Dec 2023",
+    title: "The Top 10 GitHub Repositories Making Waves 🌊📊",
+    reactions: "271+ Reactions",
+    subTitle:
+      "GitHub, the popular online platform for software and web development collaboration, provides helpful tools to optimize processes...",
+    link: "https://dev.to/arjuncodess/the-top-10-github-repositories-making-waves-4p1o",
+  },
+];
+
+function Home() {
+  return (
+    <>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossOrigin="anonymous"
+        referrerPolicy="no-referrer"
+      />
+
+      <div className="max-w-5xl mx-auto px-5">
+        <div className="w-full absolute inset-0 h-screen -z-10">
+          <SparklesCore
+            id="tsparticlesfullpage"
+            background="transparent"
+            minSize={0.6}
+            maxSize={1.4}
+            particleDensity={100}
+            className="w-full h-full"
+            particleColor="#777"
+          />
+        </div>
+
+        <div className="mt-20 lg:mt-32">
+
+          {/* marquee */}
+          <div className="marquee relative lg:my-16 my-14 h-10 max-w-6xl overflow-x-hidden">
+            <div className=" bg-gradient-to-r absolute z-10 w-20 rounded-md h-9 transition-all ease-in duration-200" />
+            <motion.div
+              className="track"
+              variants={marqueeVariants}
+              animate="animate"
+            >
+              <div className="flex gap-x-5 mt-2 uppercase font-semibold justify-evenly text-base text-neutral-400">
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
+              </div>
+            </motion.div>
+            <div className="bg-gradient-to-l absolute right-0 z-10 to-transparent w-16 rounded-md h-9 transition-all ease-in duration-200" />
+          </div>
+
+          <section className="lg:flex lg:flex-row">
+
+            <div className="lg:w-11/12">
+              <div className="flex gap-x-3">
+                <Image
+                  width={300}
+                  height={300}
+                  className="w-16 h-16 rounded-full object-cover"
+                  src={logo}
+                  alt="Profile"
+                />
+                <div>
+                  <h2 className="font-extrabold font-InterBlack dark:text-white light:text-black text-3xl">
+                    Safdar Ali
+                  </h2>
+                  <span>@safdarali</span>
+                </div>
+
+              </div>
+
+              <div className="mt-6 max-w-3xl">
+                <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold">
+                  About Me
+                </h3>
+                <p className="dark:text-neutral-300 font-InterMedium text-sm lg:text-lg mt-3 light:text-slate-800">
+                  Passionate Talented 23yo Aspiring Full-Stack Developer(MERN), Writer(2K+ Followers) from India 🇮🇳
+                </p>
+
+                <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">
+                  Achievements
+                </h3>
+                <div className="dark:text-neutral-300 font-InterMedium mt-3 text-sm lg:text-lg light:text-slate-800">
+                  <ul>
+                  <li> Created more tha 70+ lectures 👨‍💻 on Coding </li>
+                    <li>🛠 Made 20+ Projects Using MERN</li>
+                    <li>💵 Made my first 140$ w/ Freelancing</li>
+                    <li>🌟 Hit 3K+ Followers on Blog / LinkedIn </li>
+
+                  </ul>
+                </div>
+
+                <div className="flex gap-x-4">
+                  <button className="mt-10 w-1/2 border border-neutral-700/30 rounded-md p-2 lg:w-44 bg-neutral-800/20 text-sm dark:text-neutral-400 font-semibold light:text-slate-800">
+                    <Link href="https://dev.to/safdarali">View Blog</Link>
+                  </button>
+
+                  <button className="mt-10 w-1/2 border border-neutral-700/30 rounded-md p-2 lg:w-44 bg-neutral-800/20 text-sm dark:text-neutral-400 font-semibold light:text-slate-800">
+                    <Link href="https://github.com/Safdar-Ali-India">View Github</Link>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            {/* desktop */}
+            <div className="hidden w-1/12 my-10 ml-auto lg:flex justify-center">
+              <div>
+                <ul className="text-lg wrapper">
+                  <Link href={LinkTree} target="_blank" rel="noreferrer">
+                    <li className="icon link mt-10">
+                      <span>
+                        <i className="fas fa-link "></i>
+                      </span>
+                    </li>
+                  </Link>
+
+                  <Link href={GithubLink} target="_blank" rel="noreferrer">
+                    <li className="icon github my-10">
+                      <span>
+                        <i className="fab fa-github "></i>
+                      </span>
+                    </li>
+                  </Link>
+
+                  <Link href={TwitterLink} target="_blank" rel="noreferrer">
+                    <li className="icon twitter">
+                      <span>
+                        <i className="fab fa-twitter "></i>
+                      </span>
+                    </li>
+                  </Link>
+
+                  <Link href={InstagramLink} target="_blank" rel="noreferrer">
+                    <li className="icon instagram my-10">
+                      <span>
+                        <i className="fab fa-instagram "></i>
+                      </span>
+                    </li>
+                  </Link>
+
+                  <Link href={DevLink} target="_blank" rel="noreferrer">
+                    <li className="icon dev">
+                      <span>
+                        <i className="fab fa-dev "></i>
+                      </span>
+                    </li>
+                  </Link>
+                </ul>
+              </div>
+            </div>
+
+            {/* mobile */}
+            <div className="">
+              <h3 className="lg:hidden inline-block text-neutral-500 text-xs font-InterBold uppercase font-bold my-10">
+                Socials
+              </h3>
+              <ul className="text-lg wrapper lg:hidden flex flex-row gap-x-10 justify-center">
+                <Link href={LinkTree} target="_blank" rel="noreferrer">
+                  <li className="icon link">
+                    <span>
+                      <i className="fas fa-link "></i>
+                    </span>
+                  </li>
+                </Link>
+
+                <Link href={GithubLink} target="_blank" rel="noreferrer">
+                  <li className="icon github">
+                    <span>
+                      <i className="fab fa-github "></i>
+                    </span>
+                  </li>
+                </Link>
+
+                <Link href={TwitterLink} target="_blank" rel="noreferrer">
+                  <li className="icon twitter">
+                    <span>
+                      <i className="fab fa-twitter "></i>
+                    </span>
+                  </li>
+                </Link>
+
+                <Link href={InstagramLink} target="_blank" rel="noreferrer">
+                  <li className="icon instagram">
+                    <span>
+                      <i className="fab fa-instagram "></i>
+                    </span>
+                  </li>
+                </Link>
+
+                <Link href={DevLink} target="_blank" rel="noreferrer">
+                  <li className="icon dev">
+                    <span>
+                      <i className="fab fa-dev "></i>
+                    </span>
+                  </li>
+                </Link>
+              </ul>
+            </div>
+
+
+          </section>
+
+          {/* Marquee text */}
+
+          <div>
+            <div className="marquee relative mt-14 h-10 max-w-6xl overflow-x-hidden">
+              <div className="bg-gradient-to-r absolute z-10 w-20 rounded-md h-9 transition-all ease-in duration-200" />
+              <motion.div
+                className="track"
+                variants={marqueeVariants}
+                animate="animate"
+              >
+                <div className="flex gap-x-5 mt-2 uppercase font-semibold justify-evenly text-sm text-neutral-700">
+                  PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
+                  PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
+                  PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
+                  PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
+                </div>
+              </motion.div>
+              <div className=" bg-gradient-to-l absolute right-0 z-10 to-transparent w-16 rounded-md h-9 transition-all ease-in duration-200" />
+            </div>
+          </div>
+
+          {/* PROJECTS  */}
+
+          <div className="lg:mt-14">
+            {PROJECTS.map((each, i) => (
+              <div key={i}>
+                <div className="flex flex-col lg:flex-row gap-x-8 my-6">
+                  <div className="h-60 lg:w-1/2 w-full flex justify-center items-center">
+                    <Image
+                      alt="project"
+                      className="rounded-md md:mt-20 lg:mt-0"
+                      src={each.imgLink}
+                    />
+                  </div>
+
+                  <div className="lg:w-1/2 w-full">
+                    <div className="w-fit flex items-center gap-x-2">
+                      <div className="px-2 py-1 text-xs font-semibold border rounded-full dark:border-neutral-700">
+                        <span>{each.year}</span>
+                      </div>
+                      <div className="flex items-center gap-x-3">
+                      </div>
+                    </div>
+
+                    <div className="">
+                      <h1 className="font-InterBold text-lg max-w-lg mt-4 font-bold">
+                        {each.title}
+                      </h1>
+                      <p className="text-base mt-3 font-InterMedium dark:text-neutral-400 max-w-lg">
+                        {each.subT}
+                      </p>
+                      <div className="flex gap-x-5">
+                        <button className="mt-11 border border-neutral-700/30 rounded-xl p-2 px-7 lg:w-44 w-full bg-white dark:bg-neutral-800/10 text-sm text-black hover:tracking-widest transition-all duration-300 hover:font-bold dark:text-neutral-400 font-semibold shadow-md light:text-slate-800">
+                          <Link href={each.liveCode}>View Code</Link>
+                        </button>
+
+                        <button className="mt-11 border border-neutral-700/30 rounded-xl p-2 px-7 lg:w-44 w-full bg-white dark:bg-neutral-800/10 text-sm text-black hover:tracking-widest transition-all duration-300 hover:font-bold dark:text-neutral-400 font-semibold shadow-md light:text-slate-800">
+                          <Link href={each.liveLink}>View Live</Link>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Marque texts */}
+
+          <div>
+            <div className="marquee mb-10 mt-10 h-10 relative  max-w-6xl overflow-x-hidden">
+              <div className=" bg-gradient-to-r absolute z-10  to-transparent w-20 rounded-md h-9 transition-all ease-in duration-200" />
+              <motion.div
+                className="track"
+                variants={marqueeVariants}
+                animate="animate"
+              >
+                <div className=" flex gap-x-5 mt-2 uppercase font-bold justify-evenly text-sm  text-neutral-700">
+                  BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦
+                  BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦
+                  BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦
+                  BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦
+                  BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦
+                </div>
+              </motion.div>
+              <div className=" bg-gradient-to-l absolute right-0 z-10 to-transparent w-16 rounded-md h-9 transition-all ease-in duration-200" />
+            </div>
+          </div>
+
+          {/* Blog */}
+
+          <div className="max-w-3xl mx-auto">
+            <div>
+              {BLOGS.map((blog) => (
+                <div key={blog.title} className="my-8 p-2 rounded-md">
+                  <div className="border border-neutral-700 rounded-full w-fit px-2 p-1 flex items-center">
+                    <span className="text-xs light:text-neutral-700 dark:text-neutral-300">
+                      {blog.date}
+                    </span>
+                  </div>
+
+                  <div className="flex gap-x-4 my-6">
+                    <div>
+                      <Link href={blog.link} className="font-semibold hover:underline">
+                        <h1 className="font-InterBold font-extrabold lg:text-xl text-lg mb-4">{blog.title}</h1>
+                      </Link>
+                      {blog.reactions}
+
+                    </div>
+                  </div>
+
+                  <p className="text-neutral-500 text-sm max-w-3xl">
+                    {blog.subTitle}
+                  </p>
+
+                  {/* If you want to add a button to view the full blog post */}
+                  <Link href={blog.link}>
+                    <p className="mt-6 border border-neutral-700/30 rounded-md px-2 py-2 flex justify-between items-center gap-x-2 lg:w-36 bg-neutral-800/20 text-sm font-semibold hover:bg-neutral-700 dark:hover:bg-neutral-900 transition-colors">
+                      <span>Read Article</span>
+                    </p>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Marque texts */}
+
+          <div>
+            <div className="marquee relative mt-16 h-10 max-w-6xl overflow-x-hidden">
+              <div className="bg-gradient-to-r absolute z-10 w-20 rounded-md h-9 transition-all ease-in duration-200" />
+              <motion.div
+                className="track"
+                variants={marqueeVariants}
+                animate="animate"
+              >
+                <div className="flex gap-x-5 mt-2 uppercase font-bold justify-evenly text-sm text-neutral-700">
+                  ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT
+                  ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT
+                  ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT
+                  ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT
+                </div>
+              </motion.div>
+              <div className="bg-gradient-to-l absolute right-0 z-10 to-transparent w-16 rounded-md h-9 transition-all ease-in duration-200" />
+            </div>
+          </div>
+
+          <Contact />
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Home;

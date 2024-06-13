@@ -27,11 +27,11 @@ const marqueeVariants = {
   },
 };
 
-const GithubLink = "https://github.com/ArjunCodess";
-const InstagramLink = "https://www.instagram.com/arjuncodess/";
-const DevLink = "https://dev.to/arjuncodess";
-const TwitterLink = "https://twitter.com/arjuncodess";
-const LinkTree = "https://linktr.ee/ArjunCodess";
+const GithubLink = "https://github.com/Safdar-Ali-India";
+const InstagramLink = "https://www.instagram.com/codewithsafdar";
+const DevLink = "https://dev.to/safdarali";
+const TwitterLink = "https://twitter.com/safdarali___";
+const LinkTree = "https://linktr.ee/safdaralii";
 
 const PROJECTS = [
   {

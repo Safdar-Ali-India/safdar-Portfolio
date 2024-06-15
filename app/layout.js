@@ -11,8 +11,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "ArjunCodess - Portfolio",
-  description: "Portfolio of a Passionate Talented Young Full-Stack Developer, Writer and Student by Profession from India 🇮🇳",
+  title: "Safdar Ali - Portfolio",
+  description: "Portfolio of a Passionate Talented Young Full-Stack Developer, Writer and YouTuber by Profession from India 🇮🇳",
 };
 
 export default function RootLayout({ children }) {

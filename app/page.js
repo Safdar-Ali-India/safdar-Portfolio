@@ -37,37 +37,37 @@ const PROJECTS = [
   {
     imgLink: img1,
     year: '2024',
-    title: "PalettePro: The Color Palette Generator",
-    subT: "Upload an image, and it will extract hex color names and generate palettes for your creative projects.",
-    liveCode: "https://github.com/ArjunCodess/palettepro",
-    liveLink: "https://palettepro.vercel.app/",
+    title: "AdsClique Media: The website of my current company.",
+    subT: "The streamlined user interface provides a more interactive experience, allowing colleagues, partners, and clients to easily find the information they are looking for",
+    // liveCode: "https://github.com/ArjunCodess/palettepro",
+    liveLink: "https://adsclique.com/",
   },
 ];
 
 let BLOGS = [
   {
     date: "Jan 2024",
-    title: "14 Things To Check Before Deploying a Website 👨‍💻🔥",
-    reactions: "570+ Reactions",
+    title: "TypeScript | Beginner 👨‍💻🔥",
+    reactions: "100+ Reactions",
     subTitle:
       "Dropping a website out into the wild web is a big deal, so making sure every last detail is tightened up first is key...",
-    link: "https://dev.to/arjuncodess/14-things-to-check-before-deploying-a-website-49ee",
+    link: "https://medium.com/@safdaralii/typescript-beginner-d65a2e64adc5",
   },
   {
-    date: "Jan 2024",
-    title: "🌟 The Ultimate Developer's Toolkit 👨‍💻",
+    date: "Mar 2024",
+    title: "22 JavaScript Functions You’ll Use 99% of The Time 💯🔥",
     reactions: "294+ Reactions",
     subTitle:
       "I always felt a bit lost when I was starting on my programming journey. It's true — it was a very frustrating experience. Maybe you're feeling a little frustrated, too!...",
-    link: "https://dev.to/arjuncodess/the-ultimate-developers-toolkit-4a7f",
+    link: "https://medium.com/p/d18139870f9f",
   },
   {
     date: "Dec 2023",
-    title: "The Top 10 GitHub Repositories Making Waves 🌊📊",
-    reactions: "271+ Reactions",
+    title: "Mastering the Art of Writing Effective GitHub Commit Messages🌊📊",
+    reactions: "71+ Reactions",
     subTitle:
       "GitHub, the popular online platform for software and web development collaboration, provides helpful tools to optimize processes...",
-    link: "https://dev.to/arjuncodess/the-top-10-github-repositories-making-waves-4p1o",
+    link: "https://medium.com/@safdaralii/mastering-the-art-of-writing-effective-github-commit-messages-270a3bc7f1b6",
   },
 ];
 
@@ -327,9 +327,9 @@ function Home() {
                         {each.subT}
                       </p>
                       <div className="flex gap-x-5">
-                        <button className="mt-11 border border-neutral-700/30 rounded-xl p-2 px-7 lg:w-44 w-full bg-white dark:bg-neutral-800/10 text-sm text-black hover:tracking-widest transition-all duration-300 hover:font-bold dark:text-neutral-400 font-semibold shadow-md light:text-slate-800">
+                        {/* <button className="mt-11 border border-neutral-700/30 rounded-xl p-2 px-7 lg:w-44 w-full bg-white dark:bg-neutral-800/10 text-sm text-black hover:tracking-widest transition-all duration-300 hover:font-bold dark:text-neutral-400 font-semibold shadow-md light:text-slate-800">
                           <Link href={each.liveCode}>View Code</Link>
-                        </button>
+                        </button> */}
 
                         <button className="mt-11 border border-neutral-700/30 rounded-xl p-2 px-7 lg:w-44 w-full bg-white dark:bg-neutral-800/10 text-sm text-black hover:tracking-widest transition-all duration-300 hover:font-bold dark:text-neutral-400 font-semibold shadow-md light:text-slate-800">
                           <Link href={each.liveLink}>View Live</Link>

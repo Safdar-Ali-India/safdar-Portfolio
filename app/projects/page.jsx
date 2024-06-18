@@ -28,60 +28,60 @@ import project8 from "../../assets/project8.png";
 
 const projectData = [
     {
-        title: "SortingWiz",
+        title: "Fdl Beauty Bar",
         subtitle: "Attained a 400% surge in consultation bookings in 2 months via strategic use of search ads, social media, and targeted email marketing.",
         imgLink: fdl,
         codeLink: "https://www.fdlbeautybar.com/",
         liveLink: "https://www.fdlbeautybar.com/"
     },
     {
-        title: "PalettePro",
-        subtitle: "PalettePro is a web application built offering users an spontaneous colour palette generation experience. Upload an image, and PalettePro extracts hex colour names, and palettes for creative projects.",
-        imgLink: project2,
-        codeLink: "https://github.com/ArjunCodess/palettepro",
-        liveLink: "https://palettepro.vercel.app/"
+        title: "Map My Recipe",
+        subtitle: "Recipe Book application developed using React. The application allows users to view a list of recipes, search for specific recipes, and view individual recipe details.",
+        imgLink: mapmyrecipe,
+        codeLink: "https://github.com/Safdar-Ali-India/Recipe-Book-application-using-React",
+        liveLink: "https://map-my-recipe.vercel.app/"
     },
     {
-        title: "Tweetera",
-        subtitle: "Tweetera is a exciting new social media platform that brings people together in real-time conversations. Share your thoughts, connect with friends, and discover trending topics—all in a user-friendly interface.",
-        imgLink: project3,
-        codeLink: "https://github.com/ArjunCodess/Tweetera",
-        liveLink: "https://tweetera.vercel.app/"
+        title: "Safdar Restaurant",
+        subtitle: "This project showcases the development of a dynamic menu system for Safdar Restaurant, created using React. The application is built to filter and display menu items according to the selected meal time, providing users with a seamless and interactive experience.",
+        imgLink: restaurant,
+        codeLink: "https://github.com/Safdar-Ali-India/Safdar-restaurant",
+        liveLink: "https://safdar-restaurant.vercel.app/"
     },
     {
-        title: "ThinkTankTrivia",
-        subtitle: "The React.js Quiz Platform is an interactive online quiz application designed to test and enhance users' knowledge of various web development technologies and programming languages.",
-        imgLink: project4,
-        codeLink: "https://github.com/ArjunCodess/ThinkTankTrivia",
-        liveLink: "https://thinktanktrivia.vercel.app/"
+        title: "Power Rite Electric Inc.",
+        subtitle: "Doubled the conversion rate, cut CPA by 25%, securing high-quality leads for Pool and Lanai Lights business.",
+        imgLink: powerrite,
+        codeLink: "https://powerriteelectric.com",
+        liveLink: "https://powerriteelectric.com"
     },
     {
-        title: "Apple iPhone Product Clone",
-        subtitle: "Clone of Apple's iPhone 15 Pro Product website using React.js, TailwindCSS, GSAP for sleek animations and Three.js for displaying the phone model.",
-        imgLink: project5,
-        codeLink: "https://github.com/ArjunCodess/iPhone-15-Pro-Product-Page-GSAP",
-        liveLink: "https://iphone-page-arjuncodess.vercel.app/"
+        title: "Swag Brands",
+        subtitle: "Achieved a 40% sales surge through digital channels with the highest ROAS growth of +172%.",
+        imgLink: swag,
+        codeLink: "https://www.swagbrands.com/",
+        liveLink: "https://www.swagbrands.com/"
     },
     {
-        title: "PriceTrackr",
-        subtitle: "PriceTrackr is a web application that allows users to track product prices and receive timely notifications about product availability and pricing changes.",
-        imgLink: project6,
-        codeLink: "https://github.com/ArjunCodess/pricetrackr",
-        liveLink: "https://pricetrackr.vercel.app/"
+        title: "CDI25",
+        subtitle: "From abstracts to landscapes and everything in between, we have the perfect piece of art to inspire your next interior design project. ",
+        imgLink: cdi,
+        codeLink: "https://www.cdi25.com/",
+        liveLink: "https://www.cdi25.com/"
     },
     {
-        title: "Memeion",
-        subtitle: "Memeion is a dynamic web application that uses Fetch API, Meme API, and Tailwind CSS to create memes. It has a simple user interface that allows users to see memes from popular subreddits with ease.",
-        imgLink: project7,
-        codeLink: "https://github.com/ArjunCodess/memeion",
-        liveLink: "https://memeion.vercel.app/"
+        title: "Safdar's Weather App",
+        subtitle: "This project showcases the development of a fully-featured weather application using React. The application integrates with a weather API to fetch real-time weather data and presents it in a clean and user-friendly interface.",
+        imgLink: weatherapp,
+        codeLink: "https://github.com/Safdar-Ali-India/Safdar-s-Weather-app",
+        liveLink: "https://safdar-s-weather-app.vercel.app/"
     },
     {
-        title: "Earth Globe",
-        subtitle: "This is an innovative web application presenting a captivating 3D model of the Earth using Three.js and WebGL technologies. Users can navigate and interact with a realistic globe showcasing the powers of the web.",
-        imgLink: project8,
-        codeLink: "https://github.com/ArjunCodess/earth-globe-threejs",
-        liveLink: "https://earth-globe.vercel.app/"
+        title: " Hadith Generator",
+        subtitle: "Explore the wisdom and teachings of the Prophet Muhammad (PBUH) with the Hadith Generator.",
+        imgLink: hadith,
+        codeLink: "https://github.com/Safdar-Ali-India/Hadith-Generator",
+        liveLink: "https://hadith-generator-alpha.vercel.app/"
     },
 ];
 

@@ -7,7 +7,8 @@ const Contact = () => {
                 <p className="mb-8 lg:mb-16 font-light text-center light:text-slate-800 dark:text-gray-400 sm:text-xl">Having a project in mind or looking for some chit-chat, I&apos;m always ready!</p>
                 <form
                     method="POST"
-                    action="https://getform.io/f/ffb58dee-b77e-4202-bda5-1da637ea6f33"
+                    // action="https://getform.io/f/ffb58dee-b77e-4202-bda5-1da637ea6f33"
+                    action="https://getform.io/f/raeqwwma"
                     className="space-y-8"
                 >
                     <div>

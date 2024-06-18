@@ -73,7 +73,7 @@ function page() {
           <div className="dark:text-neutral-300 font-InterMedium mt-3 text-sm lg:text-lg light:text-slate-800">
             <ul>
             <li> Created more tha 70+ coding lectures 👨‍💻 on YouTube </li>
-              <li>🛠 Made 20+ Projects Using MERN</li>
+              <li>🛠 Made 20+ Projects Using React and other CMS platforms</li>
               <li>💵 Made my first 140$ w/ Freelancing</li>
               <li>🌟 Hit 3K+ Followers on Blog / LinkedIn</li>
           

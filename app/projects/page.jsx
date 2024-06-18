@@ -10,6 +10,14 @@ import ProjectCard from '../../components/ProjectCard';
 import { SparklesCore } from "../../components/ui/sparkles";
 
 import project1 from "../../assets/project1.png";
+import cdi from "../../assets/cdi.png";
+import fdl from "../../assets/fdl.png";
+import hadith from "../../assets/hadith.png";
+import mapmyrecipe from "../../assets/mapmyrecipe.png";
+import powerrite from "../../assets/powerrite.png";
+import restaurant from "../../assets/restaurant.png";
+import swag from "../../assets/swag.png";
+import weatherapp from "../../assets/weatherapp.png";
 import project2 from "../../assets/project2.png";
 import project3 from "../../assets/project3.png";
 import project4 from "../../assets/project4.png";
@@ -21,10 +29,10 @@ import project8 from "../../assets/project8.png";
 const projectData = [
     {
         title: "SortingWiz",
-        subtitle: "SortingWiz is a Python and Pygame-based interactive sorting algorithm visualizer. It allows you to see how different sorting algorithms work in real-time by providing a visual representation of the sorting process.",
-        imgLink: project1,
-        codeLink: "https://github.com/ArjunCodess/algorithm_visualizer_pygame",
-        liveLink: "https://github.com/ArjunCodess/algorithm_visualizer_pygame"
+        subtitle: "Attained a 400% surge in consultation bookings in 2 months via strategic use of search ads, social media, and targeted email marketing.",
+        imgLink: fdl,
+        codeLink: "https://www.fdlbeautybar.com/",
+        liveLink: "https://www.fdlbeautybar.com/"
     },
     {
         title: "PalettePro",

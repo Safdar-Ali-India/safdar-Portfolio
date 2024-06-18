@@ -37,6 +37,10 @@ const skills = [
     name: "Next.js",
     type: "Frontend",
   },
+   { imageUrl: assets.wordpres,
+    name: "Wordpres",
+    type: "Frontend",
+  },
   {
     imageUrl: assets.tailwindcss,
     name: "Tailwind CSS",
@@ -47,20 +51,20 @@ const skills = [
     name: "Bootstrap",
     type: "Frontend",
   },
+  // {
+  //   imageUrl: assets.nodejs,
+  //   name: "Node.js",
+  //   type: "Backend",
+  // },
   {
-    imageUrl: assets.nodejs,
-    name: "Node.js",
-    type: "Backend",
+    imageUrl: assets.redux,
+    name: "Redux",
+    type: "Frontend",
   },
   {
-    imageUrl: assets.express,
-    name: "Express",
-    type: "Backend",
-  },
-  {
-    imageUrl: assets.python,
-    name: "Python",
-    type: "Programming",
+    imageUrl: assets.materialui,
+    name: "Material ui",
+    type: "Frontend",
   },
   {
     imageUrl: assets.git,
@@ -78,9 +82,9 @@ const skills = [
     type: "Database",
   },
   {
-    imageUrl: assets.mongodb,
-    name: "MongoDB",
-    type: "Database",
+    imageUrl: assets.webpack,
+    name: "Webpack",
+    type: "Module Bundler",
   },
   {
     imageUrl: assets.figma,
@@ -93,9 +97,9 @@ const skills = [
     type: "Package Manager",
   },
   {
-    imageUrl: assets.postman,
-    name: "Postman",
-    type: "API Client",
+    imageUrl: assets.jira,
+    name: "Jira",
+    type: "Project Management Tool ",
   },
   {
     imageUrl: assets.vscode,

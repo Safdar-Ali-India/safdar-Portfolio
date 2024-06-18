@@ -148,7 +148,7 @@ function Home() {
                   About Me
                 </h3>
                 <p className="dark:text-neutral-300 font-InterMedium text-sm lg:text-lg mt-3 light:text-slate-800">
-                  Passionate Talented 23yo Aspiring Full-Stack Developer(MERN), Writer(2K+ Followers) from India 🇮🇳
+                  Passionate Talented 23yo Aspiring Frontend Developer and YouTuber from India 🇮🇳
                 </p>
 
                 <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">

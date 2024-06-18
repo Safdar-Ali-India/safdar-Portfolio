@@ -50,21 +50,21 @@ const projectData = [
     },
     {
         title: "Power Rite Electric Inc.",
-        subtitle: "Doubled the conversion rate, cut CPA by 25%, securing high-quality leads for Pool and Lanai Lights business.",
+        subtitle: "Doubled the conversion rate, cut CPA by 25%, securing high-quality leads for Pool and Lanai Lights business. Started by understanding the lighting industry intricacies, crafting tailored messaging for effective communication. ",
         imgLink: powerrite,
         codeLink: "https://powerriteelectric.com",
         liveLink: "https://powerriteelectric.com"
     },
     {
         title: "Swag Brands",
-        subtitle: "Achieved a 40% sales surge through digital channels with the highest ROAS growth of +172%.",
+        subtitle: "Achieved a 40% sales surge through digital channels with the highest ROAS growth of +172%. The Swag Brands website would love help promote your business with Promotions That Work.",
         imgLink: swag,
         codeLink: "https://www.swagbrands.com/",
         liveLink: "https://www.swagbrands.com/"
     },
     {
         title: "CDI25",
-        subtitle: "From abstracts to landscapes and everything in between, we have the perfect piece of art to inspire your next interior design project. ",
+        subtitle: "From abstracts to landscapes and everything in between, we have the perfect piece of art to inspire your next interior design project. At Creative Displays and Designs, Inc., its easy for you to find all the finishing touches you need to complete your decorating and design projects. ",
         imgLink: cdi,
         codeLink: "https://www.cdi25.com/",
         liveLink: "https://www.cdi25.com/"
@@ -78,7 +78,7 @@ const projectData = [
     },
     {
         title: " Hadith Generator",
-        subtitle: "Explore the wisdom and teachings of the Prophet Muhammad (PBUH) with the Hadith Generator.",
+        subtitle: "Explore the wisdom and teachings of the Prophet Muhammad (PBUH) with the Hadith Generator. lets you read hadiths from the top Hadith Books while keeping track of your progress.",
         imgLink: hadith,
         codeLink: "https://github.com/Safdar-Ali-India/Hadith-Generator",
         liveLink: "https://hadith-generator-alpha.vercel.app/"

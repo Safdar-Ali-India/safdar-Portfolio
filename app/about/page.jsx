@@ -34,7 +34,7 @@ function page() {
 
         <div className="mt-10">
           <h2 className="font-bold font-InterBlack dark:text-white light:text-black text-lg md:text-xl lg:text-2xl mb-8 text-center lg:mx-40">
-            <TextGenerateEffect words="Passionate Talented Young Full-Stack Developer, Writer and Student by Profession from India 🇮🇳" />
+            <TextGenerateEffect words="Passionate Frontend Developer and YouTuber from India 🇮🇳" />
           </h2>
 
           {/* TODO: add image when have a good one */}
@@ -51,7 +51,7 @@ function page() {
           </h3>
 
           <p className="mb-9 mt-4 text-sm md:text-base lg:text-lg">
-            Hey there! I&apos;m Safdar Ali, a 23-year-old full-stack developer from profession. I got into the world of coding early on and fell in love with the idea of creating things using code. With 4 years of experience in web development, I&apos;ve grown passionate about designing practical websites that cater to my clients&apos; needs.
+            Hey there! I&apos;m Safdar Ali, a 23-year-old Frontend Developer and YouTuber from profession. I got into the world of coding early on and fell in love with the idea of creating things using code. With 4 years of experience in web development, I&apos;ve grown passionate about designing practical websites that cater to my clients&apos; needs.
           </p>
 
           <p className="mb-9 mt-4 text-sm md:text-base lg:text-lg">

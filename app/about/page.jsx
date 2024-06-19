@@ -122,7 +122,7 @@ function page() {
               <li>📚 Enthusiastic reader of non-fiction and self-help books</li>
               <li>👨🏼‍💻 Love coding and building stuff out of code</li>
               <li>✍️ Consistent writer of general knowledge, practical tips and dev stuff</li>
-              <li>🎵 Music lover, compiling and sharing underrated hip-hop songs</li>
+              {/* <li>🎵 Music lover, compiling and sharing underrated hip-hop songs</li> */}
               <li>🎨 Exploring the world of visual arts, with a particular interest in sketching</li>
             </ul>
           </div>

@@ -30,6 +30,7 @@ const marqueeVariants = {
 const GithubLink = "https://github.com/Safdar-Ali-India";
 const InstagramLink = "https://www.instagram.com/codewithsafdar";
 const DevLink = "https://dev.to/safdarali";
+const YoutubeLink = "https://www.youtube.com/@safdarali_";
 const TwitterLink = "https://twitter.com/safdarali___";
 const LinkTree = "https://linktr.ee/safdaralii";
 
@@ -106,18 +107,18 @@ function Home() {
               animate="animate"
             >
               <div className="flex gap-x-5 mt-2 uppercase font-semibold justify-evenly text-base text-neutral-400">
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 👨‍🎓
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
+                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
               </div>
             </motion.div>
             <div className="bg-gradient-to-l absolute right-0 z-10 to-transparent w-16 rounded-md h-9 transition-all ease-in duration-200" />
@@ -148,7 +149,7 @@ function Home() {
                   About Me
                 </h3>
                 <p className="dark:text-neutral-300 font-InterMedium text-sm lg:text-lg mt-3 light:text-slate-800">
-                  Passionate Talented 23yo Aspiring Frontend Developer and YouTuber from India 🇮🇳
+                Software Engineer (Frontend UI Developer) at Adsclique Media | Ex Sujanix | Ex Tech Mahindra and YouTuber from 🇮🇳
                 </p>
 
                 <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">
@@ -156,7 +157,7 @@ function Home() {
                 </h3>
                 <div className="dark:text-neutral-300 font-InterMedium mt-3 text-sm lg:text-lg light:text-slate-800">
                   <ul>
-                  <li> Created more tha 70+ coding lectures 👨‍💻 on YouTube </li>
+                  <li> 👨‍💻 Created more than 70+ coding lectures on YouTube 🎥 </li>
                     <li>🛠 Made 20+ Projects Using React and other CMS platforms</li>
                     <li>💵 Made my first 140$ w/ Freelancing</li>
                     <li>🌟 Hit 3K+ Followers on Blog / LinkedIn </li>
@@ -197,10 +198,10 @@ function Home() {
                     </li>
                   </Link>
 
-                  <Link href={TwitterLink} target="_blank" rel="noreferrer">
-                    <li className="icon twitter">
+                  <Link href={YoutubeLink} target="_blank" rel="noreferrer">
+                    <li className="icon dev">
                       <span>
-                        <i className="fab fa-twitter "></i>
+                        <i className="fab fa-youtube "></i>
                       </span>
                     </li>
                   </Link>
@@ -220,6 +221,7 @@ function Home() {
                       </span>
                     </li>
                   </Link>
+                
                 </ul>
               </div>
             </div>
@@ -266,6 +268,13 @@ function Home() {
                   <li className="icon dev">
                     <span>
                       <i className="fab fa-dev "></i>
+                    </span>
+                  </li>
+                </Link>
+                <Link href={YoutubeLink} target="_blank" rel="noreferrer">
+                  <li className="icon dev">
+                    <span>
+                      <i className="fab fa-youtube "></i>
                     </span>
                   </li>
                 </Link>

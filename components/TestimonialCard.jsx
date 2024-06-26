@@ -11,7 +11,7 @@ export const projects = [
   {
     title: "Stripe",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
+      "A technology company that builds economic infrastructure for the internet. ",
     link: "https://stripe.com",
   },
   {
@@ -35,7 +35,7 @@ export const projects = [
   {
     title: "Amazon",
     description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
+      "A multinational technology company  focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
     link: "https://amazon.com",
   },
   {

@@ -51,7 +51,7 @@ function page() {
           </h3>
 
           <p className="mb-9 mt-4 text-sm md:text-base lg:text-lg">
-            Hey there! I&apos;m Safdar Ali, a 23-year-old Frontend Developer and YouTuber from profession. I got into the world of coding early on and fell in love with the idea of creating things using code. With 4 years of experience in web development, I&apos;ve grown passionate about designing practical websites that cater to my clients&apos; needs.
+            Hey there! I&apos;m Safdar Ali, a 24-year-old Frontend Developer and YouTuber from profession. I got into the world of coding early on and fell in love with the idea of creating things using code. With 4 years of experience in web development, I&apos;ve grown passionate about designing practical websites that cater to my clients&apos; needs.
           </p>
 
           <p className="mb-9 mt-4 text-sm md:text-base lg:text-lg">
@@ -72,10 +72,10 @@ function page() {
           </h3>
           <div className="dark:text-neutral-300 font-InterMedium mt-3 text-sm lg:text-lg light:text-slate-800">
             <ul>
-            <li> 👨‍💻 Created more than 70+ coding lectures on YouTube 🎥 </li>
-                    <li>🛠 Made 20+ Projects Using React and other CMS platforms</li>
-                    <li>💵 Made my first 140$ w/ Freelancing</li>
-                    <li>🌟 Hit 3K+ Followers on Blog / LinkedIn </li>
+            <li> 👨‍💻 Created 70+ coding tutorials on YouTube 🎥 </li>
+                    <li>🛠 Built 20+ projects using React and various CMS platforms</li>
+                    <li>💵 Earned my first $140 through freelancing</li>
+                    <li>🌟 Gained 5K+ followers on Blog & LinkedIn </li>
           
             </ul>
           </div>

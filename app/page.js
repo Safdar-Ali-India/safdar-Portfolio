@@ -38,7 +38,7 @@ const PROJECTS = [
   {
     imgLink: img1,
     year: '2024',
-    title: "AdsClique Media: The website of my current company.",
+    title: "AdsClique Media: The website of my previous company.",
     subT: "The streamlined user interface provides a more interactive experience, allowing colleagues, partners, and clients to easily find the information they are looking for",
     // liveCode: "https://github.com/ArjunCodess/palettepro",
     liveLink: "https://adsclique.com/",
@@ -149,7 +149,7 @@ function Home() {
                   About Me
                 </h3>
                 <p className="dark:text-neutral-300 font-InterMedium text-sm lg:text-lg mt-3 light:text-slate-800">
-                Software Engineer (Frontend UI Developer) at Adsclique Media | Ex Sujanix | Ex Tech Mahindra and YouTuber from 🇮🇳
+               Software Engineer (Frontend UI Developer) at Cube (a Sequoia Capital–backed startup) | Ex Adsclique Media | Ex Sujanix | Ex Tech Mahindra | YouTuber from 🇮🇳
                 </p>
 
                 <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">
@@ -157,10 +157,10 @@ function Home() {
                 </h3>
                 <div className="dark:text-neutral-300 font-InterMedium mt-3 text-sm lg:text-lg light:text-slate-800">
                   <ul>
-                  <li> 👨‍💻 Created more than 70+ coding lectures on YouTube 🎥 </li>
-                    <li>🛠 Made 20+ Projects Using React and other CMS platforms</li>
-                    <li>💵 Made my first 140$ w/ Freelancing</li>
-                    <li>🌟 Hit 3K+ Followers on Blog / LinkedIn </li>
+                   <li> 👨‍💻 Created 70+ coding tutorials on YouTube 🎥 </li>
+                    <li>🛠 Built 20+ projects using React and various CMS platforms</li>
+                    <li>💵 Earned my first $140 through freelancing</li>
+                    <li>🌟 Gained 5K+ followers on Blog & LinkedIn </li>
 
                   </ul>
                 </div>

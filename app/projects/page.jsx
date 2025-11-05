@@ -37,8 +37,7 @@ import weatherapp from "../../assets/weatherapp.png"
 
 const caseStudies = [
   {
-    title: "The M Salon",
-    location: "Beverly Hills",
+    title: "The M Salon", 
     url: "msalonbeverlyhills.com",
     role: "Lead Front-end & WordPress Build",
     techStack: ["WordPress", "Vanilla JavaScript", "Custom Theme"],
@@ -48,8 +47,17 @@ const caseStudies = [
     liveLink: "https://msalonbeverlyhills.com",
   },
   {
-    title: "Triton Home LLC",
-    location: "",
+    title: "WP Standard", 
+    url: "wpstandard.com",
+    role: "E-commerce Shopify Build",
+    techStack: ["Shopify", "Ruby on Rails"],
+    description: "Developed collection page, blog page, product page templates, customised Shopify theme. Implemented UI/UX improvements for product browsing and storytelling for lifestyle brand.",
+    outcome: "Elevated brand's online shopping experience for leather bags, improving UX for mobile and desktop alike.",
+    imgLink: wpstandard,
+    liveLink: "https://wpstandard.com",
+  },
+  {
+    title: "Triton Home LLC", 
     url: "tritonhomellc.com",
     role: "Full-site Build & Deploy",
     techStack: ["WordPress", "Vanilla JavaScript", "Custom Theme"],
@@ -57,6 +65,17 @@ const caseStudies = [
     outcome: "Delivered a content-rich, visually appealing real-estate site that aligned with their premium brand positioning.",
     imgLink: tritonhomellc,
     liveLink: "https://tritonhomellc.com",
+  },
+  {
+    title: "Sommet Beauty",
+    location: "",
+    url: "sommetbeauty.com",
+    role: "Shopify Build & Performance Optimisation",
+    techStack: ["Shopify"], 
+    description: "Built site (home, product, collection, cart, navigation) for luxury beauty-brand ecommerce. Created custom cart page with seamless checkout flow. Focused on speed optimisation: asset management, lazy-loading, theme tweaks.",
+    outcome: "Delivered a high-end, performance-tuned ecommerce site for premium beauty products with custom cart functionality.",
+    imgLink: sommetbeauty,
+    liveLink: "https://sommetbeauty.com",
   },
   {
     title: "IndependentMed",
@@ -70,6 +89,17 @@ const caseStudies = [
     liveLink: "https://independentmed.com",
   },
   {
+    title: "Waterboyz Surf & Skate Shop",
+    location: "",
+    url: "waterboyz.com",
+    role: "Shopify Site Build & Optimisation",
+    techStack: ["Shopify"],
+    description: "Built top navigation, product pages, implemented speed and UX improvements tailored for surf & skate culture audience. Ensured mobile performance and smooth browsing.",
+    outcome: "Created an engaging ecommerce experience aligned with active/lifestyle branding.",
+    imgLink: waterboyz,
+    liveLink: "https://waterboyz.com",
+  },
+  {
     title: "Metapeak Media",
     location: "",
     url: "metapeakmedia.com",
@@ -79,6 +109,17 @@ const caseStudies = [
     outcome: "Delivered polished corporate web presence for U.S-based digital/media firm under the Adsclique umbrella.",
     imgLink: metapeakmedia,
     liveLink: "https://metapeakmedia.com",
+  },
+  {
+    title: "Empanada Mama",
+    location: "NYC",
+    url: "empanadamama.com",
+    role: "Design & Maintenance",
+    techStack: ["Squarespace"],
+    description: "Created site in Squarespace: menu sections, blog/news feed, event listings, responsive layout. Provided ongoing maintenance: updates, content changes, optimisations.",
+    outcome: "Delivered stylish online presence for a Colombian restaurant & bar in NYC, enabling the client to manage menu updates and events easily.",
+    imgLink: empanadamama,
+    liveLink: "https://empanadamama.com",
   },
   {
     title: "SMI Line Dental PC",
@@ -92,6 +133,17 @@ const caseStudies = [
     liveLink: "https://smilinedentalpc.com",
   },
   {
+    title: "FreshSends",
+    location: "",
+    url: "freshsends.com",
+    role: "Shopify Site Work & Maintenance",
+    techStack: ["Shopify"],
+    description: "Developed 'Shop All' product listing page, managed filters, layout and theme styling. Carried out routine maintenance: theme updates, content changes, performance checks.",
+    outcome: "Supported gift/flower ecommerce business with improved product listing UX and streamlined maintenance.",
+    imgLink: freshsends,
+    liveLink: "https://freshsends.com",
+  },
+  {
     title: "First Class Pools Naples",
     location: "",
     url: "firstclasspoolsnaples.com",
@@ -103,6 +155,17 @@ const caseStudies = [
     liveLink: "https://firstclasspoolsnaples.com",
   },
   {
+    title: "The Yuzu Co.",
+    location: "",
+    url: "theyuzu.co",
+    role: "Shopify Build & Maintenance",
+    techStack: ["Shopify"],
+    description: "Created homepage, blog page, product pages; managed ongoing site maintenance. Styled theme to match brand's colourful, fresh identity and improved blog layout for story-telling.",
+    outcome: "Delivered vibrant ecommerce platform for a juice brand with both commerce and content capabilities.",
+    imgLink: theyuzu,
+    liveLink: "https://theyuzu.co",
+  },
+  {
     title: "Adsclique Media",
     location: "",
     url: "adsclique.com",
@@ -112,17 +175,6 @@ const caseStudies = [
     outcome: "Built the online face of the agency where I worked as Senior Frontend Developer — showcasing our services, case studies, and brand identity.",
     imgLink: adsclique,
     liveLink: "https://adsclique.com",
-  },
-  {
-    title: "Empanada Mama",
-    location: "NYC",
-    url: "empanadamama.com",
-    role: "Design & Maintenance",
-    techStack: ["Squarespace"],
-    description: "Created site in Squarespace: menu sections, blog/news feed, event listings, responsive layout. Provided ongoing maintenance: updates, content changes, optimisations.",
-    outcome: "Delivered stylish online presence for a Colombian restaurant & bar in NYC, enabling the client to manage menu updates and events easily.",
-    imgLink: empanadamama,
-    liveLink: "https://empanadamama.com",
   },
   {
     title: "Dawn Travel",
@@ -145,61 +197,6 @@ const caseStudies = [
     outcome: "Delivered both a visually appealing and accessibility-conscious web solution for a food service business.",
     imgLink: acfp,
     liveLink: "https://acfp.com",
-  },
-  {
-    title: "WP Standard",
-    location: "",
-    url: "wpstandard.com",
-    role: "E-commerce Shopify Build",
-    techStack: ["Shopify", "Ruby on Rails"],
-    description: "Developed collection page, blog page, product page templates, customised Shopify theme. Implemented UI/UX improvements for product browsing and storytelling for lifestyle brand.",
-    outcome: "Elevated brand's online shopping experience for leather bags, improving UX for mobile and desktop alike.",
-    imgLink: wpstandard,
-    liveLink: "https://wpstandard.com",
-  },
-  {
-    title: "Sommet Beauty",
-    location: "",
-    url: "sommetbeauty.com",
-    role: "Shopify Build & Performance Optimisation",
-    techStack: ["Shopify"],
-    description: "Built site (home, product, collection, navigation) for luxury beauty-brand ecommerce. Focused on speed optimisation: asset management, lazy-loading, theme tweaks.",
-    outcome: "Delivered a high-end, performance-tuned ecommerce site for premium beauty products.",
-    imgLink: sommetbeauty,
-    liveLink: "https://sommetbeauty.com",
-  },
-  {
-    title: "Waterboyz Surf & Skate Shop",
-    location: "",
-    url: "waterboyz.com",
-    role: "Shopify Site Build & Optimisation",
-    techStack: ["Shopify"],
-    description: "Built top navigation, product pages, implemented speed and UX improvements tailored for surf & skate culture audience. Ensured mobile performance and smooth browsing.",
-    outcome: "Created an engaging ecommerce experience aligned with active/lifestyle branding.",
-    imgLink: waterboyz,
-    liveLink: "https://waterboyz.com",
-  },
-  {
-    title: "FreshSends",
-    location: "",
-    url: "freshsends.com",
-    role: "Shopify Site Work & Maintenance",
-    techStack: ["Shopify"],
-    description: "Developed 'Shop All' product listing page, managed filters, layout and theme styling. Carried out routine maintenance: theme updates, content changes, performance checks.",
-    outcome: "Supported gift/flower ecommerce business with improved product listing UX and streamlined maintenance.",
-    imgLink: freshsends,
-    liveLink: "https://freshsends.com",
-  },
-  {
-    title: "The Yuzu Co.",
-    location: "",
-    url: "theyuzu.co",
-    role: "Shopify Build & Maintenance",
-    techStack: ["Shopify"],
-    description: "Created homepage, blog page, product pages; managed ongoing site maintenance. Styled theme to match brand's colourful, fresh identity and improved blog layout for story-telling.",
-    outcome: "Delivered vibrant ecommerce platform for a juice brand with both commerce and content capabilities.",
-    imgLink: theyuzu,
-    liveLink: "https://theyuzu.co",
   },
 ]
 
@@ -267,20 +264,21 @@ function CaseStudyCard({ study, index }) {
 
   return (
     <div className="bg-gray-50 dark:bg-black border border-black/[0.1] dark:border-white/[0.2] rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-emerald-500/[0.1] transition-all duration-300">
-      {/* Project Image */}
-      <div className="w-full h-48 relative overflow-hidden bg-neutral-200 dark:bg-neutral-800">
-        <Image src={study.imgLink} alt={study.title} fill className="object-cover hover:scale-105 transition-transform duration-300" />
-      </div>
+      {/* Project Image - Clickable */}
+      <a href={study.liveLink} target="_blank" rel="noopener noreferrer" className="block">
+        <div className="w-full h-48 relative overflow-hidden bg-neutral-200 dark:bg-neutral-800 cursor-pointer">
+          <Image src={study.imgLink} alt={study.title} fill className="object-cover hover:scale-105 transition-transform duration-300" />
+        </div>
+      </a>
 
       <div className="p-6">
         <div className="flex items-start justify-between mb-3">
           <h3 className="text-xl font-bold text-neutral-800 dark:text-white">{study.title}</h3>
-          {study.location && <span className="text-xs px-2 py-1 bg-neutral-200 dark:bg-neutral-800 rounded-full text-neutral-600 dark:text-neutral-400">{study.location}</span>}
+          <div className="flex gap-2">
+            {study.date && <span className="text-xs px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 rounded-full text-emerald-700 dark:text-emerald-400">{study.date}</span>}
+            {study.location && <span className="text-xs px-2 py-1 bg-neutral-200 dark:bg-neutral-800 rounded-full text-neutral-600 dark:text-neutral-400">{study.location}</span>}
+          </div>
         </div>
-
-        <a href={`https://${study.url}`} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 hover:text-blue-400 mb-3 block">
-          {study.url}
-        </a>
 
         <div className="mb-3">
           <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">Role</p>
@@ -303,7 +301,7 @@ function CaseStudyCard({ study, index }) {
           <p className="text-sm text-neutral-600 dark:text-neutral-400">{study.description}</p>
         </div>
 
-        <div className="mb-4">
+        <div className="mb-6">
           <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">Outcome</p>
           <p className={`text-sm text-neutral-600 dark:text-neutral-400 ${!showFullOutcome ? "line-clamp-2" : ""}`}>{study.outcome}</p>
           {study.outcome.length > 100 && (
@@ -313,9 +311,11 @@ function CaseStudyCard({ study, index }) {
           )}
         </div>
 
-        <a href={study.liveLink} target="_blank" rel="noopener noreferrer" className="block w-full text-center px-4 py-2 rounded-lg bg-black dark:bg-white dark:text-black text-white text-sm font-bold hover:opacity-80 transition-opacity">
-          View Live Site →
-        </a>
+        <div className="mt-auto">
+          <a href={study.liveLink} target="_blank" rel="noopener noreferrer" className="block w-full text-center px-4 py-2 rounded-lg bg-black dark:bg-white dark:text-black text-white text-sm font-bold hover:opacity-80 transition-opacity">
+            View Live Site →
+          </a>
+        </div>
       </div>
     </div>
   )

@@ -5,11 +5,27 @@ import Link from "next/link"
 
 import { TbArrowBackUp } from "react-icons/tb"
 
-import ProjectCard from "../../components/ProjectCard"
+import ProjectCard from "../../components/ProjectCard" 
 
 import { SparklesCore } from "../../components/ui/sparkles"
 
-import project1 from "../../assets/project1.png"
+ 
+import tritonhomellc from "../../assets/tritonhomellc.png"
+import independentmed from "../../assets/independentmed.png"
+import metapeakmedia from "../../assets/metapeakmedia.png"
+import smilinedentalpc from "../../assets/smilinedentalpc.png"
+import firstclasspoolsnaples from "../../assets/firstclasspoolsnaples.png"
+import adsclique from "../../assets/adsclique.png"
+import empanadamama from "../../assets/empanadamama.png"
+import dawntravel from "../../assets/dawntravel.png"
+import acfp from "../../assets/acfp.png"
+import wpstandard from "../../assets/wpstandard.png"
+import sommetbeauty from "../../assets/sommetbeauty.png"
+import waterboyz from "../../assets/waterboyz.png"
+import freshsends from "../../assets/freshsends.png"
+import theyuzu from "../../assets/theyuzu.png"
+
+import msalonbeverlyhills from "../../assets/msalonbeverlyhills.png"
 import cdi from "../../assets/cdi.png"
 import fdl from "../../assets/fdl.png"
 import hadith from "../../assets/hadith.png"
@@ -28,7 +44,7 @@ const caseStudies = [
     techStack: ["WordPress", "Vanilla JavaScript", "Custom Theme"],
     description: "Architected and developed site structure, custom theme and UI from scratch. Integrated salon services, gallery, blog, contact & newsletter modules. Ensured pixel-perfect design, smooth transitions and responsive behaviour.",
     outcome: "Delivered a high-end, brand-aligned site for a premium salon in Beverly Hills; the site's footer credits Adsclique Media.",
-    imgLink: project1,
+    imgLink: msalonbeverlyhills,
     liveLink: "https://msalonbeverlyhills.com",
   },
   {
@@ -39,7 +55,7 @@ const caseStudies = [
     techStack: ["WordPress", "Vanilla JavaScript", "Custom Theme"],
     description: "Designed and built a custom WordPress theme to showcase broad range of homes, tailored for budget & lifestyle breakdowns. Developed hero-sections, listings, dynamic filtering, gallery/carousel for property features.",
     outcome: "Delivered a content-rich, visually appealing real-estate site that aligned with their premium brand positioning.",
-    imgLink: project1,
+    imgLink: tritonhomellc,
     liveLink: "https://tritonhomellc.com",
   },
   {
@@ -50,7 +66,7 @@ const caseStudies = [
     techStack: ["WordPress", "WooCommerce"],
     description: "Built from scratch: custom WP theme tailored to medical-equipment e-commerce. Configured WooCommerce product/catalogue, checkout flows, shipping/payment integrations. Implemented UI/UX improvements specifically for equipment listing.",
     outcome: "Provided a scalable e-commerce platform for medical-equipment sales with user-friendly product browsing and checkout.",
-    imgLink: project1,
+    imgLink: independentmed,
     liveLink: "https://independentmed.com",
   },
   {
@@ -61,7 +77,7 @@ const caseStudies = [
     techStack: ["WordPress"],
     description: "Created full branding site for Metapeak (child company of Adsclique), built on WordPress. Custom design, content integration, mobile responsive build, and deployment.",
     outcome: "Delivered polished corporate web presence for U.S-based digital/media firm under the Adsclique umbrella.",
-    imgLink: project1,
+    imgLink: metapeakmedia,
     liveLink: "https://metapeakmedia.com",
   },
   {
@@ -72,7 +88,7 @@ const caseStudies = [
     techStack: ["WordPress", "PHP", "Hostinger"],
     description: "Built site from ground up: structured service pages, team bios, appointment/contact modules. Set up hosting on Hostinger, theme customisation and maintenance hand-off.",
     outcome: "Delivered professional-looking web presence for dental practice with emphasis on trust and conversion.",
-    imgLink: project1,
+    imgLink: smilinedentalpc,
     liveLink: "https://smilinedentalpc.com",
   },
   {
@@ -83,7 +99,7 @@ const caseStudies = [
     techStack: ["WordPress", "Custom Theme"],
     description: "Designed and developed full site: hero imagery, services (pool builds, maintenance), galleries, CTAs. Ensured mobile usability and SEO basics for local business.",
     outcome: "Delivered a visually rich site for a pool-services company, focused on lead generation and showcasing work.",
-    imgLink: project1,
+    imgLink: firstclasspoolsnaples,
     liveLink: "https://firstclasspoolsnaples.com",
   },
   {
@@ -94,7 +110,7 @@ const caseStudies = [
     techStack: ["WordPress", "PHP", "Gatsby", "Swiper"],
     description: "Created agency website from scratch: custom theme, dynamic sections (case studies, services, blog). Integrated Swiper (carousel/slider) for 'our work' section, built WordPress backend for client-editable content. Deployment, hosting setup, performance tuning.",
     outcome: "Built the online face of the agency where I worked as Senior Frontend Developer — showcasing our services, case studies, and brand identity.",
-    imgLink: project1,
+    imgLink: adsclique,
     liveLink: "https://adsclique.com",
   },
   {
@@ -105,7 +121,7 @@ const caseStudies = [
     techStack: ["Squarespace"],
     description: "Created site in Squarespace: menu sections, blog/news feed, event listings, responsive layout. Provided ongoing maintenance: updates, content changes, optimisations.",
     outcome: "Delivered stylish online presence for a Colombian restaurant & bar in NYC, enabling the client to manage menu updates and events easily.",
-    imgLink: project1,
+    imgLink: empanadamama,
     liveLink: "https://empanadamama.com",
   },
   {
@@ -116,7 +132,7 @@ const caseStudies = [
     techStack: ["Wix"],
     description: "Built key main pages (home page, cruises page) on Wix: crafted imagery-rich layouts, service highlights, call-to-actions. Maintained site: refreshed content, UX adjustments, ensured mobile friendliness.",
     outcome: "Helped luxury travel business maintain strong online first impression, focusing on premium tours, safaris, villas and cruises.",
-    imgLink: project1,
+    imgLink: dawntravel,
     liveLink: "https://dawn.travel",
   },
   {
@@ -127,7 +143,7 @@ const caseStudies = [
     techStack: ["WordPress", "Accessibility Standards"],
     description: "Built WordPress site for pizza company: homepage, menu, ordering link, about and contact. Executed accessibility enhancements (ARIA tags, keyboard navigation, semantic markup) to improve usability.",
     outcome: "Delivered both a visually appealing and accessibility-conscious web solution for a food service business.",
-    imgLink: project1,
+    imgLink: acfp,
     liveLink: "https://acfp.com",
   },
   {
@@ -138,7 +154,7 @@ const caseStudies = [
     techStack: ["Shopify", "Ruby on Rails"],
     description: "Developed collection page, blog page, product page templates, customised Shopify theme. Implemented UI/UX improvements for product browsing and storytelling for lifestyle brand.",
     outcome: "Elevated brand's online shopping experience for leather bags, improving UX for mobile and desktop alike.",
-    imgLink: project1,
+    imgLink: wpstandard,
     liveLink: "https://wpstandard.com",
   },
   {
@@ -149,7 +165,7 @@ const caseStudies = [
     techStack: ["Shopify"],
     description: "Built site (home, product, collection, navigation) for luxury beauty-brand ecommerce. Focused on speed optimisation: asset management, lazy-loading, theme tweaks.",
     outcome: "Delivered a high-end, performance-tuned ecommerce site for premium beauty products.",
-    imgLink: project1,
+    imgLink: sommetbeauty,
     liveLink: "https://sommetbeauty.com",
   },
   {
@@ -160,7 +176,7 @@ const caseStudies = [
     techStack: ["Shopify"],
     description: "Built top navigation, product pages, implemented speed and UX improvements tailored for surf & skate culture audience. Ensured mobile performance and smooth browsing.",
     outcome: "Created an engaging ecommerce experience aligned with active/lifestyle branding.",
-    imgLink: project1,
+    imgLink: waterboyz,
     liveLink: "https://waterboyz.com",
   },
   {
@@ -171,7 +187,7 @@ const caseStudies = [
     techStack: ["Shopify"],
     description: "Developed 'Shop All' product listing page, managed filters, layout and theme styling. Carried out routine maintenance: theme updates, content changes, performance checks.",
     outcome: "Supported gift/flower ecommerce business with improved product listing UX and streamlined maintenance.",
-    imgLink: project1,
+    imgLink: freshsends,
     liveLink: "https://freshsends.com",
   },
   {
@@ -182,7 +198,7 @@ const caseStudies = [
     techStack: ["Shopify"],
     description: "Created homepage, blog page, product pages; managed ongoing site maintenance. Styled theme to match brand's colourful, fresh identity and improved blog layout for story-telling.",
     outcome: "Delivered vibrant ecommerce platform for a juice brand with both commerce and content capabilities.",
-    imgLink: project1,
+    imgLink: theyuzu,
     liveLink: "https://theyuzu.co",
   },
 ]

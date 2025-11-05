@@ -298,7 +298,7 @@ function CaseStudyCard({ study, index }) {
           <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">What I Did</p>
           <p className={`text-sm text-neutral-600 dark:text-neutral-400 ${!showFullDescription ? "line-clamp-4" : ""}`}>{study.description}</p>
           {study.description.length > 120 && (
-            <button onClick={() => setShowFullDescription(!showFullDescription)} className="text-xs text-blue-500 hover:text-blue-400 mt-1">
+            <button onClick={() => setShowFullDescription(!showFullDescription)} className="text-xs text-white hover:text-gray-300 mt-1">
               {showFullDescription ? "Show Less" : "Read More"}
             </button>
           )}
@@ -308,7 +308,7 @@ function CaseStudyCard({ study, index }) {
           <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">Outcome</p>
           <p className={`text-sm text-neutral-600 dark:text-neutral-400 ${!showFullOutcome ? "line-clamp-2" : ""}`}>{study.outcome}</p>
           {study.outcome.length > 80 && (
-            <button onClick={() => setShowFullOutcome(!showFullOutcome)} className="text-xs text-blue-500 hover:text-blue-400 mt-1">
+            <button onClick={() => setShowFullOutcome(!showFullOutcome)} className="text-xs text-white hover:text-gray-300 mt-1">
               {showFullOutcome ? "Show Less" : "Read More"}
             </button>
           )}

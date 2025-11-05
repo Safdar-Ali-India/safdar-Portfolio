@@ -37,7 +37,7 @@ import weatherapp from "../../assets/weatherapp.png"
 
 const caseStudies = [
   {
-    title: "The M Salon", 
+    title: "The M Salon",
     url: "msalonbeverlyhills.com",
     role: "Lead Front-end & WordPress Build",
     techStack: ["WordPress", "Vanilla JavaScript", "Custom Theme"],
@@ -47,7 +47,7 @@ const caseStudies = [
     liveLink: "https://msalonbeverlyhills.com",
   },
   {
-    title: "WP Standard", 
+    title: "WP Standard",
     url: "wpstandard.com",
     role: "E-commerce Shopify Build",
     techStack: ["Shopify", "Ruby on Rails"],
@@ -57,7 +57,7 @@ const caseStudies = [
     liveLink: "https://wpstandard.com",
   },
   {
-    title: "Triton Home LLC", 
+    title: "Triton Home LLC",
     url: "tritonhomellc.com",
     role: "Full-site Build & Deploy",
     techStack: ["WordPress", "Vanilla JavaScript", "Custom Theme"],
@@ -68,10 +68,9 @@ const caseStudies = [
   },
   {
     title: "Sommet Beauty",
-    location: "",
     url: "sommetbeauty.com",
     role: "Shopify Build & Performance Optimisation",
-    techStack: ["Shopify"], 
+    techStack: ["Shopify"],
     description: "Built site (home, product, collection, cart, navigation) for luxury beauty-brand ecommerce. Created custom cart page with seamless checkout flow. Focused on speed optimisation: asset management, lazy-loading, theme tweaks.",
     outcome: "Delivered a high-end, performance-tuned ecommerce site for premium beauty products with custom cart functionality.",
     imgLink: sommetbeauty,
@@ -112,7 +111,6 @@ const caseStudies = [
   },
   {
     title: "Empanada Mama",
-    location: "NYC",
     url: "empanadamama.com",
     role: "Design & Maintenance",
     techStack: ["Squarespace"],
@@ -134,7 +132,6 @@ const caseStudies = [
   },
   {
     title: "FreshSends",
-    location: "",
     url: "freshsends.com",
     role: "Shopify Site Work & Maintenance",
     techStack: ["Shopify"],
@@ -261,6 +258,7 @@ const projectData = [
 
 function CaseStudyCard({ study, index }) {
   const [showFullOutcome, setShowFullOutcome] = useState(false)
+  const [showFullDescription, setShowFullDescription] = useState(false)
 
   return (
     <div className="bg-gray-50 dark:bg-black border border-black/[0.1] dark:border-white/[0.2] rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-emerald-500/[0.1] transition-all duration-300">
@@ -298,13 +296,18 @@ function CaseStudyCard({ study, index }) {
 
         <div className="mb-3">
           <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">What I Did</p>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">{study.description}</p>
+          <p className={`text-sm text-neutral-600 dark:text-neutral-400 ${!showFullDescription ? "line-clamp-4" : ""}`}>{study.description}</p>
+          {study.description.length > 120 && (
+            <button onClick={() => setShowFullDescription(!showFullDescription)} className="text-xs text-blue-500 hover:text-blue-400 mt-1">
+              {showFullDescription ? "Show Less" : "Read More"}
+            </button>
+          )}
         </div>
 
         <div className="mb-6">
           <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">Outcome</p>
           <p className={`text-sm text-neutral-600 dark:text-neutral-400 ${!showFullOutcome ? "line-clamp-2" : ""}`}>{study.outcome}</p>
-          {study.outcome.length > 100 && (
+          {study.outcome.length > 80 && (
             <button onClick={() => setShowFullOutcome(!showFullOutcome)} className="text-xs text-blue-500 hover:text-blue-400 mt-1">
               {showFullOutcome ? "Show Less" : "Read More"}
             </button>

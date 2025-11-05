@@ -5,11 +5,11 @@ import Link from "next/link"
 
 import { TbArrowBackUp } from "react-icons/tb"
 
-import ProjectCard from "../../components/ProjectCard" 
+import ProjectCard from "../../components/ProjectCard"
+import Image from "next/image"
 
 import { SparklesCore } from "../../components/ui/sparkles"
 
- 
 import tritonhomellc from "../../assets/tritonhomellc.png"
 import independentmed from "../../assets/independentmed.png"
 import metapeakmedia from "../../assets/metapeakmedia.png"
@@ -266,50 +266,57 @@ function CaseStudyCard({ study, index }) {
   const [showFullOutcome, setShowFullOutcome] = useState(false)
 
   return (
-    <div className="bg-gray-50 dark:bg-black border border-black/[0.1] dark:border-white/[0.2] rounded-xl p-6 hover:shadow-2xl hover:shadow-emerald-500/[0.1] transition-all duration-300">
-      <div className="flex items-start justify-between mb-3">
-        <h3 className="text-xl font-bold text-neutral-800 dark:text-white">{study.title}</h3>
-        {study.location && <span className="text-xs px-2 py-1 bg-neutral-200 dark:bg-neutral-800 rounded-full text-neutral-600 dark:text-neutral-400">{study.location}</span>}
+    <div className="bg-gray-50 dark:bg-black border border-black/[0.1] dark:border-white/[0.2] rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-emerald-500/[0.1] transition-all duration-300">
+      {/* Project Image */}
+      <div className="w-full h-48 relative overflow-hidden bg-neutral-200 dark:bg-neutral-800">
+        <Image src={study.imgLink} alt={study.title} fill className="object-cover hover:scale-105 transition-transform duration-300" />
       </div>
 
-      <a href={`https://${study.url}`} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 hover:text-blue-400 mb-3 block">
-        {study.url}
-      </a>
-
-      <div className="mb-3">
-        <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">Role</p>
-        <p className="text-sm text-neutral-700 dark:text-neutral-300">{study.role}</p>
-      </div>
-
-      <div className="mb-3">
-        <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-2">Tech Stack</p>
-        <div className="flex flex-wrap gap-1">
-          {study.techStack.map((tech, idx) => (
-            <span key={idx} className="text-xs px-2 py-1 bg-neutral-200 dark:bg-neutral-800 rounded text-neutral-700 dark:text-neutral-300">
-              {tech}
-            </span>
-          ))}
+      <div className="p-6">
+        <div className="flex items-start justify-between mb-3">
+          <h3 className="text-xl font-bold text-neutral-800 dark:text-white">{study.title}</h3>
+          {study.location && <span className="text-xs px-2 py-1 bg-neutral-200 dark:bg-neutral-800 rounded-full text-neutral-600 dark:text-neutral-400">{study.location}</span>}
         </div>
-      </div>
 
-      <div className="mb-3">
-        <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">What I Did</p>
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">{study.description}</p>
-      </div>
+        <a href={`https://${study.url}`} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 hover:text-blue-400 mb-3 block">
+          {study.url}
+        </a>
 
-      <div className="mb-4">
-        <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">Outcome</p>
-        <p className={`text-sm text-neutral-600 dark:text-neutral-400 ${!showFullOutcome ? "line-clamp-2" : ""}`}>{study.outcome}</p>
-        {study.outcome.length > 100 && (
-          <button onClick={() => setShowFullOutcome(!showFullOutcome)} className="text-xs text-blue-500 hover:text-blue-400 mt-1">
-            {showFullOutcome ? "Show Less" : "Read More"}
-          </button>
-        )}
-      </div>
+        <div className="mb-3">
+          <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">Role</p>
+          <p className="text-sm text-neutral-700 dark:text-neutral-300">{study.role}</p>
+        </div>
 
-      <a href={study.liveLink} target="_blank" rel="noopener noreferrer" className="block w-full text-center px-4 py-2 rounded-lg bg-black dark:bg-white dark:text-black text-white text-sm font-bold hover:opacity-80 transition-opacity">
-        View Live Site →
-      </a>
+        <div className="mb-3">
+          <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-2">Tech Stack</p>
+          <div className="flex flex-wrap gap-1">
+            {study.techStack.map((tech, idx) => (
+              <span key={idx} className="text-xs px-2 py-1 bg-neutral-200 dark:bg-neutral-800 rounded text-neutral-700 dark:text-neutral-300">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-3">
+          <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">What I Did</p>
+          <p className="text-sm text-neutral-600 dark:text-neutral-400">{study.description}</p>
+        </div>
+
+        <div className="mb-4">
+          <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">Outcome</p>
+          <p className={`text-sm text-neutral-600 dark:text-neutral-400 ${!showFullOutcome ? "line-clamp-2" : ""}`}>{study.outcome}</p>
+          {study.outcome.length > 100 && (
+            <button onClick={() => setShowFullOutcome(!showFullOutcome)} className="text-xs text-blue-500 hover:text-blue-400 mt-1">
+              {showFullOutcome ? "Show Less" : "Read More"}
+            </button>
+          )}
+        </div>
+
+        <a href={study.liveLink} target="_blank" rel="noopener noreferrer" className="block w-full text-center px-4 py-2 rounded-lg bg-black dark:bg-white dark:text-black text-white text-sm font-bold hover:opacity-80 transition-opacity">
+          View Live Site →
+        </a>
+      </div>
     </div>
   )
 }

@@ -39,6 +39,7 @@ const caseStudies = [
   {
     title: "The M Salon",
     url: "msalonbeverlyhills.com",
+    location: "Salon & Spa",
     role: "Lead Front-end & WordPress Build",
     techStack: ["WordPress", "Vanilla JavaScript", "Custom Theme"],
     description: "Architected and developed site structure, custom theme and UI from scratch. Integrated salon services, gallery, blog, contact & newsletter modules. Ensured pixel-perfect design, smooth transitions and responsive behaviour.",
@@ -49,6 +50,7 @@ const caseStudies = [
   {
     title: "WP Standard",
     url: "wpstandard.com",
+    location: "E-commerce Leather bags",
     role: "E-commerce Shopify Build",
     techStack: ["Shopify", "Ruby on Rails"],
     description: "Developed collection page, blog page, product page templates, customised Shopify theme. Implemented UI/UX improvements for product browsing and storytelling for lifestyle brand.",
@@ -59,6 +61,7 @@ const caseStudies = [
   {
     title: "Triton Home LLC",
     url: "tritonhomellc.com",
+    location: "Real-estate",
     role: "Full-site Build & Deploy",
     techStack: ["WordPress", "Vanilla JavaScript", "Custom Theme"],
     description: "Designed and built a custom WordPress theme to showcase broad range of homes, tailored for budget & lifestyle breakdowns. Developed hero-sections, listings, dynamic filtering, gallery/carousel for property features.",
@@ -69,6 +72,7 @@ const caseStudies = [
   {
     title: "Sommet Beauty",
     url: "sommetbeauty.com",
+    location: "Luxury Beauty Products",
     role: "Shopify Build & Performance Optimisation",
     techStack: ["Shopify"],
     description: "Built site (home, product, collection, cart, navigation) for luxury beauty-brand ecommerce. Created custom cart page with seamless checkout flow. Focused on speed optimisation: asset management, lazy-loading, theme tweaks.",
@@ -78,8 +82,8 @@ const caseStudies = [
   },
   {
     title: "IndependentMed",
-    location: "",
-    url: "independentmed.com",
+    location: "Medical Equpment",
+    url: "independentmed.com", 
     role: "E-commerce/Equipment Site Build",
     techStack: ["WordPress", "WooCommerce"],
     description: "Built from scratch: custom WP theme tailored to medical-equipment e-commerce. Configured WooCommerce product/catalogue, checkout flows, shipping/payment integrations. Implemented UI/UX improvements specifically for equipment listing.",
@@ -88,8 +92,8 @@ const caseStudies = [
     liveLink: "https://independentmed.com",
   },
   {
-    title: "Waterboyz Surf & Skate Shop",
-    location: "",
+    title: "Waterboyz",
+    location: "Surf & Skate Shop",
     url: "waterboyz.com",
     role: "Shopify Site Build & Optimisation",
     techStack: ["Shopify"],
@@ -100,7 +104,7 @@ const caseStudies = [
   },
   {
     title: "Metapeak Media",
-    location: "",
+    location: "Media firm",
     url: "metapeakmedia.com",
     role: "Brand-site Build",
     techStack: ["WordPress"],
@@ -113,9 +117,10 @@ const caseStudies = [
     title: "Empanada Mama",
     url: "empanadamama.com",
     role: "Design & Maintenance",
+    location: "Restaurant Website",
     techStack: ["Squarespace"],
     description: "Created site in Squarespace: menu sections, blog/news feed, event listings, responsive layout. Provided ongoing maintenance: updates, content changes, optimisations.",
-    outcome: "Delivered stylish online presence for a Colombian restaurant & bar in NYC, enabling the client to manage menu updates and events easily.",
+    outcome: "Delivered stylish online presence for a Colombian restaurant in NYC, enabling the client to manage menu updates and events easily.",
     imgLink: empanadamama,
     liveLink: "https://empanadamama.com",
   },
@@ -133,6 +138,7 @@ const caseStudies = [
   {
     title: "FreshSends",
     url: "freshsends.com",
+    location: "E-commerce Gift & Flower Shop",
     role: "Shopify Site Work & Maintenance",
     techStack: ["Shopify"],
     description: "Developed 'Shop All' product listing page, managed filters, layout and theme styling. Carried out routine maintenance: theme updates, content changes, performance checks.",
@@ -142,7 +148,7 @@ const caseStudies = [
   },
   {
     title: "First Class Pools Naples",
-    location: "",
+    location: "Pool Services",
     url: "firstclasspoolsnaples.com",
     role: "Web Design & Development",
     techStack: ["WordPress", "Custom Theme"],
@@ -153,7 +159,7 @@ const caseStudies = [
   },
   {
     title: "The Yuzu Co.",
-    location: "",
+    location: "E-commerce Juice Brand",
     url: "theyuzu.co",
     role: "Shopify Build & Maintenance",
     techStack: ["Shopify"],
@@ -164,7 +170,7 @@ const caseStudies = [
   },
   {
     title: "Adsclique Media",
-    location: "",
+    location: "Digital Marketing Agency",
     url: "adsclique.com",
     role: "Agency's Primary Website",
     techStack: ["WordPress", "PHP", "Gatsby", "Swiper"],
@@ -175,7 +181,7 @@ const caseStudies = [
   },
   {
     title: "Dawn Travel",
-    location: "",
+    location: "Luxury Travel Agency",
     url: "dawn.travel",
     role: "Selected Page Builds & Maintenance",
     techStack: ["Wix"],
@@ -186,7 +192,7 @@ const caseStudies = [
   },
   {
     title: "ACFP Pizza",
-    location: "",
+    location: "Pizza Restaurant",
     url: "acfp.com",
     role: "WordPress Site Build + Accessibility",
     techStack: ["WordPress", "Accessibility Standards"],
@@ -298,7 +304,7 @@ function CaseStudyCard({ study, index }) {
           <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">What I Did</p>
           <p className={`text-sm text-neutral-600 dark:text-neutral-400 ${!showFullDescription ? "line-clamp-4" : ""}`}>{study.description}</p>
           {study.description.length > 120 && (
-            <button onClick={() => setShowFullDescription(!showFullDescription)} className="text-xs text-white hover:text-gray-300 mt-1">
+            <button onClick={() => setShowFullDescription(!showFullDescription)} className="text-xs text-neutral-600 hover:text-gray-300 mt-1">
               {showFullDescription ? "Show Less" : "Read More"}
             </button>
           )}
@@ -308,7 +314,7 @@ function CaseStudyCard({ study, index }) {
           <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">Outcome</p>
           <p className={`text-sm text-neutral-600 dark:text-neutral-400 ${!showFullOutcome ? "line-clamp-2" : ""}`}>{study.outcome}</p>
           {study.outcome.length > 80 && (
-            <button onClick={() => setShowFullOutcome(!showFullOutcome)} className="text-xs text-white hover:text-gray-300 mt-1">
+            <button onClick={() => setShowFullOutcome(!showFullOutcome)} className="text-xs text-neutral-600 hover:text-gray-300 mt-1">
               {showFullOutcome ? "Show Less" : "Read More"}
             </button>
           )}
@@ -346,8 +352,8 @@ export default function page() {
 
           {/* Disclaimer */}
           <div className="mb-8 p-4 bg-neutral-800/20 border border-neutral-700/30 rounded-lg max-w-4xl mx-auto">
-            <p className="text-sm text-neutral-400 text-center">
-              <span className="font-semibold text-neutral-300">Disclaimer:</span> I am not the owner of these websites. These projects were developed during my employment with various agencies and companies. All intellectual property rights belong to the respective clients and organizations.
+            <p className="text-sm text-neutral-400 text-center  ">
+              <span className="font-semibold text-neutral-300 dark:text-neutral-900 ">Disclaimer:</span> I am not the owner of these websites. These projects were developed during my employment with various agencies and companies. All intellectual property rights belong to the respective clients and organizations.
             </p>
           </div>
 

@@ -36,16 +36,17 @@ import swag from "../../assets/swag.png"
 import weatherapp from "../../assets/weatherapp.png"
 
 const caseStudies = [
+  
   {
-    title: "The M Salon",
-    url: "msalonbeverlyhills.com",
-    location: "Salon & Spa",
-    role: "Lead Front-end & WordPress Build",
-    techStack: ["WordPress", "Vanilla JavaScript", "Custom Theme"],
-    description: "Architected and developed site structure, custom theme and UI from scratch. Integrated salon services, gallery, blog, contact & newsletter modules. Ensured pixel-perfect design, smooth transitions and responsive behaviour.",
-    outcome: "Delivered a high-end, brand-aligned site for a premium salon in Beverly Hills; the site's footer credits Adsclique Media.",
-    imgLink: msalonbeverlyhills,
-    liveLink: "https://msalonbeverlyhills.com",
+    title: "First Class Pools",
+    location: "Pool Services",
+    url: "firstclasspoolsnaples.com",
+    role: "Web Design & Development",
+    techStack: ["WordPress", "Custom Theme"],
+    description: "Designed and developed full site: hero imagery, services (pool builds, maintenance), galleries, CTAs. Ensured mobile usability and SEO basics for local business.",
+    outcome: "Delivered a visually rich site for a pool-services company, focused on lead generation and showcasing work.",
+    imgLink: firstclasspoolsnaples,
+    liveLink: "https://firstclasspoolsnaples.com",
   },
   {
     title: "WP Standard",
@@ -125,8 +126,8 @@ const caseStudies = [
     liveLink: "https://empanadamama.com",
   },
   {
-    title: "SMI Line Dental PC",
-    location: "",
+    title: "Smiline Dental",
+    location: "Dentistry Practice",
     url: "smilinedentalpc.com",
     role: "Dental Practice Website",
     techStack: ["WordPress", "PHP", "Hostinger"],
@@ -138,7 +139,7 @@ const caseStudies = [
   {
     title: "FreshSends",
     url: "freshsends.com",
-    location: "E-commerce Gift & Flower Shop",
+    location: "Gift & Flower Shop",
     role: "Shopify Site Work & Maintenance",
     techStack: ["Shopify"],
     description: "Developed 'Shop All' product listing page, managed filters, layout and theme styling. Carried out routine maintenance: theme updates, content changes, performance checks.",
@@ -147,15 +148,15 @@ const caseStudies = [
     liveLink: "https://freshsends.com",
   },
   {
-    title: "First Class Pools Naples",
-    location: "Pool Services",
-    url: "firstclasspoolsnaples.com",
-    role: "Web Design & Development",
-    techStack: ["WordPress", "Custom Theme"],
-    description: "Designed and developed full site: hero imagery, services (pool builds, maintenance), galleries, CTAs. Ensured mobile usability and SEO basics for local business.",
-    outcome: "Delivered a visually rich site for a pool-services company, focused on lead generation and showcasing work.",
-    imgLink: firstclasspoolsnaples,
-    liveLink: "https://firstclasspoolsnaples.com",
+    title: "The M Salon",
+    url: "msalonbeverlyhills.com",
+    location: "Salon & Spa",
+    role: "Lead Front-end & WordPress Build",
+    techStack: ["WordPress", "Vanilla JavaScript", "Custom Theme"],
+    description: "Architected and developed site structure, custom theme and UI from scratch. Integrated salon services, gallery, blog, contact & newsletter modules. Ensured pixel-perfect design, smooth transitions and responsive behaviour.",
+    outcome: "Delivered a high-end, brand-aligned site for a premium salon in Beverly Hills; the site's footer credits Adsclique Media.",
+    imgLink: msalonbeverlyhills,
+    liveLink: "https://msalonbeverlyhills.com",
   },
   {
     title: "The Yuzu Co.",
@@ -279,8 +280,8 @@ function CaseStudyCard({ study, index }) {
         <div className="flex items-start justify-between mb-3">
           <h3 className="text-xl font-bold text-neutral-800 dark:text-white">{study.title}</h3>
           <div className="flex gap-2">
-            {study.date && <span className="text-xs px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 rounded-full text-emerald-700 dark:text-emerald-400">{study.date}</span>}
-            {study.location && <span className="text-xs px-2 py-1 bg-neutral-200 dark:bg-neutral-800 rounded-full text-neutral-600 dark:text-neutral-400">{study.location}</span>}
+            {study.date && <span className="text-xs px-2 py-1 text-center bg-emerald-100 dark:bg-emerald-900/30 rounded-full text-emerald-700 dark:text-emerald-400">{study.date}</span>}
+            {study.location && <span className="text-xs px-2 text-center py-1 bg-neutral-200 dark:bg-neutral-800 rounded-full text-neutral-600 dark:text-neutral-400">{study.location}</span>}
           </div>
         </div>
 

@@ -344,7 +344,7 @@ function Home() {
                           <Link href={each.liveLink}>View Live</Link>
                         </button>
                           <button className="mt-11 border border-neutral-700/30 rounded-xl p-2 px-7 lg:w-44 w-full bg-white dark:bg-neutral-800/10 text-sm text-black  hover:font-bold dark:text-neutral-400 font-semibold shadow-md light:text-slate-800">
-                          <Link href="/projects">Browse Projects</Link>
+                          <Link href="/projects">Browse All Projects</Link>
                         </button>
                       </div>
                     </div>

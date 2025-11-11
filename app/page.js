@@ -1,17 +1,17 @@
-"use client";
+"use client"
 
-import React from "react";
-import Link from "next/link";
-import logo from '../assets/logo.jpeg'
-import Image from "next/image";
+import React from "react"
+import Link from "next/link"
+import logo from "../assets/logo.jpeg"
+import Image from "next/image"
 
-import { motion } from "framer-motion";
-import Contact from "../components/Contact";
-import Testimonials from "../components/Testimonials";
+import { motion } from "framer-motion"
+import Contact from "../components/Contact"
+import Testimonials from "../components/Testimonials"
 
-import img1 from '../assets/img1.png';
+import img1 from "../assets/img1.png"
 
-import { SparklesCore } from "../components/ui/sparkles";
+import { SparklesCore } from "../components/ui/sparkles"
 
 const marqueeVariants = {
   animate: {
@@ -25,143 +25,91 @@ const marqueeVariants = {
       },
     },
   },
-};
+}
 
-const GithubLink = "https://github.com/Safdar-Ali-India";
-const InstagramLink = "https://www.instagram.com/codewithsafdar";
-const DevLink = "https://dev.to/safdarali";
-const YoutubeLink = "https://www.youtube.com/@safdarali_";
-const TwitterLink = "https://twitter.com/safdarali___";
-const LinkTree = "https://linktr.ee/safdaralii";
+const GithubLink = "https://github.com/Safdar-Ali-India"
+const InstagramLink = "https://www.instagram.com/codewithsafdar"
+const DevLink = "https://dev.to/safdarali"
+const YoutubeLink = "https://www.youtube.com/@safdarali_"
+const TwitterLink = "https://twitter.com/safdarali___"
+const LinkTree = "https://linktr.ee/safdaralii"
 
 const PROJECTS = [
   {
     imgLink: img1,
-    year: '2024',
+    year: "2024",
     title: "AdsClique Media: The website of my previous company.",
     subT: "The streamlined user interface provides a more interactive experience, allowing colleagues, partners, and clients to easily find the information they are looking for",
     // liveCode: "https://github.com/ArjunCodess/palettepro",
     liveLink: "https://adsclique.com/",
   },
-];
+]
 
 let BLOGS = [
   {
     date: "Jan 2024",
     title: "TypeScript | Beginner 👨‍💻🔥",
     reactions: "100+ Reactions",
-    subTitle:
-      "Dropping a website out into the wild web is a big deal, so making sure every last detail is tightened up first is key...",
+    subTitle: "Dropping a website out into the wild web is a big deal, so making sure every last detail is tightened up first is key...",
     link: "https://medium.com/@safdaralii/typescript-beginner-d65a2e64adc5",
   },
   {
     date: "Mar 2024",
     title: "22 JavaScript Functions You’ll Use 99% of The Time 💯🔥",
     reactions: "294+ Reactions",
-    subTitle:
-      "I always felt a bit lost when I was starting on my programming journey. It's true — it was a very frustrating experience. Maybe you're feeling a little frustrated, too!...",
+    subTitle: "I always felt a bit lost when I was starting on my programming journey. It's true — it was a very frustrating experience. Maybe you're feeling a little frustrated, too!...",
     link: "https://medium.com/p/d18139870f9f",
   },
   {
     date: "Dec 2023",
     title: "Mastering the Art of Writing Effective GitHub Commit Messages🌊📊",
     reactions: "71+ Reactions",
-    subTitle:
-      "GitHub, the popular online platform for software and web development collaboration, provides helpful tools to optimize processes...",
+    subTitle: "GitHub, the popular online platform for software and web development collaboration, provides helpful tools to optimize processes...",
     link: "https://medium.com/@safdaralii/mastering-the-art-of-writing-effective-github-commit-messages-270a3bc7f1b6",
   },
-];
+]
 
 function Home() {
   return (
     <>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossOrigin="anonymous"
-        referrerPolicy="no-referrer"
-      />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
 
       <div className="max-w-5xl mx-auto px-5">
         <div className="w-full absolute inset-0 h-screen -z-10">
-          <SparklesCore
-            id="tsparticlesfullpage"
-            background="transparent"
-            minSize={0.6}
-            maxSize={1.4}
-            particleDensity={100}
-            className="w-full h-full"
-            particleColor="#777"
-          />
+          <SparklesCore id="tsparticlesfullpage" background="transparent" minSize={0.6} maxSize={1.4} particleDensity={100} className="w-full h-full" particleColor="#777" />
         </div>
 
         <div className="mt-20 lg:mt-32">
-
           {/* marquee */}
           <div className="marquee relative lg:my-16 my-14 h-10 max-w-6xl overflow-x-hidden">
             <div className=" bg-gradient-to-r absolute z-10 w-20 rounded-md h-9 transition-all ease-in duration-200" />
-            <motion.div
-              className="track"
-              variants={marqueeVariants}
-              animate="animate"
-            >
-              <div className="flex gap-x-5 mt-2 uppercase font-semibold justify-evenly text-base text-neutral-400">
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
-                DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥
-              </div>
+            <motion.div className="track" variants={marqueeVariants} animate="animate">
+              <div className="flex gap-x-5 mt-2 uppercase font-semibold justify-evenly text-base text-neutral-400">DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥 DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥 DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥 DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥 DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥 DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥 DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥 DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥 DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥 DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥 DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥 DEVELOPER 👨‍💻 WRITER ✍️ YOUTUBER 🎥</div>
             </motion.div>
             <div className="bg-gradient-to-l absolute right-0 z-10 to-transparent w-16 rounded-md h-9 transition-all ease-in duration-200" />
           </div>
 
           <section className="lg:flex lg:flex-row">
-
             <div className="lg:w-11/12">
               <div className="flex gap-x-3">
-                <Image
-                  width={300}
-                  height={300}
-                  className="w-16 h-16 rounded-full object-cover"
-                  src={logo}
-                  alt="Profile"
-                />
+                <Image width={300} height={300} className="w-16 h-16 rounded-full object-cover" src={logo} alt="Profile" />
                 <div>
-                  <h2 className="font-extrabold font-InterBlack dark:text-white light:text-black text-3xl">
-                    Safdar Ali
-                  </h2>
+                  <h2 className="font-extrabold font-InterBlack dark:text-white light:text-black text-3xl">Safdar Ali</h2>
                   <span>@safdarali</span>
                 </div>
-
               </div>
 
               <div className="mt-6 max-w-3xl">
-                <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold">
-                  About Me
-                </h3>
-                <p className="dark:text-neutral-300 font-InterMedium text-sm lg:text-lg mt-3 light:text-slate-800">
-               Software Engineer (Frontend UI Developer) at Cube (a Sequoia Capital–backed startup) | Ex Adsclique Media | Ex Sujanix | Ex Tech Mahindra | YouTuber from 🇮🇳
-                </p>
+                <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold">About Me</h3>
+                <p className="dark:text-neutral-300 font-InterMedium text-sm lg:text-lg mt-3 light:text-slate-800">Software Engineer (Frontend UI Developer) at Cube (a Sequoia Capital–backed startup) | Ex Adsclique Media | Ex Sujanix | Ex Tech Mahindra | YouTuber from 🇮🇳</p>
 
-                <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">
-                  Achievements
-                </h3>
+                <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">Achievements</h3>
                 <div className="dark:text-neutral-300 font-InterMedium mt-3 text-sm lg:text-lg light:text-slate-800">
                   <ul>
-                   <li> 👨‍💻 Created 70+ coding tutorials on YouTube 🎥 </li>
+                    <li> 👨‍💻 Created 70+ coding tutorials on YouTube 🎥 </li>
                     <li>🛠 Built 20+ projects using React and various CMS platforms</li>
                     <li>💵 Earned my first $140 through freelancing</li>
                     <li>🌟 Gained 5K+ followers on Blog & LinkedIn </li>
-
                   </ul>
                 </div>
 
@@ -175,7 +123,6 @@ function Home() {
                   </button>
                 </div>
               </div>
-
             </div>
 
             {/* desktop */}
@@ -221,16 +168,13 @@ function Home() {
                       </span>
                     </li>
                   </Link>
-                
                 </ul>
               </div>
             </div>
 
             {/* mobile */}
             <div className="">
-              <h3 className="lg:hidden inline-block text-neutral-500 text-xs font-InterBold uppercase font-bold my-10">
-                Socials
-              </h3>
+              <h3 className="lg:hidden inline-block text-neutral-500 text-xs font-InterBold uppercase font-bold my-10">Socials</h3>
               <ul className="text-lg wrapper lg:hidden flex flex-row gap-x-10 justify-center">
                 <Link href={LinkTree} target="_blank" rel="noreferrer">
                   <li className="icon link">
@@ -280,8 +224,6 @@ function Home() {
                 </Link>
               </ul>
             </div>
-
-
           </section>
 
           {/* Marquee text */}
@@ -289,17 +231,8 @@ function Home() {
           <div>
             <div className="marquee relative mt-14 h-10 max-w-6xl overflow-x-hidden">
               <div className="bg-gradient-to-r absolute z-10 w-20 rounded-md h-9 transition-all ease-in duration-200" />
-              <motion.div
-                className="track"
-                variants={marqueeVariants}
-                animate="animate"
-              >
-                <div className="flex gap-x-5 mt-2 uppercase font-semibold justify-evenly text-sm text-neutral-700">
-                  PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
-                  PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
-                  PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
-                  PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
-                </div>
+              <motion.div className="track" variants={marqueeVariants} animate="animate">
+                <div className="flex gap-x-5 mt-2 uppercase font-semibold justify-evenly text-sm text-neutral-700">PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS</div>
               </motion.div>
               <div className=" bg-gradient-to-l absolute right-0 z-10 to-transparent w-16 rounded-md h-9 transition-all ease-in duration-200" />
             </div>
@@ -312,11 +245,7 @@ function Home() {
               <div key={i}>
                 <div className="flex flex-col lg:flex-row gap-x-8 my-6">
                   <div className="h-60 lg:w-1/2 w-full flex justify-center items-center">
-                    <Image
-                      alt="project"
-                      className="rounded-md md:mt-20 lg:mt-0"
-                      src={each.imgLink}
-                    />
+                    <Image alt="project" className="rounded-md md:mt-20 lg:mt-0" src={each.imgLink} />
                   </div>
 
                   <div className="lg:w-1/2 w-full">
@@ -324,26 +253,21 @@ function Home() {
                       <div className="px-2 py-1 text-xs font-semibold border rounded-full dark:border-neutral-700">
                         <span>{each.year}</span>
                       </div>
-                      <div className="flex items-center gap-x-3">
-                      </div>
+                      <div className="flex items-center gap-x-3"></div>
                     </div>
 
                     <div className="">
-                      <h1 className="font-InterBold text-lg max-w-lg mt-4 font-bold">
-                        {each.title}
-                      </h1>
-                      <p className="text-base mt-3 font-InterMedium dark:text-neutral-400 max-w-lg">
-                        {each.subT}
-                      </p>
+                      <h1 className="font-InterBold text-lg max-w-lg mt-4 font-bold">{each.title}</h1>
+                      <p className="text-base mt-3 font-InterMedium dark:text-neutral-400 max-w-lg">{each.subT}</p>
                       <div className="flex gap-x-5">
                         {/* <button className="mt-11 border border-neutral-700/30 rounded-xl p-2 px-7 lg:w-44 w-full bg-white dark:bg-neutral-800/10 text-sm text-black hover:tracking-widest transition-all duration-300 hover:font-bold dark:text-neutral-400 font-semibold shadow-md light:text-slate-800">
                           <Link href={each.liveCode}>View Code</Link>
                         </button> */}
- 
+
                         <button className="mt-11 border border-neutral-700/30 rounded-xl p-2 px-7 lg:w-44 w-full bg-white dark:bg-neutral-800/10 text-sm text-black hover:font-bold dark:text-neutral-400 font-semibold shadow-md light:text-slate-800">
                           <Link href={each.liveLink}>View Live</Link>
                         </button>
-                          <button className="mt-11 border border-neutral-700/30 rounded-xl p-2 px-7 lg:w-44 w-full bg-white dark:bg-neutral-800/10 text-sm text-black  hover:font-bold dark:text-neutral-400 font-semibold shadow-md light:text-slate-800">
+                        <button className="mt-11 border border-neutral-700/30 rounded-xl p-2 px-7 lg:w-44 w-full bg-white dark:bg-neutral-800/10 text-sm text-black  hover:font-bold dark:text-neutral-400 font-semibold shadow-md light:text-slate-800">
                           <Link href="/projects">Browse All Projects</Link>
                         </button>
                       </div>
@@ -359,18 +283,8 @@ function Home() {
           <div>
             <div className="marquee mb-10 mt-10 h-10 relative  max-w-6xl overflow-x-hidden">
               <div className=" bg-gradient-to-r absolute z-10  to-transparent w-20 rounded-md h-9 transition-all ease-in duration-200" />
-              <motion.div
-                className="track"
-                variants={marqueeVariants}
-                animate="animate"
-              >
-                <div className=" flex gap-x-5 mt-2 uppercase font-bold justify-evenly text-sm  text-neutral-700">
-                  BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦
-                  BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦
-                  BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦
-                  BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦
-                  BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦
-                </div>
+              <motion.div className="track" variants={marqueeVariants} animate="animate">
+                <div className=" flex gap-x-5 mt-2 uppercase font-bold justify-evenly text-sm  text-neutral-700">BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦ BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦ BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦ BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦ BLOG ✦ 20K FOLLOWERS SOON ✦ ARTICLES ✦ 200K VIEWS SOON ✦</div>
               </motion.div>
               <div className=" bg-gradient-to-l absolute right-0 z-10 to-transparent w-16 rounded-md h-9 transition-all ease-in duration-200" />
             </div>
@@ -383,9 +297,7 @@ function Home() {
               {BLOGS.map((blog) => (
                 <div key={blog.title} className="my-8 p-2 rounded-md">
                   <div className="border border-neutral-700 rounded-full w-fit px-2 p-1 flex items-center">
-                    <span className="text-xs light:text-neutral-700 dark:text-neutral-300">
-                      {blog.date}
-                    </span>
+                    <span className="text-xs light:text-neutral-700 dark:text-neutral-300">{blog.date}</span>
                   </div>
 
                   <div className="flex gap-x-4 my-6">
@@ -394,13 +306,10 @@ function Home() {
                         <h1 className="font-InterBold font-extrabold lg:text-xl text-lg mb-4">{blog.title}</h1>
                       </Link>
                       {blog.reactions}
-
                     </div>
                   </div>
 
-                  <p className="text-neutral-500 text-sm max-w-3xl">
-                    {blog.subTitle}
-                  </p>
+                  <p className="text-neutral-500 text-sm max-w-3xl">{blog.subTitle}</p>
 
                   {/* If you want to add a button to view the full blog post */}
                   <Link href={blog.link}>
@@ -418,17 +327,8 @@ function Home() {
           <div>
             <div className="marquee relative mt-16 h-10 max-w-6xl overflow-x-hidden">
               <div className="bg-gradient-to-r absolute z-10 w-20 rounded-md h-9 transition-all ease-in duration-200" />
-              <motion.div
-                className="track"
-                variants={marqueeVariants}
-                animate="animate"
-              >
-                <div className="flex gap-x-5 mt-2 uppercase font-bold justify-evenly text-sm text-neutral-700">
-                  ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT
-                  ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT
-                  ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT
-                  ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT
-                </div>
+              <motion.div className="track" variants={marqueeVariants} animate="animate">
+                <div className="flex gap-x-5 mt-2 uppercase font-bold justify-evenly text-sm text-neutral-700">✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT ✦ CONTACT</div>
               </motion.div>
               <div className="bg-gradient-to-l absolute right-0 z-10 to-transparent w-16 rounded-md h-9 transition-all ease-in duration-200" />
             </div>
@@ -438,7 +338,7 @@ function Home() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default Home;
+export default Home

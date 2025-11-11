@@ -1,30 +1,20 @@
-import Link from "next/link";
-import React from "react";
-import { TbArrowBackUp } from "react-icons/tb";
-import Image from "next/image";
-import img from '../../assets/img.jpeg';
-import { TextGenerateEffect } from "../../components/ui/text-generate-effect";
-import { SparklesCore } from "../../components/ui/sparkles";
+import Link from "next/link"
+import React from "react"
+import { TbArrowBackUp } from "react-icons/tb"
+import Image from "next/image"
+import img from "../../assets/img.jpeg"
+import { TextGenerateEffect } from "../../components/ui/text-generate-effect"
+import { SparklesCore } from "../../components/ui/sparkles"
 
 function page() {
   return (
     <div>
       <div className="w-full absolute inset-0 h-screen -z-10">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={100}
-          className="w-full h-full"
-          particleColor="#777"
-        />
+        <SparklesCore id="tsparticlesfullpage" background="transparent" minSize={0.6} maxSize={1.4} particleDensity={100} className="w-full h-full" particleColor="#777" />
       </div>
       <div className="relative max-w-5xl mx-auto px-4 pb-20">
         <div className="relative mt-14">
-          <h2 className=" text-center font-InterBold uppercase font-extrabold font-InterBlack dark:text-white light:text-black text-3xl">
-            About me
-          </h2>
+          <h2 className=" text-center font-InterBold uppercase font-extrabold font-InterBlack dark:text-white light:text-black text-3xl">About me</h2>
           <Link href={"/"}>
             <div className=" bg-neutral-700/10 rounded-md absolute -top-2 w-12 h-8 flex items-center justify-center ">
               <TbArrowBackUp className="dark:text-white light:text-black text-xl" />
@@ -46,45 +36,29 @@ function page() {
             alt=""
           /> */}
 
-          <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold mt-10">
-            About Me
-          </h3>
+          <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold mt-10">About Me</h3>
 
-          <p className="mb-9 mt-4 text-sm md:text-base lg:text-lg">
-            Hey there! I&apos;m Safdar Ali, a 24-year-old Frontend Developer and YouTuber from profession. I got into the world of coding early on and fell in love with the idea of creating things using code. With 4 years of experience in web development, I&apos;ve grown passionate about designing practical websites that cater to my clients&apos; needs.
-          </p>
+          <p className="mb-9 mt-4 text-sm md:text-base lg:text-lg">Hey there! I&apos;m Safdar Ali, a 24-year-old Frontend Developer and YouTuber from profession. I got into the world of coding early on and fell in love with the idea of creating things using code. With 4 years of experience in web development, I&apos;ve grown passionate about designing practical websites that cater to my clients&apos; needs.</p>
 
-          <p className="mb-9 mt-4 text-sm md:text-base lg:text-lg">
-            To keep up with the latest trends and technologies in the field, I make sure I read articles trending and try to make content around them to maximize my reach. I also explore new tools and frameworks and stay active on tech Twitter & developer Discord communities.
-          </p>
+          <p className="mb-9 mt-4 text-sm md:text-base lg:text-lg">To keep up with the latest trends and technologies in the field, I make sure I read articles trending and try to make content around them to maximize my reach. I also explore new tools and frameworks and stay active on tech Twitter & developer Discord communities.</p>
 
-          <p className="mb-9 mt-4 text-sm md:text-base lg:text-lg">
-            What sets my method of website creation apart is my priority on finding creative but practical solutions rather than getting distracted by technical details. While some developers get caught up in deciding &quot;Which technology should I choose?&quot;, I focus on &quot;What problem needs solving?&quot;
-          </p>
+          <p className="mb-9 mt-4 text-sm md:text-base lg:text-lg">What sets my method of website creation apart is my priority on finding creative but practical solutions rather than getting distracted by technical details. While some developers get caught up in deciding &quot;Which technology should I choose?&quot;, I focus on &quot;What problem needs solving?&quot;</p>
 
-          <p className="mb-9 mt-4 text-sm md:text-base lg:text-lg">
-            Moreover, I make sure that the websites I develop not only look visually appealing but also offer a flawless user experience. Using advanced technologies such as Next.js allows me to deliver top-grade UX and eye-catching UI designs that go beyond expectations.
-          </p>
+          <p className="mb-9 mt-4 text-sm md:text-base lg:text-lg">Moreover, I make sure that the websites I develop not only look visually appealing but also offer a flawless user experience. Using advanced technologies such as Next.js allows me to deliver top-grade UX and eye-catching UI designs that go beyond expectations.</p>
 
-
-          <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">
-            Achievements
-          </h3>
+          <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">Achievements</h3>
           <div className="dark:text-neutral-300 font-InterMedium mt-3 text-sm lg:text-lg light:text-slate-800">
             <ul>
-            <li> 👨‍💻 Created 70+ coding tutorials on YouTube 🎥 </li>
-                    <li>🛠 Built 20+ projects using React and various CMS platforms</li>
-                    <li>💵 Earned my first $140 through freelancing</li>
-                    <li>🌟 Gained 5K+ followers on Blog & LinkedIn </li>
-          
+              <li> 👨‍💻 Created 70+ coding tutorials on YouTube 🎥 </li>
+              <li>🛠 Built 20+ projects using React and various CMS platforms</li>
+              <li>💵 Earned my first $140 through freelancing</li>
+              <li>🌟 Gained 5K+ followers on Blog & LinkedIn </li>
             </ul>
           </div>
 
           {/* desktop */}
           <div className="md:text-right md:block hidden">
-            <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">
-              Personality Traits
-            </h3>
+            <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">Personality Traits</h3>
             <div className="dark:text-neutral-300 font-InterMedium mt-3 text-sm lg:text-lg light:text-slate-800">
               <ul>
                 <li>Self-motivated, driven to achieve my goals 🚀</li>
@@ -99,9 +73,7 @@ function page() {
 
           {/* mobile */}
           <div className="md:text-right block md:hidden">
-            <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">
-              Personality Traits
-            </h3>
+            <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">Personality Traits</h3>
             <div className="dark:text-neutral-300 font-InterMedium mt-3 text-sm lg:text-lg light:text-slate-800">
               <ul>
                 <li>🚀 Self-motivated</li>
@@ -114,22 +86,20 @@ function page() {
             </div>
           </div>
 
-          <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">
-            Hobbies & Interests
-          </h3>
+          <h3 className="text-neutral-500 text-xs font-InterBold uppercase font-bold my-5">Hobbies & Interests</h3>
           <div className="dark:text-neutral-300 font-InterMedium mt-3 text-sm lg:text-lg light:text-slate-800">
             <ul>
               <li>📚 Enthusiastic reader of non-fiction and self-help books</li>
               <li>👨🏼‍💻 Love coding and building stuff out of code</li>
               <li>✍️ Consistent writer of general knowledge, practical tips and dev stuff</li>
               {/* <li>🎵 Music lover, compiling and sharing underrated hip-hop songs</li> */}
-              <li>🎨 Exploring the world of visual arts, with a particular interest in sketching</li>
+              {/* <li>🎨 Exploring the world of visual arts, with a particular interest in sketching</li> */}
             </ul>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default page;
+export default page

@@ -36,7 +36,9 @@ const personJsonLd = {
   ],
 };
 
-const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+/** Google Search Console (HTML tag method). Override locally with NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION if you rotate the token. */
+const googleSiteVerification =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "RJa8ea2hjcm9iyb-J3xPx7eizkCTEVUWG5_lx2--QQs";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -83,13 +85,9 @@ export const metadata = {
     },
   },
   manifest: "/manifest.json",
-  ...(googleSiteVerification
-    ? {
-        verification: {
-          google: googleSiteVerification,
-        },
-      }
-    : {}),
+  verification: {
+    google: googleSiteVerification,
+  },
 };
 
 export default function RootLayout({ children }) {

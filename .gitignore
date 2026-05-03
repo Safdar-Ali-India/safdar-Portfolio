@@ -31,6 +31,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# About page raw uploads (keep optimized outputs in public/about/*.jpg)
+public/about/_incoming/*
+!public/about/_incoming/.gitkeep
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

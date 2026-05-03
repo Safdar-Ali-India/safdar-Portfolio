@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "about:images": "node scripts/optimize-about-images.mjs"
   },
   "dependencies": {
     "@tsparticles/engine": "^3.3.0",

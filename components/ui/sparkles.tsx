@@ -42,7 +42,6 @@ export const SparklesCore = (props: ParticlesProps) => {
 
   const particlesLoaded = async (container?: Container) => {
     if (container) {
-      console.log(container);
       controls.start({
         opacity: 1,
         transition: {
@@ -53,7 +52,11 @@ export const SparklesCore = (props: ParticlesProps) => {
   };
 
   return (
-    <motion.div animate={controls} className={cn("opacity-0", className)}>
+    <motion.div
+      animate={controls}
+      className={cn("opacity-0", className)}
+      aria-hidden="true"
+    >
       {init && (
         <Particles
           id={id || "tsparticles"}

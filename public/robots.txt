@@ -1,0 +1,34 @@
+User-agent: *
+Allow: /
+
+# Block common crawl spam patterns (do not block /_next — Google needs JS/CSS for rendering)
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://safdarali.in/sitemap.xml
+
+# LLMs.txt — AI crawler guidance
+# https://safdarali.in/llms.txt
+
+# Allow major AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /

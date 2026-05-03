@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  /** Must match next-themes `attribute="class"` — otherwise `dark:*` follows OS only, not site theme */
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,6 +9,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        /** Primary foreground on dark canvas (accessibility + brand consistency) */
+        ink: "#fafafa",
+        /** Near-black page background in dark mode */
+        night: "#0a0a0a",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -29,5 +37,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    /** next-themes: `dark` class on html; light = no .dark — makes `light:*` utilities work */
+    function ({ addVariant }) {
+      addVariant("light", "html:not(.dark) &");
+    },
+  ],
 };

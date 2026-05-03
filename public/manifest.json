@@ -1,0 +1,18 @@
+{
+  "name": "Safdar Ali — Portfolio",
+  "short_name": "Safdar Ali",
+  "description": "Portfolio of Safdar Ali — Next.js and React developer, Bengaluru, India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

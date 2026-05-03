@@ -1,10 +1,26 @@
 import Link from "next/link";
 import React from "react";
-import { TbArrowBackUp } from "react-icons/tb";
 import Image from "next/image";
+import BackToHomeLink from "../../components/BackToHomeLink";
 import { SparklesCore } from "../../components/ui/sparkles";
 
 import * as assets from "../../assets";
+
+const SITE = "https://safdarali.in";
+
+export const metadata = {
+  title: "Skills",
+  description:
+    "Tech stack and tools Safdar Ali uses: Next.js, React, TypeScript, Tailwind CSS, WordPress, Git, Figma, and more. Frontend developer Bengaluru.",
+  alternates: {
+    canonical: `${SITE}/skills`,
+  },
+  openGraph: {
+    title: "Skills | Safdar Ali",
+    url: `${SITE}/skills`,
+    description: "Skills and tools for modern frontend and web development.",
+  },
+};
 
 const skills = [
   {
@@ -111,7 +127,7 @@ const skills = [
 function page() {
   return (
     <div className="lg:h-screen">
-      <div className="w-full absolute inset-0 h-screen -z-10">
+      <div className="w-full absolute inset-0 h-screen -z-10" aria-hidden="true">
           <SparklesCore
             id="tsparticlesfullpage"
             background="transparent"
@@ -124,32 +140,30 @@ function page() {
         </div>
       <div className="relative max-w-5xl mx-auto px-4 pb-20">
         <div className="relative mt-14">
-          <h2 className=" text-center font-InterBold uppercase font-extrabold font-InterBlack dark:text-white light:text-black text-3xl">
+          <h1 className="text-center font-InterBold uppercase font-extrabold font-InterBlack dark:text-ink light:text-black text-3xl">
             Skills
-          </h2>
-          <Link href={"/"}>
-            <div className=" bg-neutral-700/10 rounded-md absolute -top-2 w-12 h-8 flex items-center justify-center ">
-              <TbArrowBackUp className="dark:text-white light:text-black text-xl" />
-            </div>
-          </Link>
+          </h1>
+          <BackToHomeLink />
         </div>
 
         <div className="lg:mt-48 md:mt-30">
-          <div className="mt-16 flex flex-wrap md:gap-x-16 gap-x-8 gap-y-8 justify-center items-center">
+          <ul className="mt-16 flex flex-wrap md:gap-x-16 gap-x-8 gap-y-8 justify-center items-center list-none p-0 m-0" aria-label="Technologies and tools">
             {skills &&
               skills.map((skill) => (
-                <div className="block-container w-20 h-20 bg-white dark:bg-white rounded-xl" key={skill.name}>
-                  <div className="btn-back rounded-xl" />
-                  <div className="btn-front rounded-xl flex justify-center items-center border border-slate-800">
+                <li className="block-container w-20 h-20 bg-white dark:bg-white rounded-xl list-none" key={skill.name}>
+                  <div className="btn-back rounded-xl" aria-hidden="true" />
+                  <div className="btn-front rounded-xl flex justify-center items-center border border-slate-800" title={`${skill.name} (${skill.type})`}>
                     <Image
                       src={skill.imageUrl}
-                      alt={skill.name}
+                      alt={`${skill.name}, ${skill.type}`}
+                      width={40}
+                      height={40}
                       className="w-1/2 h-1/2 object-contain animate-fade-in"
                     />
                   </div>
-                </div>
+                </li>
               ))}
-          </div>
+          </ul>
         </div>
       </div>
     </div>

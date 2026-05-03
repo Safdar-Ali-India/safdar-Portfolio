@@ -9,10 +9,12 @@ function Footer() {
         ></div>
       </span>
       <div className="py-12 mb-48 lg:mb-28 mt-10 lg:mt-10 text-center light:text-slate-800 px-10">
-        <p className="dark:text-neutral-50 font-InterBold text-lg font-semibold">
-          &quot;The only way to do great work is to love what you do.&quot;
-        </p>
-        <p className="dark:text-slate-200 light:text-slate-700">- Steve Jobs</p>
+        <blockquote cite="https://www.goodreads.com/quotes/436173-the-only-way-to-do-great-work-is-to-love-what-you-do" className="dark:text-ink font-InterBold text-lg font-semibold">
+          <p>&quot;The only way to do great work is to love what you do.&quot;</p>
+          <footer className="dark:text-ink/75 light:text-slate-700 mt-2 font-normal text-base not-italic">
+            <span className="sr-only">Attributed to </span>Steve Jobs
+          </footer>
+        </blockquote>
       </div>
     </>
   );

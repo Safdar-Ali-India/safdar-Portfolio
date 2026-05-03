@@ -9,109 +9,74 @@ import {
 
 import { useRef, useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 import {
   PiHouseThin,
   PiCloudSunLight,
   PiMoonLight,
-  PiGithubLogoThin,
-  PiTwitterLogoThin,
-  PiInstagramLogoThin,
-  PiDevToLogoThin,
   PiBrainThin,
   PiPersonSimpleWalkThin,
   PiCodeThin,
+  PiEnvelopeSimpleThin,
 } from "react-icons/pi";
 
-import Link from "next/link";
+import { MAILTO_HREF } from "../lib/site";
 
+/** Blog stays at /blog for SEO; dock stays minimal (no duplicate “writing” entry). */
 export const generalLinks = [
+  { href: "/", label: "Home", Icon: PiHouseThin },
+  { href: "/about", label: "About", Icon: PiPersonSimpleWalkThin },
+  { href: "/skills", label: "Skills", Icon: PiBrainThin },
+  { href: "/projects", label: "Projects", Icon: PiCodeThin },
   {
-    href: "/",
-    label: "Home",
-    Icon: <PiHouseThin />,
+    href: MAILTO_HREF,
+    label: "Email Safdar Ali",
+    Icon: PiEnvelopeSimpleThin,
+    hideOnMobile: true,
+    isMailto: true,
   },
-  {
-    href: "/about",
-    label: "About",
-    Icon: <PiPersonSimpleWalkThin />,
-  },
-  {
-    href: "/skills",
-    label: "Skills",
-    Icon: <PiBrainThin />,
-  },
-  {
-    href: "/projects",
-    label: "Projects",
-    Icon: <PiCodeThin />,
-  },
-  // {
-  //   href: "https://github.com/ArjunCodess",
-  //   label: "GitHub",
-  //   target: "_blank",
-  //   Icon: <PiGithubLogoThin />,
-  // },
-  // {
-  //   href: "https://twitter.com/ArjunCodess",
-  //   label: "GitHub",
-  //   target: "_blank",
-  //   Icon: <PiTwitterLogoThin />,
-  // },
-  // {
-  //   href: "https://dev.com/ArjunCodess",
-  //   label: "DEV.to",
-  //   target: "_blank",
-  //   Icon: <PiDevToLogoThin />,
-  // },
-  // {
-  //   href: "https://instagram.com/ArjunCodess",
-  //   label: "Instagram",
-  //   target: "_blank",
-  //   Icon: <PiInstagramLogoThin />,
-  // },
 ];
 
 function Navbar() {
   let mouseX = useMotionValue(Infinity);
 
   return (
-    <div>
+    <nav aria-label="Main navigation" className="fixed z-50 bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 px-2 w-full max-w-[100vw] flex justify-center pointer-events-none">
       <motion.div
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="fixed z-50 flex bottom-8 left-1/2 -translate-x-1/2"
+        className="flex pointer-events-auto"
       >
-        <div className="flex items-end h-16 gap-2 px-4 pb-1.5 mx-auto outline-0 rounded-2xl box-gen border border-slate-500 backdrop-blur-md dark:ring-[#1a1a1a] light:bg-slate-200">
-          {generalLinks.map((link, i) => {
+        <div className="flex items-end h-[3.75rem] gap-1.5 sm:gap-2 px-3 sm:px-4 pb-1.5 mx-auto outline-0 rounded-2xl border border-neutral-200/90 bg-white/90 backdrop-blur-xl shadow-lg shadow-neutral-900/5 dark:border-white/[0.1] dark:bg-night/75 dark:shadow-black/50 dark:backdrop-blur-xl light:bg-slate-100/90">
+          {generalLinks.map((link) => {
+            const wrapClass = link.hideOnMobile ? "hidden md:contents" : "";
             return (
-              <div key={i}>
+              <div key={link.href} className={wrapClass}>
                 <AppIcon
                   href={link.href}
-                  rel={link.target === "_blank" ? "noopener noreferrer" : ""}
-                  target={link.target}
-                  aria-label={link.label}
-                  outline={link.outline}
+                  isMailto={link.isMailto}
+                  ariaLabel={link.label}
                   mouseX={mouseX}
-                  imgs={link.Icon}
+                  Icon={link.Icon}
                 />
               </div>
             );
           })}
 
-          <hr className="h-10 w-[1px] bg-neutral-300 dark:bg-neutral-700 mb-1 border-none" />
+          <hr className="h-10 w-px bg-neutral-200/90 dark:bg-white/15 mb-1 border-none shrink-0 self-end" aria-hidden="true" />
 
           <ThemeToggleNav mouseX={mouseX} />
         </div>
       </motion.div>
-    </div>
+    </nav>
   );
 }
 
 export default Navbar;
 
-function AppIcon({ mouseX, imgs, href }) {
-  let ref = useRef();
+function AppIcon({ mouseX, Icon, href, isMailto, ariaLabel }) {
+  let ref = useRef(null);
 
   let distance = useTransform(mouseX, (val) => {
     let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -122,15 +87,33 @@ function AppIcon({ mouseX, imgs, href }) {
   let widthSync = useTransform(distance, [-150, 0, 150], [50, 140, 50]);
   let width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
 
+  const inner = (
+    <motion.div
+      ref={ref}
+      style={{ width }}
+      className="z-30 flex items-center justify-center rounded-full border border-neutral-300/80 bg-neutral-100/90 text-neutral-900 cursor-pointer aspect-square dark:border-white/[0.12] dark:bg-white/[0.06] dark:text-ink dark:hover:bg-white/[0.1] transition-colors"
+      aria-hidden="true"
+    >
+      <span className="text-[1.65rem] leading-none flex items-center justify-center">
+        <Icon aria-hidden />
+      </span>
+    </motion.div>
+  );
+
+  const focusRing =
+    "rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:focus-visible:outline-ink/70";
+
+  if (isMailto) {
+    return (
+      <a href={href} aria-label={ariaLabel} className={focusRing}>
+        {inner}
+      </a>
+    );
+  }
+
   return (
-    <Link href={href}>
-      <motion.div
-        ref={ref}
-        style={{ width }}
-        className="z-30 flex items-center justify-center rounded-full border border-neutral-400/20 dark:border-neutral-700 dark:bg-neutral-900/70 cursor-pointer aspect-square "
-      >
-        <span className="text-3xl">{imgs}</span>
-      </motion.div>
+    <Link href={href} aria-label={ariaLabel} className={focusRing}>
+      {inner}
     </Link>
   );
 }
@@ -139,7 +122,7 @@ export function ThemeToggleNav({ mouseX }) {
   const { resolvedTheme, setTheme } = useTheme();
   const otherTheme = resolvedTheme === "dark" ? "light" : "dark";
   const [mounted, setMounted] = useState(false);
-  const ref = useRef();
+  const ref = useRef(null);
 
   const distance = useTransform(mouseX, (val) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -154,18 +137,20 @@ export function ThemeToggleNav({ mouseX }) {
   }, []);
 
   return (
-    <motion.div
+    <motion.button
+      type="button"
       ref={ref}
       style={{ width }}
-      className={`z-30 flex items-center justify-center w-10 rounded-full cursor-pointer border border-slate-300 backdrop-blur-md dark:ring-[#1a1a1a] ${resolvedTheme === "dark" ? "bg-neutral-900/70" : "bg-neutral-200/70"} aspect-square py-3 mb-1`}
-      aria-label={mounted ? `Switch to ${otherTheme} theme` : "Toggle theme"}
+      className="z-30 flex items-center justify-center w-10 rounded-full cursor-pointer border border-neutral-300/80 bg-neutral-100/90 text-neutral-900 aspect-square py-3 mb-1 dark:border-white/[0.12] dark:bg-white/[0.06] dark:text-ink dark:hover:bg-white/[0.1] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:focus-visible:outline-ink/70"
+      aria-label={mounted ? `Switch to ${otherTheme} mode` : "Toggle color theme"}
+      aria-pressed={mounted ? resolvedTheme === "dark" : undefined}
       onClick={() => setTheme(otherTheme)}
     >
       {resolvedTheme === "dark" ? (
-        <PiMoonLight className="w-6/12 transition stroke-neutral-900 duration-300" />
+        <PiMoonLight className="w-[50%] h-auto transition text-current" aria-hidden />
       ) : (
-        <PiCloudSunLight className="w-6/12 transition stroke-neutral-900 duration-300" />
+        <PiCloudSunLight className="w-[50%] h-auto transition text-current" aria-hidden />
       )}
-    </motion.div>
+    </motion.button>
   );
 }

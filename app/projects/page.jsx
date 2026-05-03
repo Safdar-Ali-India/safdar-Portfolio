@@ -3,7 +3,7 @@
 import React, { useState } from "react"
 import Link from "next/link"
 
-import { TbArrowBackUp } from "react-icons/tb"
+import BackToHomeLink from "../../components/BackToHomeLink"
 
 import ProjectCard from "../../components/ProjectCard"
 import Image from "next/image"
@@ -266,35 +266,47 @@ const projectData = [
 function CaseStudyCard({ study, index }) {
   const [showFullOutcome, setShowFullOutcome] = useState(false)
   const [showFullDescription, setShowFullDescription] = useState(false)
+  const descId = `case-study-${index}-description`
+  const outcomeId = `case-study-${index}-outcome`
 
   return (
-    <div className="bg-gray-50 dark:bg-black border border-black/[0.1] dark:border-white/[0.2] rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-emerald-500/[0.1] transition-all duration-300">
-      {/* Project Image - Clickable */}
-      <a href={study.liveLink} target="_blank" rel="noopener noreferrer" className="block">
+    <article className="bg-gray-50 dark:bg-white/[0.04] border border-black/[0.1] dark:border-white/[0.1] rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-neutral-400/10 dark:hover:shadow-white/5 transition-all duration-300">
+      <a href={study.liveLink} target="_blank" rel="noopener noreferrer" className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 rounded-t-xl" aria-label={`${study.title} — open live site (new tab)`}>
         <div className="w-full h-48 relative overflow-hidden bg-neutral-200 dark:bg-neutral-800 cursor-pointer">
-          <Image src={study.imgLink} alt={study.title} fill className="object-cover hover:scale-105 transition-transform duration-300" />
+          <Image src={study.imgLink} alt="" fill className="object-cover hover:scale-105 transition-transform duration-300" />
         </div>
       </a>
 
       <div className="p-6">
         <div className="flex items-start justify-between mb-3">
-          <h3 className="text-xl font-bold text-neutral-800 dark:text-white">{study.title}</h3>
+          <h3 className="text-xl font-bold text-neutral-800 dark:text-ink">{study.title}</h3>
           <div className="flex gap-2">
-            {study.date && <span className="text-xs px-2 py-1 text-center bg-emerald-100 dark:bg-emerald-900/30 rounded-full text-emerald-700 dark:text-emerald-400">{study.date}</span>}
-            {study.location && <span className="text-xs px-2 text-center py-1 bg-neutral-200 dark:bg-neutral-800 rounded-full text-neutral-600 dark:text-neutral-400">{study.location}</span>}
+            {study.date && (
+              <span className="text-xs px-2 py-1 text-center bg-neutral-200 dark:bg-white/[0.08] rounded-full text-neutral-800 dark:text-ink/90">
+                {study.date}
+              </span>
+            )}
+            {study.location && (
+              <span className="text-xs px-2 text-center py-1 bg-neutral-200 dark:bg-white/[0.08] rounded-full text-neutral-600 dark:text-ink/75">
+                {study.location}
+              </span>
+            )}
           </div>
         </div>
 
         <div className="mb-3">
-          <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">Role</p>
-          <p className="text-sm text-neutral-700 dark:text-neutral-300">{study.role}</p>
+          <p className="text-xs font-semibold text-neutral-500 dark:text-ink/60 uppercase mb-1">Role</p>
+          <p className="text-sm text-neutral-700 dark:text-ink/90">{study.role}</p>
         </div>
 
         <div className="mb-3">
-          <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-2">Tech Stack</p>
+          <p className="text-xs font-semibold text-neutral-500 dark:text-ink/60 uppercase mb-2">Tech Stack</p>
           <div className="flex flex-wrap gap-1">
             {study.techStack.map((tech, idx) => (
-              <span key={idx} className="text-xs px-2 py-1 bg-neutral-200 dark:bg-neutral-800 rounded text-neutral-700 dark:text-neutral-300">
+              <span
+                key={idx}
+                className="text-xs px-2 py-1 bg-neutral-200 dark:bg-white/[0.08] rounded text-neutral-700 dark:text-ink/85"
+              >
                 {tech}
               </span>
             ))}
@@ -302,59 +314,75 @@ function CaseStudyCard({ study, index }) {
         </div>
 
         <div className="mb-3">
-          <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">What I Did</p>
-          <p className={`text-sm text-neutral-600 dark:text-neutral-400 ${!showFullDescription ? "line-clamp-4" : ""}`}>{study.description}</p>
+          <p className="text-xs font-semibold text-neutral-500 dark:text-ink/60 uppercase mb-1">What I Did</p>
+          <p id={descId} className={`text-sm text-neutral-600 dark:text-ink/80 ${!showFullDescription ? "line-clamp-4" : ""}`}>
+            {study.description}
+          </p>
           {study.description.length > 120 && (
-            <button onClick={() => setShowFullDescription(!showFullDescription)} className="text-xs text-neutral-600 hover:text-gray-300 mt-1">
-              {showFullDescription ? "Show Less" : "Read More"}
+            <button
+              type="button"
+              onClick={() => setShowFullDescription(!showFullDescription)}
+              className="text-xs text-neutral-600 hover:text-gray-300 mt-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 rounded"
+              aria-expanded={showFullDescription}
+              aria-controls={descId}
+            >
+              {showFullDescription ? "Show less" : "Read more"}
             </button>
           )}
         </div>
 
         <div className="mb-6">
-          <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase mb-1">Outcome</p>
-          <p className={`text-sm text-neutral-600 dark:text-neutral-400 ${!showFullOutcome ? "line-clamp-2" : ""}`}>{study.outcome}</p>
+          <p className="text-xs font-semibold text-neutral-500 dark:text-ink/60 uppercase mb-1">Outcome</p>
+          <p id={outcomeId} className={`text-sm text-neutral-600 dark:text-ink/80 ${!showFullOutcome ? "line-clamp-2" : ""}`}>
+            {study.outcome}
+          </p>
           {study.outcome.length > 80 && (
-            <button onClick={() => setShowFullOutcome(!showFullOutcome)} className="text-xs text-neutral-600 hover:text-gray-300 mt-1">
-              {showFullOutcome ? "Show Less" : "Read More"}
+            <button
+              type="button"
+              onClick={() => setShowFullOutcome(!showFullOutcome)}
+              className="text-xs text-neutral-600 hover:text-gray-300 mt-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 rounded"
+              aria-expanded={showFullOutcome}
+              aria-controls={outcomeId}
+            >
+              {showFullOutcome ? "Show less" : "Read more"}
             </button>
           )}
         </div>
 
         <div className="mt-auto">
-          <a href={study.liveLink} target="_blank" rel="noopener noreferrer" className="block w-full text-center px-4 py-2 rounded-lg bg-black dark:bg-white dark:text-black text-white text-sm font-bold hover:opacity-80 transition-opacity">
-            View Live Site →
+          <a href={study.liveLink} target="_blank" rel="noopener noreferrer" className="block w-full text-center px-4 py-2 rounded-lg bg-black dark:bg-white dark:text-black text-white text-sm font-bold hover:opacity-80 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500">
+            View live site →
           </a>
         </div>
       </div>
-    </div>
+    </article>
   )
 }
 
 export default function page() {
   return (
     <section>
-      <div className="w-full absolute inset-0 lg:h-screen -z-10">
+      <div className="w-full absolute inset-0 lg:h-screen -z-10" aria-hidden="true">
         <SparklesCore id="tsparticlesfullpage" background="transparent" minSize={0.6} maxSize={1.4} particleDensity={100} className="w-full h-full" particleColor="#777" />
       </div>
       <div className="relative max-w-6xl mx-auto px-4 pb-20">
         <div className="relative mt-14">
-          <h2 className=" text-center font-InterBold uppercase font-extrabold font-InterBlack dark:text-white light:text-black text-3xl">Projects</h2>
-          <Link href={"/"}>
-            <div className=" bg-neutral-700/10 rounded-md absolute -top-2 w-12 h-8 flex items-center justify-center ">
-              <TbArrowBackUp className="dark:text-white light:text-black text-xl" />
-            </div>
-          </Link>
+          <h1 className="text-center font-InterBold uppercase font-extrabold font-InterBlack dark:text-ink light:text-black text-3xl">
+            Projects
+          </h1>
+          <BackToHomeLink />
         </div>
 
         {/* Case Studies Section */}
         <div className="mt-12">
-          <h3 className="text-2xl font-bold text-center mb-4 dark:text-white light:text-black">Professional Case Studies</h3>
+          <h2 className="text-2xl font-bold text-center mb-4 dark:text-ink light:text-black">Professional Case Studies</h2>
 
           {/* Disclaimer */}
           <div className="mb-8 p-4 bg-neutral-800/20 border border-neutral-700/30 rounded-lg max-w-4xl mx-auto">
-            <p className="text-sm text-neutral-400 text-center  ">
-              <span className="font-semibold text-neutral-300 dark:text-neutral-900 ">Disclaimer:</span> I am not the owner of these websites. These projects were developed during my employment with various agencies and companies. All intellectual property rights belong to the respective clients and organizations.
+            <p className="text-sm text-neutral-600 dark:text-ink/80 text-center">
+              <span className="font-semibold text-neutral-800 dark:text-ink">Disclaimer:</span> I am not the owner of these
+              websites. These projects were developed during my employment with various agencies and companies. All
+              intellectual property rights belong to the respective clients and organizations.
             </p>
           </div>
 
@@ -367,7 +395,12 @@ export default function page() {
 
         {/* Original Projects Section */}
         <div className="mt-20">
-          <h3 className="text-2xl font-bold text-center mb-8 dark:text-white light:text-black">Personal & Featured Projects</h3>
+          <h2
+            id="featured-projects"
+            className="text-2xl font-bold text-center mb-8 dark:text-ink light:text-black scroll-mt-24"
+          >
+            Personal & Featured Projects
+          </h2>
 
           <div className="flex flex-wrap justify-center gap-x-8">
             {projectData.map((project, index) => (

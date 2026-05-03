@@ -133,7 +133,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="flex gap-x-4 flex-wrap">
-                  <Link href={DevLink} target="_blank" rel="noopener noreferrer" className={`${dockPill} mt-10 w-1/2 min-w-[140px] lg:w-44`}>
+                  <Link href={DevLink} target="_blank" rel="noopener noreferrer" className={`${dockPill}  w-1/2 min-w-[140px] lg:w-44`}>
                     DEV blog
                   </Link>
 
@@ -141,7 +141,7 @@ export default function HomePage() {
                     href={GithubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${dockPill} mt-10 w-1/2 min-w-[140px] lg:w-44`}
+                    className={`${dockPill}   w-1/2 min-w-[140px] lg:w-44`}
                   >
                     GitHub
                   </Link>

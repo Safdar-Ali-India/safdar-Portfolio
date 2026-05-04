@@ -1,4 +1,4 @@
-/** Canonical list of articles for /blog and the homepage (newest first) */
+/** Canonical list of articles for /blog and the homepage — newest first (by date). */
 export const blogPosts = [
   {
     date: "Mar 2025",
@@ -21,16 +21,6 @@ export const blogPosts = [
     href: "https://dev.to/safdarali25/from-chaos-to-claws-how-openclaw-won-open-source-in-a-single-week-1a85",
   },
   {
-    date: "Jan 2024",
-    title: "TypeScript | Beginner 👨‍💻🔥",
-    reactions: "100+ reactions · Medium",
-    subTitle:
-      "Dropping a website out into the wild web is a big deal, so making sure every last detail is tightened up first is key...",
-    excerpt:
-      "Getting started with TypeScript on the web — types, tooling, and how to ship your first typed project.",
-    href: "https://medium.com/@safdaralii/typescript-beginner-d65a2e64adc5",
-  },
-  {
     date: "Mar 2024",
     title: "22 JavaScript Functions You’ll Use 99% of The Time 💯🔥",
     popular: true,
@@ -40,6 +30,16 @@ export const blogPosts = [
     excerpt:
       "Practical JavaScript functions you reach for daily — from arrays to async, written for developers levelling up fast.",
     href: "https://medium.com/p/d18139870f9f",
+  },
+  {
+    date: "Jan 2024",
+    title: "TypeScript | Beginner 👨‍💻🔥",
+    reactions: "100+ reactions · Medium",
+    subTitle:
+      "Dropping a website out into the wild web is a big deal, so making sure every last detail is tightened up first is key...",
+    excerpt:
+      "Getting started with TypeScript on the web — types, tooling, and how to ship your first typed project.",
+    href: "https://medium.com/@safdaralii/typescript-beginner-d65a2e64adc5",
   },
   {
     date: "Dec 2023",

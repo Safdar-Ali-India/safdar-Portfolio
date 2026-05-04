@@ -34,22 +34,8 @@ import powerrite from "../../assets/powerrite.png"
 import restaurant from "../../assets/restaurant.png"
 import swag from "../../assets/swag.png"
 import weatherapp from "../../assets/weatherapp.png"
-import logo from "../../assets/logo.jpeg"
 
 const caseStudies = [
-  {
-    title: "Cube — Product UI",
-    location: "Data Platform",
-    url: "cube.dev",
-    role: "Frontend Engineer",
-    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    description:
-      "Own and ship the product UI for Cube's data platform, used by engineering teams globally. Work across design system components, performance optimisation, and new feature development in a fast-moving Sequoia-backed team.",
-    outcome: "Shipping production React/Next.js UI at scale — real users, real data, real uptime requirements.",
-    note: "Proprietary — no public demo available.",
-    imgLink: logo,
-    liveLink: null,
-  },
   {
     title: "First Class Pools",
     location: "Pool Services",
@@ -297,7 +283,15 @@ function CaseStudyCard({ study, index }) {
 
   const imageBlock = (
     <div className="relative h-48 w-full cursor-pointer overflow-hidden bg-neutral-200 dark:bg-neutral-800">
-      <Image src={study.imgLink} alt="" fill className="object-cover transition-transform duration-300 hover:scale-105" />
+      <Image
+        src={study.imgLink}
+        alt={`${study.title} — case study preview`}
+        fill
+        className="object-cover transition-transform duration-300 hover:scale-105"
+        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        loading="lazy"
+        decoding="async"
+      />
     </div>
   )
 

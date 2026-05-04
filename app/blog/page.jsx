@@ -47,7 +47,7 @@ export default function BlogPage() {
           <BackToHomeLink />
         </div>
 
-        <p className="mt-2 text-sm text-neutral-500 dark:text-ink/50">
+        <p className="mt-2 text-sm text-neutral-500 text-center dark:text-ink/50">
           Native posts coming soon at safdarali.in — currently writing on{" "}
           <a href="https://dev.to/safdarali25" className="underline underline-offset-2">
             DEV

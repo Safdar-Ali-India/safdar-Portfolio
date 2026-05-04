@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { PiEnvelopeSimpleThin, PiPersonSimpleWalkThin } from "react-icons/pi";
 import logo from "../assets/logo.jpeg";
 import Image from "next/image";
 import Contact from "./Contact";
@@ -111,15 +112,6 @@ export default function HomePage() {
                   for the full background.
                 </p>
 
-                <div className="flex flex-wrap gap-3">
-                  <Link href="/projects" className={dockPill}>
-                    View my work
-                  </Link>
-                  <Link href="/contact" className={dockPill}>
-                    Hire me
-                  </Link>
-                </div>
-
                 <div>
                   <h2 className="text-neutral-600 dark:text-ink/80 text-xs font-InterBold uppercase font-bold tracking-wide mb-3">
                     Highlights
@@ -150,18 +142,22 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="flex gap-x-4 flex-wrap">
-                  <Link href={DevLink} target="_blank" rel="noopener noreferrer" className={`${dockPill}  w-1/2 min-w-[140px] lg:w-44`}>
-                    DEV blog
-                  </Link>
-
+                <div className="flex flex-wrap gap-3">
                   <Link
-                    href={GithubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${dockPill}   w-1/2 min-w-[140px] lg:w-44`}
+                    href="/contact"
+                    className={`${dockPill} inline-flex h-11 w-11 shrink-0 items-center justify-center p-0`}
+                    aria-label="Contact — hire or collaborate"
+                    title="Contact"
                   >
-                    GitHub
+                    <PiEnvelopeSimpleThin className="h-[1.65rem] w-[1.65rem] shrink-0" aria-hidden />
+                  </Link>
+                  <Link
+                    href="/about"
+                    className={`${dockPill} inline-flex h-11 w-11 shrink-0 items-center justify-center p-0`}
+                    aria-label="About — background and story"
+                    title="About"
+                  >
+                    <PiPersonSimpleWalkThin className="h-[1.65rem] w-[1.65rem] shrink-0" aria-hidden />
                   </Link>
                 </div>
               </div>
@@ -291,6 +287,8 @@ export default function HomePage() {
                       fill
                       className="object-cover"
                       sizes="(max-width:768px) 100vw, 33vw"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className="p-4 flex flex-col flex-1 gap-3">

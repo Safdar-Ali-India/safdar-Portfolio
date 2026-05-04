@@ -159,6 +159,9 @@ function page() {
                       width={40}
                       height={40}
                       className="w-1/2 h-1/2 object-contain animate-fade-in"
+                      sizes="40px"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </li>

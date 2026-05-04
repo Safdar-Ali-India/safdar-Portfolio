@@ -10,6 +10,7 @@ import {
 import { useRef, useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import {
   PiHouseThin,
@@ -40,6 +41,11 @@ export const generalLinks = [
 
 function Navbar() {
   let mouseX = useMotionValue(Infinity);
+  const pathname = usePathname();
+  const navLinks =
+    pathname === "/projects"
+      ? generalLinks.filter((link) => !link.isMailto)
+      : generalLinks;
 
   return (
     <nav aria-label="Main navigation" className="fixed z-50 bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 px-2 w-full max-w-[100vw] flex justify-center pointer-events-none">
@@ -49,7 +55,7 @@ function Navbar() {
         className="flex pointer-events-auto"
       >
         <div className="flex items-end h-[3.75rem] gap-1.5 sm:gap-2 px-3 sm:px-4 pb-1.5 mx-auto outline-0 rounded-2xl border border-neutral-200/90 bg-white/90 backdrop-blur-xl shadow-lg shadow-neutral-900/5 dark:border-white/[0.1] dark:bg-night/75 dark:shadow-black/50 dark:backdrop-blur-xl light:bg-slate-100/90">
-          {generalLinks.map((link) => {
+          {navLinks.map((link) => {
             const wrapClass = link.hideOnMobile ? "hidden md:contents" : "";
             return (
               <div key={link.href} className={wrapClass}>

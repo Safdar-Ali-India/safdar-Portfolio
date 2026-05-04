@@ -26,6 +26,9 @@ const ProjectCard = ({ title, subtitle, imgLink, codeLink, liveLink }) => {
             width={1000}
             className="border border-slate-900 h-60 w-full object-cover rounded-lg group-hover/card:shadow-xl"
             alt={thumbAlt}
+            sizes="(max-width: 640px) 100vw, 30rem"
+            loading="lazy"
+            decoding="async"
           />
         </CardItem>
         <div className="flex justify-between items-center mt-6 md:mt-10 gap-3">

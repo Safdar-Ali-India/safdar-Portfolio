@@ -36,18 +36,70 @@ export default function ContactPage() {
       </div>
       <div className="relative max-w-5xl mx-auto px-4 pb-20">
         <div className="relative mt-14">
-          <h1 className="text-center font-InterBold uppercase font-extrabold dark:text-ink light:text-black text-3xl">
-            Contact
+          <h1 className="text-center font-InterBold text-3xl font-extrabold text-neutral-950 dark:text-ink light:text-black">
+            Let&apos;s build something.
           </h1>
           <BackToHomeLink />
         </div>
 
-        <p className="mt-8 text-center max-w-xl mx-auto text-neutral-600 dark:text-ink">
-          For <strong>hire</strong>, freelance, or collaboration: use the form below. I&apos;m based in{" "}
-          <strong>Bengaluru</strong> and work with teams across India and remotely.
+        <p className="mt-8 max-w-xl mx-auto text-center text-neutral-600 dark:text-ink">
+          I&apos;m a frontend engineer based in <strong>Bengaluru</strong>, currently at Cube (Sequoia-backed). I&apos;m open to senior frontend roles,
+          freelance projects, and collaborations with ambitious teams across India and remotely.
+        </p>
+        <p className="mt-2 text-center text-sm text-neutral-600 dark:text-ink/85">
+          <span className="inline-flex items-center gap-1.5">
+            <span className="inline-block h-2 w-2 rounded-full bg-green-500" aria-hidden />
+            Currently at Cube · Open to senior frontend opportunities
+          </span>
         </p>
 
         <Contact />
+
+        <div className="mt-10 border-t border-neutral-200 pt-8 dark:border-white/10">
+          <p className="mb-4 text-xs uppercase tracking-widest text-neutral-400 dark:text-ink/40">Find me on</p>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="https://www.youtube.com/@safdarali_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-neutral-600 underline underline-offset-2 hover:text-neutral-950 dark:text-ink/70 dark:hover:text-ink"
+            >
+              YouTube
+            </a>
+            <a
+              href="https://www.linkedin.com/in/safdarali25/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-neutral-600 underline underline-offset-2 hover:text-neutral-950 dark:text-ink/70 dark:hover:text-ink"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/Safdar-Ali-India"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-neutral-600 underline underline-offset-2 hover:text-neutral-950 dark:text-ink/70 dark:hover:text-ink"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://dev.to/safdarali25"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-neutral-600 underline underline-offset-2 hover:text-neutral-950 dark:text-ink/70 dark:hover:text-ink"
+            >
+              DEV.to
+            </a>
+            <a
+              href="https://www.instagram.com/codewithsafdar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-neutral-600 underline underline-offset-2 hover:text-neutral-950 dark:text-ink/70 dark:hover:text-ink"
+            >
+              Instagram
+            </a>
+          </div>
+        </div>
 
         <p className="text-center text-sm text-neutral-500 dark:text-ink/65 mt-4">
           Prefer the homepage?{" "}

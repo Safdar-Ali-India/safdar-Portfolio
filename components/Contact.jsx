@@ -8,9 +8,6 @@ const Contact = () => {
         Contact Safdar Ali
       </h2>
       <div className="py-8 lg:pt-16 mx-auto max-w-screen-md">
-        <p className="mb-4 lg:mb-8 font-light text-center text-neutral-700 dark:text-ink sm:text-xl">
-          Having a project in mind or looking for some chit-chat, I&apos;m always ready!
-        </p>
         <p className="mb-8 lg:mb-12 text-center text-sm text-neutral-600 dark:text-ink">
           Prefer email?{" "}
           <a

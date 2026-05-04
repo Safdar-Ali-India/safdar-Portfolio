@@ -33,6 +33,7 @@ export const blogPosts = [
   {
     date: "Mar 2024",
     title: "22 JavaScript Functions You’ll Use 99% of The Time 💯🔥",
+    popular: true,
     reactions: "294+ reactions · Medium",
     subTitle:
       "I always felt a bit lost when I was starting on my programming journey. It's true — it was a very frustrating experience. Maybe you're feeling a little frustrated, too!...",

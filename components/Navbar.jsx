@@ -10,8 +10,6 @@ import {
 import { useRef, useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-
 import {
   PiHouseThin,
   PiCloudSunLight,
@@ -19,10 +17,7 @@ import {
   PiBrainThin,
   PiPersonSimpleWalkThin,
   PiCodeThin,
-  PiEnvelopeSimpleThin,
 } from "react-icons/pi";
-
-import { MAILTO_HREF } from "../lib/site";
 
 /** Blog stays at /blog for SEO; dock stays minimal (no duplicate “writing” entry). */
 export const generalLinks = [
@@ -30,23 +25,10 @@ export const generalLinks = [
   { href: "/about", label: "About", Icon: PiPersonSimpleWalkThin },
   { href: "/skills", label: "Skills", Icon: PiBrainThin },
   { href: "/projects", label: "Projects", Icon: PiCodeThin },
-  {
-    href: MAILTO_HREF,
-    label: "Email Safdar Ali",
-    Icon: PiEnvelopeSimpleThin,
-    hideOnMobile: true,
-    isMailto: true,
-  },
 ];
 
 function Navbar() {
   let mouseX = useMotionValue(Infinity);
-  const pathname = usePathname();
-  const navLinks =
-    pathname === "/projects"
-      ? generalLinks.filter((link) => !link.isMailto)
-      : generalLinks;
-
   return (
     <nav aria-label="Main navigation" className="fixed z-50 bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 px-2 w-full max-w-[100vw] flex justify-center pointer-events-none">
       <motion.div
@@ -55,20 +37,9 @@ function Navbar() {
         className="flex pointer-events-auto"
       >
         <div className="flex items-end h-[3.75rem] gap-1.5 sm:gap-2 px-3 sm:px-4 pb-1.5 mx-auto outline-0 rounded-2xl border border-neutral-200/90 bg-white/90 backdrop-blur-xl shadow-lg shadow-neutral-900/5 dark:border-white/[0.1] dark:bg-night/75 dark:shadow-black/50 dark:backdrop-blur-xl light:bg-slate-100/90">
-          {navLinks.map((link) => {
-            const wrapClass = link.hideOnMobile ? "hidden md:contents" : "";
-            return (
-              <div key={link.href} className={wrapClass}>
-                <AppIcon
-                  href={link.href}
-                  isMailto={link.isMailto}
-                  ariaLabel={link.label}
-                  mouseX={mouseX}
-                  Icon={link.Icon}
-                />
-              </div>
-            );
-          })}
+          {generalLinks.map((link) => (
+            <AppIcon key={link.href} href={link.href} ariaLabel={link.label} mouseX={mouseX} Icon={link.Icon} />
+          ))}
 
           <hr className="h-10 w-px bg-neutral-200/90 dark:bg-white/15 mb-1 border-none shrink-0 self-end" aria-hidden="true" />
 
@@ -81,7 +52,7 @@ function Navbar() {
 
 export default Navbar;
 
-function AppIcon({ mouseX, Icon, href, isMailto, ariaLabel }) {
+function AppIcon({ mouseX, Icon, href, ariaLabel }) {
   let ref = useRef(null);
 
   let distance = useTransform(mouseX, (val) => {
@@ -108,14 +79,6 @@ function AppIcon({ mouseX, Icon, href, isMailto, ariaLabel }) {
 
   const focusRing =
     "rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:focus-visible:outline-ink/70";
-
-  if (isMailto) {
-    return (
-      <a href={href} aria-label={ariaLabel} className={focusRing}>
-        {inner}
-      </a>
-    );
-  }
 
   return (
     <Link href={href} aria-label={ariaLabel} className={focusRing}>

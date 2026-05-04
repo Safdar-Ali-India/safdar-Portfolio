@@ -26,9 +26,9 @@ export const blogPosts = [
     popular: true,
     reactions: "294+ reactions · Medium",
     subTitle:
-      "I always felt a bit lost when I was starting on my programming journey. It's true — it was a very frustrating experience. Maybe you're feeling a little frustrated, too!...",
+      "294+ developers found this useful — a no-nonsense breakdown of the JavaScript functions you'll actually reach for daily, from arrays to async.",
     excerpt:
-      "Practical JavaScript functions you reach for daily — from arrays to async, written for developers levelling up fast.",
+      "294+ developers found this useful — a no-nonsense breakdown of the JavaScript functions you'll actually reach for daily, from arrays to async.",
     href: "https://medium.com/p/d18139870f9f",
   },
   {

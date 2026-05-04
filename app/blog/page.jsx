@@ -47,6 +47,18 @@ export default function BlogPage() {
           <BackToHomeLink />
         </div>
 
+        <p className="mt-2 text-sm text-neutral-500 dark:text-ink/50">
+          Native posts coming soon at safdarali.in — currently writing on{" "}
+          <a href="https://dev.to/safdarali25" className="underline underline-offset-2">
+            DEV
+          </a>{" "}
+          and{" "}
+          <a href="https://medium.com/@safdaralii" className="underline underline-offset-2">
+            Medium
+          </a>
+          .
+        </p>
+
         <p className="mt-10 text-center text-neutral-600 dark:text-ink/80 sm:text-lg max-w-2xl mx-auto">
           Writing by <strong>Safdar Ali</strong> — featured posts on{" "}
           <a
@@ -67,11 +79,18 @@ export default function BlogPage() {
               className="border border-neutral-200 rounded-xl p-6 bg-white/80 dark:border-white/[0.1] dark:bg-white/[0.04]"
             >
               <p className="text-xs uppercase font-bold text-neutral-500 dark:text-ink/60 mb-2">{post.date}</p>
-              <h2 className="text-xl font-bold text-neutral-950 dark:text-ink mb-2">
-                <Link href={post.href} target="_blank" rel="noopener noreferrer" className="hover:underline dark:decoration-white/35">
-                  {post.title}
-                </Link>
-              </h2>
+              <div className="mb-2 flex flex-wrap items-center gap-2">
+                {post.popular ? (
+                  <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-900/30 dark:text-amber-300">
+                    Most popular
+                  </span>
+                ) : null}
+                <h2 className="text-xl font-bold text-neutral-950 dark:text-ink">
+                  <Link href={post.href} target="_blank" rel="noopener noreferrer" className="hover:underline dark:decoration-white/35">
+                    {post.title}
+                  </Link>
+                </h2>
+              </div>
               <p className="text-sm text-neutral-600 dark:text-ink/80 mb-3">{post.excerpt}</p>
               <p className="text-xs text-neutral-500 dark:text-ink/65 mb-4">{post.reactions}</p>
               <Link

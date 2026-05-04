@@ -124,12 +124,30 @@ export default function HomePage() {
                   <h2 className="text-neutral-600 dark:text-ink/80 text-xs font-InterBold uppercase font-bold tracking-wide mb-3">
                     Highlights
                   </h2>
-                  <ul className="text-neutral-800 dark:text-ink font-InterMedium text-sm lg:text-base space-y-2 list-none p-0 m-0">
-                    <li>👨‍💻 Created 70+ coding tutorials on YouTube 🎥</li>
-                    <li>🛠 Built 30+ projects using React and various CMS platforms</li>
-                    <li>💵 Earned my first $140 through freelancing</li>
-                    <li>🌟 Gained 5K+ followers on Blog &amp; LinkedIn</li>
-                  </ul>
+                  <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                    <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
+                      <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">70+</p>
+                      <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">YouTube Tutorials</p>
+                    </div>
+                    <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
+                      <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">30+</p>
+                      <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">Projects Shipped</p>
+                    </div>
+                    <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
+                      <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">4 Yrs</p>
+                      <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">Experience</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {["Next.js", "React", "TypeScript", "Node.js", "Tailwind CSS"].map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-full border border-neutral-200/80 px-3 py-1 text-xs text-neutral-600 dark:border-white/15 dark:text-ink/70"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="flex gap-x-4 flex-wrap">

@@ -1,28 +1,30 @@
-import mapmyrecipe from "../assets/mapmyrecipe.png";
-import hadith from "../assets/hadith.png";
-import restaurant from "../assets/restaurant.png";
+import msalonbeverlyhills from "../assets/msalonbeverlyhills.png";
+import sommetbeauty from "../assets/sommetbeauty.png";
+import wpstandard from "../assets/wpstandard.png";
+
+const portfolioCode = "https://github.com/Safdar-Ali-India";
 
 /** Shown on the homepage; full grid lives on /projects */
 export const featuredProjects = [
   {
-    title: "Map My Recipe",
-    subT: "React recipe book — search, browse, and open recipe details with a clean UI.",
-    imgLink: mapmyrecipe,
-    liveLink: "https://map-my-recipe.vercel.app/",
-    codeLink: "https://github.com/Safdar-Ali-India/Recipe-Book-application-using-React",
+    title: "M Salon Beverly Hills",
+    subT: "High-end salon site: custom WordPress theme, services, gallery, and responsive UI for a Beverly Hills brand.",
+    imgLink: msalonbeverlyhills,
+    liveLink: "https://msalonbeverlyhills.com",
+    codeLink: portfolioCode,
   },
   {
-    title: "Hadith Generator",
-    subT: "Read hadiths from major books, track progress, and explore teachings in one place.",
-    imgLink: hadith,
-    liveLink: "https://hadith-generator-alpha.vercel.app/",
-    codeLink: "https://github.com/Safdar-Ali-India/Hadith-Generator",
+    title: "Sommet Beauty",
+    subT: "Luxury Shopify ecommerce: collections, cart, checkout, and performance tuning for a premium beauty brand.",
+    imgLink: sommetbeauty,
+    liveLink: "https://sommetbeauty.com",
+    codeLink: portfolioCode,
   },
   {
-    title: "Safdar Restaurant",
-    subT: "React menu that filters by meal time — interactive ordering-style experience.",
-    imgLink: restaurant,
-    liveLink: "https://safdar-restaurant.vercel.app/",
-    codeLink: "https://github.com/Safdar-Ali-India/Safdar-restaurant",
+    title: "WP Standard",
+    subT: "Shopify build for leather goods: collection, product, and blog templates with a polished shopping experience.",
+    imgLink: wpstandard,
+    liveLink: "https://wpstandard.com",
+    codeLink: portfolioCode,
   },
 ];

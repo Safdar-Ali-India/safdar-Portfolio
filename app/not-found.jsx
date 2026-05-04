@@ -32,7 +32,15 @@ const NotFound = () => {
         </div>
 
         <div className="relative w-full mt-12 lg:w-1/2 lg:mt-0" aria-hidden="true">
-          <Image className="w-full max-w-lg lg:mx-auto" src="https://merakiui.com/images/components/illustration.svg" alt="" height={550} width={550} />
+          <Image
+            className="w-full max-w-lg lg:mx-auto"
+            src="https://merakiui.com/images/components/illustration.svg"
+            alt=""
+            height={550}
+            width={550}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </section>

@@ -78,7 +78,13 @@ function page() {
         {/* Hero — lead title is h2 so the route keeps a single h1 (matches Projects / Blog pattern) */}
         <section aria-labelledby="about-hero-heading" className="mb-28 grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-12">
           <div className="relative overflow-hidden rounded-3xl shadow-lg shadow-neutral-900/10 ring-1 ring-neutral-200/80 dark:shadow-black/40 dark:ring-white/15 lg:col-span-5">
-            <StoryImageSlot src="/about/photo-hero-desk-wide.jpeg" alt="Safdar at his desk with monitors, keyboard, and coding setup indoors" caption="" aspectClass="min-h-[280px] aspect-[4/5] sm:min-h-[360px]" />
+            <StoryImageSlot
+              priority
+              src="/about/photo-hero-desk-wide.jpeg"
+              alt="Safdar at his desk with monitors, keyboard, and coding setup indoors"
+              caption=""
+              aspectClass="min-h-[280px] aspect-[4/5] sm:min-h-[360px]"
+            />
           </div>
           <div className="lg:col-span-7">
             <h2 id="about-hero-heading" className="font-extrabold font-InterBlack text-3xl leading-tight text-neutral-950 dark:text-ink">
@@ -90,6 +96,20 @@ function page() {
             <p className={`mt-4 ${bodyProse}`}>
               Outside sprint boards, I&apos;m on a cricket ground, racking up kilometres on two wheels, hunting for the best food in Bengaluru, or somewhere in the hills with a camera in hand. I believe great engineers have full lives — it shows up in the work. If you&apos;re building something ambitious — at scale or from scratch — scroll down. I&apos;d love to connect.
             </p>
+            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
+                <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">70+</p>
+                <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">YouTube Tutorials</p>
+              </div>
+              <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
+                <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">30+</p>
+                <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">Projects Shipped</p>
+              </div>
+              <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
+                <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">4 Yrs</p>
+                <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">Experience</p>
+              </div>
+            </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contact" className={dockPill}>
                 Say hello →

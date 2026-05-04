@@ -43,14 +43,7 @@ export default function ContactPage() {
         </div>
 
         <p className="mt-8 max-w-xl mx-auto text-center text-neutral-600 dark:text-ink">
-          I&apos;m a frontend engineer based in <strong>Bengaluru</strong>, currently at Cube (Sequoia-backed). I&apos;m open to senior frontend roles,
-          freelance projects, and collaborations with ambitious teams across India and remotely.
-        </p>
-        <p className="mt-2 text-center text-sm text-neutral-600 dark:text-ink/85">
-          <span className="inline-flex items-center gap-1.5">
-            <span className="inline-block h-2 w-2 rounded-full bg-green-500" aria-hidden />
-            Currently at Cube · Open to senior frontend opportunities
-          </span>
+          Frontend engineer in <strong>Bengaluru</strong>. Use the form for roles, freelance, or collaboration—I&apos;ll reply when I can.
         </p>
 
         <Contact />

@@ -16,8 +16,6 @@ const Contact = () => {
           >
             Open in your mail app
           </a>
-          {" "}
-          — no address shown here to reduce spam.
         </p>
         <form
           method="POST"
@@ -63,7 +61,7 @@ const Contact = () => {
               rows={6}
               autoComplete="off"
               className="block p-2.5 w-full text-sm rounded-lg shadow-sm border border-neutral-300 bg-white text-neutral-900 placeholder:text-neutral-400 focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-600 dark:border-white/[0.12] dark:bg-white/[0.05] dark:text-ink dark:placeholder:text-ink/45 dark:focus:ring-white/20 dark:focus:border-white/25"
-              placeholder="Can you help me ship this project?..."
+              placeholder="What should I know?"
               required
             />
           </div>

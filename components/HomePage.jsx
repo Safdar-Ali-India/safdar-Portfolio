@@ -99,9 +99,10 @@ export default function HomePage() {
 
               <div className="mt-8 max-w-3xl space-y-5">
                 <p className="text-neutral-800 dark:text-ink font-InterMedium text-sm lg:text-lg leading-relaxed">
-                  I ship fast, accessible product UI with Next.js and React—primarily for startups and agencies. Today:
-                  Frontend UI at Cube (Sequoia-backed); earlier Adsclique Media, Sujanix, and Tech Mahindra. I turn side
-                  learnings into YouTube tutorials and articles (TypeScript, tooling, shipping in production).{" "}
+                  I ship fast, accessible product UI with Next.js and React—for product teams that care about performance,
+                  scale, and experience. Today: Frontend UI at Cube (Sequoia-backed); earlier Adsclique Media, Sujanix, and
+                  Tech Mahindra. I document what I build — 70+ tutorials on React, Next.js, and TypeScript, watched by developers
+                  across India.{" "}
                   <Link href="/projects" className={linkInline}>
                     Browse projects
                   </Link>{" "}
@@ -114,7 +115,7 @@ export default function HomePage() {
 
                 <div>
                   <h2 className="text-neutral-600 dark:text-ink/80 text-xs font-InterBold uppercase font-bold tracking-wide mb-3">
-                    Highlights
+                    BY THE NUMBERS
                   </h2>
                   <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-3">
                     <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">

@@ -4,11 +4,6 @@ import React, { useEffect, useState } from "react";
 
 const QUOTES = [
   {
-    text: "The only way to do great work is to love what you do.",
-    author: "Steve Jobs",
-    cite: "https://www.goodreads.com/quotes/436173-the-only-way-to-do-great-work-is-to-love-what-you-do",
-  },
-  {
     text: "Talk is cheap. Show me the code.",
     author: "Linus Torvalds",
     cite: "https://en.wikiquote.org/wiki/Linus_Torvalds",
@@ -19,9 +14,9 @@ const QUOTES = [
     cite: "https://en.wikiquote.org/wiki/Grace_Hopper",
   },
   {
-    text: "Innovation distinguishes between a leader and a follower.",
-    author: "Steve Jobs",
-    cite: "https://www.goodreads.com/quotes/161431-innovation-distinguishes-between-a-leader-and-a-follower",
+    text: "Premature optimization is the root of all evil.",
+    author: "Donald Knuth",
+    cite: "https://en.wikiquote.org/wiki/Donald_Knuth",
   },
   {
     text: "First, solve the problem. Then, write the code.",
@@ -37,6 +32,21 @@ const QUOTES = [
     text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
     author: "Martin Fowler",
     cite: "https://www.goodreads.com/quotes/144383-any-fool-can-write-code-that-a-computer-can-understand",
+  },
+  {
+    text: "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
+    author: "Brian Kernighan",
+    cite: "https://en.wikiquote.org/wiki/Brian_Kernighan",
+  },
+  {
+    text: "The only way to do great work is to love what you do.",
+    author: "Steve Jobs",
+    cite: "https://www.goodreads.com/quotes/436173-the-only-way-to-do-great-work-is-to-love-what-you-do",
+  },
+  {
+    text: "Innovation distinguishes between a leader and a follower.",
+    author: "Steve Jobs",
+    cite: "https://www.goodreads.com/quotes/161431-innovation-distinguishes-between-a-leader-and-a-follower",
   },
 ];
 

@@ -91,10 +91,14 @@ function page() {
               What I&apos;m about.
             </h2>
             <p className={`mt-5 ${bodyProse}`}>
-              Hey — I&apos;m Safdar. Frontend engineer at Cube (Sequoia-backed), where I own the product UI across a data platform used by engineering teams globally. I ship with Next.js, React, and TypeScript — and I document the craft through 70+ tutorials on YouTube, watched by developers across India and beyond.
+              Hey — I&apos;m Safdar. Frontend engineer at Cube (Sequoia-backed), where I own the product UI across a data platform used by data and engineering teams at startups and scale-ups across the US and India. I ship with Next.js, React, and TypeScript — and I document the craft through 70+ tutorials on YouTube, watched by developers across India and beyond.
             </p>
             <p className={`mt-4 ${bodyProse}`}>
               Outside sprint boards, I&apos;m on a cricket ground, racking up kilometres on two wheels, hunting for the best food in Bengaluru, or somewhere in the hills with a camera in hand. I believe great engineers have full lives — it shows up in the work. If you&apos;re building something ambitious — at scale or from scratch — scroll down. I&apos;d love to connect.
+            </p>
+            <p className={`mt-4 ${bodyProse}`}>
+              ChatGPT for real work from early 2023; from 2024, Claude, Cursor, and v0 are how I prototype and ship every week.
+              In 2026, skipping that stack is the outlier.
             </p>
             <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
@@ -129,7 +133,9 @@ function page() {
             I create, code & share.
           </h2>
           <p className={`${sectionLead} max-w-2xl`}>
-            Four years in, I&apos;ve shipped production UI at a Sequoia-backed startup, built 30+ projects across React and various CMS platforms, and published weekly tutorials that break down real engineering problems — not toy examples. The YouTube channel started as notes-to-self. Now it helps thousands of developers get unstuck.
+            Four years in, I&apos;ve shipped production UI at a Sequoia-backed startup, built 30+ projects, and kept AI in the
+            loop as a force multiplier — not a crutch. My tutorials break down real engineering problems, not toy examples. The
+            YouTube channel started as notes-to-self. Now it helps thousands of developers get unstuck.
           </p>
           <div className={`${sectionMediaTop} grid gap-6 sm:grid-cols-2`}>
             <StoryVideoSlot src="/about/clip-desk-loop.mp4" label="Recording a YouTube tutorial" aspectClass="aspect-[1600/963]" />

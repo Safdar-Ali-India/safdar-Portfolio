@@ -56,11 +56,11 @@ export default function WhereImBasedSection() {
             Where I&apos;m based
           </h2>
           <p className={`mt-4 ${bodyProse}`}>
-            I&apos;m in Bengaluru, India — coffee, midnight deploys, and all. Frontend engineer by day, content creator by night. Ping me via the{" "}
+            I&apos;m in Bengaluru, India — coffee, midnight deploys, and all. I build in public — shipping at Cube during the day, documenting the craft on YouTube after hours. Ping me via the{" "}
             <Link href="/contact" className={linkClass}>
               contact page
             </Link>{" "}
-            or connect on any of the links below — no scraped bios, just my own feeds.
+            — no scraped bios, just my own feeds. I respond within 24 hours.
           </p>
         </div>
 

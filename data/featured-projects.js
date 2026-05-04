@@ -8,21 +8,21 @@ const portfolioCode = "https://github.com/Safdar-Ali-India";
 export const featuredProjects = [
   {
     title: "M Salon Beverly Hills",
-    subT: "High-end salon site: custom WordPress theme, services, gallery, and responsive UI for a Beverly Hills brand.",
+    subT: "Architected a full custom WordPress theme for a premium Beverly Hills salon — services, gallery, booking integration, and pixel-perfect mobile UI. Site credited in client's physical marketing.",
     imgLink: msalonbeverlyhills,
     liveLink: "https://msalonbeverlyhills.com",
     codeLink: portfolioCode,
   },
   {
     title: "Sommet Beauty",
-    subT: "Luxury Shopify ecommerce: collections, cart, checkout, and performance tuning for a premium beauty brand.",
+    subT: "Performance-tuned Shopify build for a luxury beauty brand — custom cart, seamless checkout, and 90+ PageSpeed score.",
     imgLink: sommetbeauty,
     liveLink: "https://sommetbeauty.com",
     codeLink: portfolioCode,
   },
   {
     title: "WP Standard",
-    subT: "Shopify build for leather goods: collection, product, and blog templates with a polished shopping experience.",
+    subT: "End-to-end Shopify build for a leather goods brand — product pages, collection templates, and storytelling-first mobile UX.",
     imgLink: wpstandard,
     liveLink: "https://wpstandard.com",
     codeLink: portfolioCode,

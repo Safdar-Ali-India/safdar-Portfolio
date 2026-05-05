@@ -24,6 +24,14 @@ export const metadata = {
     title: "About | Safdar Ali",
     url: `${SITE}/about`,
     description: "Story-led about page: engineering, creativity, Bengaluru life, travel, and highlights.",
+    images: [
+      {
+        url: `${SITE}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "Safdar Ali — About",
+      },
+    ],
   },
 }
 

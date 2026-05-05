@@ -8,6 +8,7 @@ const Contact = () => {
         Contact Safdar Ali
       </h2>
       <div className="py-8 lg:pt-16 mx-auto max-w-screen-md">
+        <h3 className="mb-2 text-center text-xl font-bold text-neutral-950 dark:text-ink">Work with me</h3>
         <p className="mb-8 lg:mb-12 text-center text-sm text-neutral-600 dark:text-ink">
           Prefer email?{" "}
           <a

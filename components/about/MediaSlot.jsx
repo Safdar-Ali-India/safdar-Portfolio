@@ -125,7 +125,7 @@ export function StoryVideoSlot({
       <figure className={`${frameBorder} bg-neutral-900/20 dark:bg-night/40 ${intrinsic ? "min-h-[200px] w-full" : aspectClass}`}>
         <div className={intrinsic ? placeholderClass : `${placeholderClass} h-full`}>
           <span className="font-medium dark:text-ink/80">{label}</span>
-          <span className="mt-2 max-w-xs text-xs opacity-90">Place MP4 at {src}</span>
+          <span className="mt-2 max-w-xs text-xs opacity-90">Unable to load this video clip.</span>
         </div>
       </figure>
     );
@@ -369,7 +369,7 @@ export function StoryBentoVideo({
       <figure className={`relative ${shell} ${contain ? "min-h-[200px] w-full" : `${aspectClass} w-full`}${extra}`}>
         <div className={placeholderClass}>
           <span className="font-medium dark:text-ink/80">{label}</span>
-          <span className="mt-2 max-w-xs text-xs opacity-90">Place MP4 at {src}</span>
+          <span className="mt-2 max-w-xs text-xs opacity-90">Unable to load this video clip.</span>
         </div>
       </figure>
     );

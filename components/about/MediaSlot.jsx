@@ -6,6 +6,8 @@ import { useCallback, useLayoutEffect, useRef, useState } from "react";
 const placeholderClass =
   "flex min-h-[200px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-neutral-300/90 bg-gradient-to-br from-amber-100/35 via-neutral-100/80 to-orange-950/15 px-4 py-10 text-center text-sm text-neutral-600 dark:border-white/15 dark:from-amber-900/25 dark:via-night dark:to-orange-950/30 dark:text-ink/60";
 
+const imageSkeleton = "absolute inset-0 bg-neutral-200/40 animate-pulse dark:bg-white/[0.06]";
+
 const frameBorder =
   "overflow-hidden rounded-2xl border border-neutral-200/90 dark:border-white/10";
 
@@ -187,6 +189,7 @@ export function StoryVideoSlot({
 
 export function StoryImageSlot({ src, alt, caption, aspectClass = "aspect-[4/3]", priority = false }) {
   const [fallback, setFallback] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   if (fallback) {
     return (
@@ -200,7 +203,8 @@ export function StoryImageSlot({ src, alt, caption, aspectClass = "aspect-[4/3]"
   }
 
   return (
-    <figure className={`relative ${frameBorder} ${aspectClass}`}>
+    <figure className={`relative ${frameBorder} ${aspectClass} bg-neutral-100/40 dark:bg-white/[0.04]`}>
+      {!loaded ? <div className={imageSkeleton} aria-hidden /> : null}
       <Image
         src={src}
         alt={alt}
@@ -210,6 +214,7 @@ export function StoryImageSlot({ src, alt, caption, aspectClass = "aspect-[4/3]"
         decoding="async"
         className="object-cover contrast-[0.97] saturate-[0.93]"
         sizes="(max-width:768px) 100vw, 45vw"
+        onLoadingComplete={() => setLoaded(true)}
         onError={() => setFallback(true)}
       />
     </figure>
@@ -230,6 +235,7 @@ export function StoryImageNatural({
   fillCell = false,
 }) {
   const [fallback, setFallback] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   if (fallback) {
     return (
@@ -247,6 +253,7 @@ export function StoryImageNatural({
       <figure
         className={`relative ${frameBorder} ${figureClassName} h-full min-h-[220px] w-full overflow-hidden bg-neutral-100/40 dark:bg-white/[0.06]`}
       >
+        {!loaded ? <div className={imageSkeleton} aria-hidden /> : null}
         <Image
           src={src}
           alt={alt}
@@ -255,6 +262,7 @@ export function StoryImageNatural({
           decoding="async"
           className="object-contain p-1 contrast-[0.97] saturate-[0.93]"
           sizes="(max-width: 768px) 100vw, 45vw"
+          onLoadingComplete={() => setLoaded(true)}
           onError={() => setFallback(true)}
         />
       </figure>
@@ -262,7 +270,8 @@ export function StoryImageNatural({
   }
 
   return (
-    <figure className={`${frameBorder} ${figureClassName}`}>
+    <figure className={`relative ${frameBorder} ${figureClassName} bg-neutral-100/40 dark:bg-white/[0.04]`}>
+      {!loaded ? <div className={imageSkeleton} aria-hidden /> : null}
       <Image
         src={src}
         alt={alt}
@@ -273,6 +282,7 @@ export function StoryImageNatural({
         sizes="(max-width: 768px) 100vw, 50vw"
         className="h-auto w-full contrast-[0.97] saturate-[0.93]"
         style={{ width: "100%", height: "auto" }}
+        onLoadingComplete={() => setLoaded(true)}
         onError={() => setFallback(true)}
       />
     </figure>
@@ -291,6 +301,7 @@ export function StoryBentoImage({
   priority = false,
 }) {
   const [fallback, setFallback] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const shell = plain ? plainTileFrame : bentoFrame;
   const figureClass = `relative ${shell} ${aspectClass} w-full ${className}`.trim();
 
@@ -307,6 +318,7 @@ export function StoryBentoImage({
 
   return (
     <figure className={`${figureClass} bg-neutral-100 dark:bg-neutral-950`}>
+      {!loaded ? <div className={imageSkeleton} aria-hidden /> : null}
       <Image
         src={src}
         alt={alt}
@@ -316,6 +328,7 @@ export function StoryBentoImage({
         decoding="async"
         className={`object-cover contrast-[0.97] saturate-[0.93] ${objectPosition}`}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        onLoadingComplete={() => setLoaded(true)}
         onError={() => setFallback(true)}
       />
     </figure>
@@ -430,6 +443,7 @@ export function StoryBentoVideo({
  */
 export function StoryBentoPortraitTile({ src, alt, objectPosition = "object-top", priority = false }) {
   const [fallback, setFallback] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   if (fallback) {
     return (
@@ -446,8 +460,9 @@ export function StoryBentoPortraitTile({ src, alt, objectPosition = "object-top"
 
   return (
     <figure
-      className={`relative ${bentoFrame} aspect-[9/16] w-full max-h-[min(40vh,360px)] overflow-hidden sm:max-h-[min(42vh,380px)]`}
+      className={`relative ${bentoFrame} aspect-[9/16] w-full max-h-[min(40vh,360px)] overflow-hidden sm:max-h-[min(42vh,380px)] bg-neutral-100/40 dark:bg-white/[0.04]`}
     >
+      {!loaded ? <div className={imageSkeleton} aria-hidden /> : null}
       <Image
         src={src}
         alt={alt}
@@ -457,6 +472,7 @@ export function StoryBentoPortraitTile({ src, alt, objectPosition = "object-top"
         decoding="async"
         className={`object-cover contrast-[0.97] saturate-[0.93] ${objectPosition}`}
         sizes="(max-width: 640px) 100vw, 45vw"
+        onLoadingComplete={() => setLoaded(true)}
         onError={() => setFallback(true)}
       />
     </figure>
@@ -469,6 +485,7 @@ const portraitHeroFrame =
 /** Tall portrait: intrinsic 899×1599 (tweak props), object-contain + max-height — never squashed to a wide box. */
 export function StoryBentoPortraitCenter({ src, alt, width = 899, height = 1599, priority = false }) {
   const [fallback, setFallback] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   if (fallback) {
     return (
@@ -482,7 +499,8 @@ export function StoryBentoPortraitCenter({ src, alt, width = 899, height = 1599,
   }
 
   return (
-    <figure className={`mx-auto w-fit max-w-full ${portraitHeroFrame}`}>
+    <figure className={`relative mx-auto w-fit max-w-full ${portraitHeroFrame} bg-neutral-100/40 dark:bg-white/[0.04]`}>
+      {!loaded ? <div className={imageSkeleton} aria-hidden /> : null}
       <Image
         src={src}
         alt={alt}
@@ -494,6 +512,7 @@ export function StoryBentoPortraitCenter({ src, alt, width = 899, height = 1599,
         sizes="(max-width: 640px) 92vw, 45vw"
         className="block h-auto w-auto max-w-full object-contain object-center contrast-[0.97] saturate-[0.93] max-h-[min(42vh,360px)] sm:max-h-[min(46vh,420px)] md:max-h-[min(50vh,480px)]"
         style={{ width: "auto", height: "auto" }}
+        onLoadingComplete={() => setLoaded(true)}
         onError={() => setFallback(true)}
       />
     </figure>

@@ -147,7 +147,13 @@ function page() {
           </p>
           <div className={`${sectionMediaTop} grid gap-6 sm:grid-cols-2`}>
             <StoryVideoSlot src="/about/clip-desk-loop.mp4" label="Recording a YouTube tutorial" aspectClass="aspect-[1600/963]" />
-            <StoryImageSlot src="/about/photo-cafe-laptop.webp" alt="Safdar Ali Coding YouTube channel banner: wide dark art with channel title, subscribe graphic, and social links" caption="YouTube banner — 1600×963" aspectClass="aspect-[1600/963] w-full min-h-0" />
+            <StoryImageSlot
+              priority
+              src="/about/photo-cafe-laptop.webp"
+              alt="Safdar Ali Coding YouTube channel banner: wide dark art with channel title, subscribe graphic, and social links"
+              caption="YouTube banner — 1600×963"
+              aspectClass="aspect-[1600/963] w-full min-h-0"
+            />
           </div>
         </section>
 

@@ -88,7 +88,7 @@ function page() {
           <div className="relative overflow-hidden rounded-3xl shadow-lg shadow-neutral-900/10 ring-1 ring-neutral-200/80 dark:shadow-black/40 dark:ring-white/15 lg:col-span-5">
             <StoryImageSlot
               priority
-              src="/about/photo-hero-desk-wide.jpeg"
+              src="/about/photo-hero-desk-wide.webp"
               alt="Safdar at his desk with monitors, keyboard, and coding setup indoors"
               caption=""
               aspectClass="min-h-[280px] aspect-[4/5] sm:min-h-[360px]"
@@ -147,7 +147,7 @@ function page() {
           </p>
           <div className={`${sectionMediaTop} grid gap-6 sm:grid-cols-2`}>
             <StoryVideoSlot src="/about/clip-desk-loop.mp4" label="Recording a YouTube tutorial" aspectClass="aspect-[1600/963]" />
-            <StoryImageSlot src="/about/photo-cafe-laptop.png" alt="Safdar Ali Coding YouTube channel banner: wide dark art with channel title, subscribe graphic, and social links" caption="YouTube banner — 1600×963" aspectClass="aspect-[1600/963] w-full min-h-0" />
+            <StoryImageSlot src="/about/photo-cafe-laptop.webp" alt="Safdar Ali Coding YouTube channel banner: wide dark art with channel title, subscribe graphic, and social links" caption="YouTube banner — 1600×963" aspectClass="aspect-[1600/963] w-full min-h-0" />
           </div>
         </section>
 
@@ -165,28 +165,28 @@ function page() {
             </div>
             <div className="min-h-0 min-w-0 sm:col-start-2 sm:row-start-1">
               <StoryBentoImage
-                src="/about/photo-swimming-pool.jpg"
+                src="/about/photo-swimming-pool.webp"
                 alt="Safdar at the swimming pool, water and deck in frame"
                 aspectClass="aspect-video"
               />
             </div>
             <div className="min-h-0 min-w-0 sm:col-start-1 sm:row-start-2">
               <StoryBentoPortraitTile
-                src="/about/photo-sunglasses-sitting.jpg"
+                src="/about/photo-sunglasses-sitting.webp"
                 alt="Safdar sitting outdoors wearing sunglasses, relaxed portrait"
                 objectPosition="object-top"
               />
             </div>
             <div className="min-h-0 min-w-0 sm:col-start-2 sm:row-start-2">
               <StoryBentoPortraitTile
-                src="/about/photo-cycling.jpg"
+                src="/about/photo-cycling.webp"
                 alt="Safdar cycling in Bengaluru, daylight ride"
                 objectPosition="object-top"
               />
             </div>
             <div className="flex min-h-0 min-w-0 justify-center sm:col-span-2 sm:row-start-3">
               <StoryBentoPortraitCenter
-                src="/about/photo-cube-teammates-bbq.jpg"
+                src="/about/photo-cube-teammates-bbq.webp"
                 alt="Cube teammates gathered for a barbecue, grilling and group moment"
                 width={899}
                 height={1599}
@@ -205,28 +205,28 @@ function page() {
           </p>
           <div className={`${sectionMediaTop} grid w-full min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto]`}>
             <StoryBentoImage
-              src="/about/photo-pondicherry-beach.jpg"
+              src="/about/photo-pondicherry-beach.webp"
               alt="Pondicherry beach, sand and shoreline"
               aspectClass="aspect-square w-full"
               plain
               className="lg:col-start-1 lg:row-start-1"
             />
             <StoryBentoImage
-              src="/about/photo-wander-cafe.jpg"
+              src="/about/photo-wander-cafe.webp"
               alt="Café interior, warm light and tables"
               aspectClass="aspect-[1511/1600] w-full"
               plain
               className="lg:col-start-2 lg:row-start-1"
             />
             <StoryBentoImage
-              src="/about/photo-wander-cycle.jpg"
+              src="/about/photo-wander-cycle.webp"
               alt="Cycle outdoors, square crop"
               aspectClass="aspect-square w-full"
               plain
               className="lg:col-start-1 lg:row-start-2"
             />
             <StoryBentoImage
-              src="/about/photo-airbnb-sunglasses.jpg"
+              src="/about/photo-airbnb-sunglasses.webp"
               alt="Safdar standing in an Airbnb wearing sunglasses"
               aspectClass="aspect-square w-full"
               plain

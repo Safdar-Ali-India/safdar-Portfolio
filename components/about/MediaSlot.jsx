@@ -6,7 +6,8 @@ import { useCallback, useLayoutEffect, useRef, useState } from "react";
 const placeholderClass =
   "flex min-h-[200px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-neutral-300/90 bg-gradient-to-br from-amber-100/35 via-neutral-100/80 to-orange-950/15 px-4 py-10 text-center text-sm text-neutral-600 dark:border-white/15 dark:from-amber-900/25 dark:via-night dark:to-orange-950/30 dark:text-ink/60";
 
-const imageSkeleton = "absolute inset-0 bg-neutral-200/40 animate-pulse dark:bg-white/[0.06]";
+const imageSkeleton =
+  "absolute inset-0 animate-pulse bg-neutral-900/5 dark:bg-white/[0.085]";
 
 const frameBorder =
   "overflow-hidden rounded-2xl border border-neutral-200/90 dark:border-white/10";
@@ -108,6 +109,8 @@ export function StoryVideoSlot({
   aspectClass = "aspect-video",
   intrinsic = false,
   capIntrinsicHeight = true,
+  poster,
+  preload = "metadata",
   /** Defer loading until near viewport to avoid empty tiles and bandwidth on scroll. */
   /** Default off: IntersectionObserver + React Strict Mode made clips stay blank; set true to defer off-screen mounts. */
   lazyVideo = false,
@@ -149,7 +152,8 @@ export function StoryVideoSlot({
             defaultMuted
             loop
             playsInline
-            preload="auto"
+            preload={preload}
+            poster={poster}
             className={`block h-auto w-full rounded-2xl object-contain contrast-[0.95] saturate-[0.92] ${cap}`}
             onError={onErr}
             onLoadedData={(e) => tryPlayVideo(e.currentTarget)}
@@ -174,7 +178,8 @@ export function StoryVideoSlot({
           defaultMuted
           loop
           playsInline
-          preload="auto"
+          preload={preload}
+          poster={poster}
           className="h-full w-full rounded-2xl object-cover contrast-[0.95] saturate-[0.92]"
           onError={onErr}
           onLoadedData={(e) => tryPlayVideo(e.currentTarget)}

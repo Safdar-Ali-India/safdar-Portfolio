@@ -1,6 +1,6 @@
 import Link from "next/link"
 import BackToHomeLink from "../../components/BackToHomeLink"
-import { SparklesCore } from "../../components/ui/sparkles"
+import DeferredSparkles from "../../components/ui/DeferredSparkles"
 import {
   StoryBentoImage,
   StoryBentoPortraitCenter,
@@ -66,7 +66,7 @@ function page() {
   return (
     <div className="relative pb-36 sm:pb-40">
       <div className="pointer-events-none fixed inset-0 -z-10 h-screen w-full" aria-hidden="true">
-        <SparklesCore
+        <DeferredSparkles
           id="aboutsparkles"
           background="transparent"
           minSize={0.6}
@@ -146,7 +146,13 @@ function page() {
             YouTube channel started as notes-to-self. Now it helps thousands of developers get unstuck.
           </p>
           <div className={`${sectionMediaTop} grid gap-6 sm:grid-cols-2`}>
-            <StoryVideoSlot src="/about/clip-desk-loop.mp4" label="Recording a YouTube tutorial" aspectClass="aspect-[1600/963]" />
+            <StoryVideoSlot
+              src="/about/clip-desk-loop.mp4"
+              poster="/about/poster-desk-loop.webp"
+              preload="auto"
+              label="Recording a YouTube tutorial"
+              aspectClass="aspect-[1600/963]"
+            />
             <StoryImageSlot
               priority
               src="/about/photo-cafe-laptop.webp"

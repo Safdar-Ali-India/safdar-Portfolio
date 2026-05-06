@@ -149,7 +149,7 @@ export function StoryVideoSlot({
             defaultMuted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
             className={`block h-auto w-full rounded-2xl object-contain contrast-[0.95] saturate-[0.92] ${cap}`}
             onError={onErr}
             onLoadedData={(e) => tryPlayVideo(e.currentTarget)}
@@ -174,7 +174,7 @@ export function StoryVideoSlot({
           defaultMuted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           className="h-full w-full rounded-2xl object-cover contrast-[0.95] saturate-[0.92]"
           onError={onErr}
           onLoadedData={(e) => tryPlayVideo(e.currentTarget)}
@@ -349,7 +349,7 @@ function BentoVideoInner({ src, label, onErr, className }) {
       defaultMuted
       loop
       playsInline
-      preload="metadata"
+      preload="auto"
       className={className}
       onError={onErr}
       onLoadedData={(e) => tryPlayVideo(e.currentTarget)}

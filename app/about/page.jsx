@@ -26,10 +26,10 @@ export const metadata = {
     description: "Story-led about page: engineering, creativity, Bengaluru life, travel, and highlights.",
     images: [
       {
-        url: `${SITE}/opengraph-image`,
+        url: "https://safdarali.in/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Safdar Ali — About",
+        alt: "Safdar Ali — Frontend Engineer Bengaluru",
       },
     ],
   },

@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import BackToHomeLink from "../../components/BackToHomeLink";
-import { SparklesCore } from "../../components/ui/sparkles";
+import DeferredSparkles from "../../components/ui/DeferredSparkles";
 
 import * as assets from "../../assets";
 
@@ -128,7 +128,7 @@ function page() {
   return (
     <div className="lg:h-screen">
       <div className="w-full absolute inset-0 h-screen -z-10" aria-hidden="true">
-          <SparklesCore
+          <DeferredSparkles
             id="tsparticlesfullpage"
             background="transparent"
             minSize={0.6}

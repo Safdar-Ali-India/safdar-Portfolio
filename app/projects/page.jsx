@@ -8,7 +8,7 @@ import BackToHomeLink from "../../components/BackToHomeLink"
 import ProjectCard from "../../components/ProjectCard"
 import Image from "next/image"
 
-import { SparklesCore } from "../../components/ui/sparkles"
+import DeferredSparkles from "../../components/ui/DeferredSparkles"
 
 import tritonhomellc from "../../assets/tritonhomellc.png"
 import independentmed from "../../assets/independentmed.png"
@@ -411,7 +411,7 @@ export default function page() {
   return (
     <section>
       <div className="w-full absolute inset-0 lg:h-screen -z-10" aria-hidden="true">
-        <SparklesCore id="tsparticlesfullpage" background="transparent" minSize={0.6} maxSize={1.4} particleDensity={100} className="w-full h-full" particleColor="#777" />
+        <DeferredSparkles id="tsparticlesfullpage" background="transparent" minSize={0.6} maxSize={1.4} particleDensity={100} className="w-full h-full" particleColor="#777" />
       </div>
       <div className="relative max-w-6xl mx-auto px-4 pb-20">
         <div className="relative mt-14">

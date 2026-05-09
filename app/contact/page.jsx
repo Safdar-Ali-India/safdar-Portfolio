@@ -1,6 +1,6 @@
 import Link from "next/link";
 import BackToHomeLink from "../../components/BackToHomeLink";
-import { SparklesCore } from "../../components/ui/sparkles";
+import DeferredSparkles from "../../components/ui/DeferredSparkles";
 import Contact from "../../components/Contact";
 
 const SITE = "https://safdarali.in";
@@ -24,7 +24,7 @@ export default function ContactPage() {
   return (
     <div>
       <div className="w-full absolute inset-0 min-h-screen -z-10" aria-hidden="true">
-        <SparklesCore
+        <DeferredSparkles
           id="tsparticlescontact"
           background="transparent"
           minSize={0.6}

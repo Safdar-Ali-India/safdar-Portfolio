@@ -6,7 +6,7 @@ import { PiEnvelopeSimpleThin, PiPersonSimpleWalkThin } from "react-icons/pi";
 import logo from "../assets/logo.jpeg";
 import Image from "next/image";
 import Contact from "./Contact";
-import { SparklesCore } from "./ui/sparkles";
+import DeferredSparkles from "./ui/DeferredSparkles";
 import { blogPosts } from "../data/blog-posts";
 import { featuredProjects } from "../data/featured-projects";
 
@@ -58,11 +58,24 @@ export default function HomePage() {
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossOrigin="anonymous"
         referrerPolicy="no-referrer"
+        media="print"
+        onLoad={(e) => {
+          e.currentTarget.media = "all";
+        }}
       />
+      <noscript>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+      </noscript>
 
       <div className="max-w-5xl mx-auto px-5">
         <div className="w-full absolute inset-0 h-screen -z-10" aria-hidden="true">
-          <SparklesCore
+          <DeferredSparkles
             id="tsparticlesfullpage"
             background="transparent"
             minSize={0.6}

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "about:images": "node scripts/optimize-about-images.mjs"
+    "about:images": "node scripts/optimize-about-images.mjs",
+    "favicon:ico": "node scripts/make-favicon-ico.mjs"
   },
   "dependencies": {
     "@tsparticles/engine": "^3.3.0",
@@ -37,6 +38,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.1",
     "ffmpeg-static": "^5.3.0",
+    "png-to-ico": "^3.0.1",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "5.4.2"

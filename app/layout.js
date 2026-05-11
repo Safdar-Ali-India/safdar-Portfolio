@@ -42,6 +42,13 @@ const googleSiteVerification =
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/favicon.png", sizes: "48x48", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   title: {
     default: "Safdar Ali — Next.js & React developer | Bengaluru, India",
     template: "%s | Safdar Ali",

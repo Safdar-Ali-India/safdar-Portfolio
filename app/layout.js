@@ -1,6 +1,7 @@
 import Theming from "../theme/Theming";
 import Header from "../components/Navbar";
 import Footer from "../components/Footer";
+import { ABOUT_PERSON_IMAGES, PERSON_ALTERNATE_NAMES } from "../lib/about-media-seo";
 import { CONTACT_EMAIL } from "../lib/site";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
@@ -14,10 +15,12 @@ const SITE_URL = "https://safdarali.in";
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${SITE_URL}#person`,
   name: "Safdar Ali",
+  alternateName: PERSON_ALTERNATE_NAMES,
   url: SITE_URL,
   jobTitle: "Software Engineer & Frontend Developer",
-  image: `${SITE_URL}/safdar-ali.jpg`,
+  image: ABOUT_PERSON_IMAGES,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Bengaluru",

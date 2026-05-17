@@ -47,6 +47,15 @@ const nextConfig = {
   async headers() {
     return [
       {
+        source: "/about/:file*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
         source: "/:path*",
         headers: securityHeaders,
       },

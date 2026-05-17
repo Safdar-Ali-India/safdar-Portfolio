@@ -3,11 +3,23 @@
 import Image from "next/image";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 
+/** About photos are pre-compressed WebP in /public — skip /_next/image to avoid cold re-encode latency. */
+const ABOUT_IMAGE = { unoptimized: true };
+
 const placeholderClass =
   "flex min-h-[200px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-neutral-300/90 bg-gradient-to-br from-amber-100/35 via-neutral-100/80 to-orange-950/15 px-4 py-10 text-center text-sm text-neutral-600 dark:border-white/15 dark:from-amber-900/25 dark:via-night dark:to-orange-950/30 dark:text-ink/60";
 
 const imageSkeleton =
-  "absolute inset-0 animate-pulse bg-neutral-900/5 dark:bg-white/[0.085]";
+  "pointer-events-none absolute inset-0 z-[1] animate-pulse bg-neutral-200/70 transition-opacity duration-300 dark:bg-white/[0.08]";
+
+const imageReveal =
+  "transition-opacity duration-300 ease-out contrast-[0.97] saturate-[0.93]";
+
+function useImageLoaded() {
+  const [loaded, setLoaded] = useState(false);
+  const onLoad = useCallback(() => setLoaded(true), []);
+  return { loaded, onLoad };
+}
 
 const frameBorder =
   "overflow-hidden rounded-2xl border border-neutral-200/90 dark:border-white/10";
@@ -194,7 +206,7 @@ export function StoryVideoSlot({
 
 export function StoryImageSlot({ src, alt, caption, aspectClass = "aspect-[4/3]", priority = false }) {
   const [fallback, setFallback] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const { loaded, onLoad } = useImageLoaded();
 
   if (fallback) {
     return (
@@ -208,18 +220,20 @@ export function StoryImageSlot({ src, alt, caption, aspectClass = "aspect-[4/3]"
   }
 
   return (
-    <figure className={`relative ${frameBorder} ${aspectClass} bg-neutral-100/40 dark:bg-white/[0.04]`}>
-      {!loaded ? <div className={imageSkeleton} aria-hidden /> : null}
+    <figure className={`relative ${frameBorder} ${aspectClass} bg-neutral-100/50 dark:bg-white/[0.06]`}>
+      <div className={`${imageSkeleton} ${loaded ? "opacity-0" : "opacity-100"}`} aria-hidden />
       <Image
         src={src}
         alt={alt}
+        title={alt}
         fill
         priority={priority}
         loading={priority ? undefined : "lazy"}
         decoding="async"
-        className="object-cover contrast-[0.97] saturate-[0.93]"
+        {...ABOUT_IMAGE}
+        className={`object-cover ${imageReveal} ${loaded ? "opacity-100" : "opacity-0"}`}
         sizes="(max-width:768px) 100vw, 45vw"
-        onLoadingComplete={() => setLoaded(true)}
+        onLoad={onLoad}
         onError={() => setFallback(true)}
       />
     </figure>
@@ -240,7 +254,7 @@ export function StoryImageNatural({
   fillCell = false,
 }) {
   const [fallback, setFallback] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const { loaded, onLoad } = useImageLoaded();
 
   if (fallback) {
     return (
@@ -258,16 +272,18 @@ export function StoryImageNatural({
       <figure
         className={`relative ${frameBorder} ${figureClassName} h-full min-h-[220px] w-full overflow-hidden bg-neutral-100/40 dark:bg-white/[0.06]`}
       >
-        {!loaded ? <div className={imageSkeleton} aria-hidden /> : null}
+        <div className={`${imageSkeleton} ${loaded ? "opacity-0" : "opacity-100"}`} aria-hidden />
         <Image
           src={src}
           alt={alt}
+          title={alt}
           fill
           loading="lazy"
           decoding="async"
-          className="object-contain p-1 contrast-[0.97] saturate-[0.93]"
+          {...ABOUT_IMAGE}
+          className={`object-contain p-1 ${imageReveal} ${loaded ? "opacity-100" : "opacity-0"}`}
           sizes="(max-width: 768px) 100vw, 45vw"
-          onLoadingComplete={() => setLoaded(true)}
+          onLoad={onLoad}
           onError={() => setFallback(true)}
         />
       </figure>
@@ -276,18 +292,20 @@ export function StoryImageNatural({
 
   return (
     <figure className={`relative ${frameBorder} ${figureClassName} bg-neutral-100/40 dark:bg-white/[0.04]`}>
-      {!loaded ? <div className={imageSkeleton} aria-hidden /> : null}
+      <div className={`${imageSkeleton} ${loaded ? "opacity-0" : "opacity-100"}`} aria-hidden />
       <Image
         src={src}
         alt={alt}
+        title={alt}
         width={width}
         height={height}
         loading="lazy"
         decoding="async"
+        {...ABOUT_IMAGE}
         sizes="(max-width: 768px) 100vw, 50vw"
-        className="h-auto w-full contrast-[0.97] saturate-[0.93]"
+        className={`h-auto w-full ${imageReveal} ${loaded ? "opacity-100" : "opacity-0"}`}
         style={{ width: "100%", height: "auto" }}
-        onLoadingComplete={() => setLoaded(true)}
+        onLoad={onLoad}
         onError={() => setFallback(true)}
       />
     </figure>
@@ -306,7 +324,7 @@ export function StoryBentoImage({
   priority = false,
 }) {
   const [fallback, setFallback] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const { loaded, onLoad } = useImageLoaded();
   const shell = plain ? plainTileFrame : bentoFrame;
   const figureClass = `relative ${shell} ${aspectClass} w-full ${className}`.trim();
 
@@ -322,25 +340,27 @@ export function StoryBentoImage({
   }
 
   return (
-    <figure className={`${figureClass} bg-neutral-100 dark:bg-neutral-950`}>
-      {!loaded ? <div className={imageSkeleton} aria-hidden /> : null}
+    <figure className={`${figureClass} bg-neutral-100/50 dark:bg-white/[0.06]`}>
+      <div className={`${imageSkeleton} ${loaded ? "opacity-0" : "opacity-100"}`} aria-hidden />
       <Image
         src={src}
         alt={alt}
+        title={alt}
         fill
         priority={priority}
         loading={priority ? undefined : "lazy"}
         decoding="async"
-        className={`object-cover contrast-[0.97] saturate-[0.93] ${objectPosition}`}
+        {...ABOUT_IMAGE}
+        className={`object-cover ${imageReveal} ${objectPosition} ${loaded ? "opacity-100" : "opacity-0"}`}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        onLoadingComplete={() => setLoaded(true)}
+        onLoad={onLoad}
         onError={() => setFallback(true)}
       />
     </figure>
   );
 }
 
-function BentoVideoInner({ src, label, onErr, className }) {
+function BentoVideoInner({ src, label, onErr, className, poster, preload = "metadata" }) {
   const vRef = useRef(null);
   useLayoutEffect(() => {
     tryPlayVideo(vRef.current);
@@ -354,7 +374,8 @@ function BentoVideoInner({ src, label, onErr, className }) {
       defaultMuted
       loop
       playsInline
-      preload="auto"
+      preload={preload}
+      poster={poster}
       className={className}
       onError={onErr}
       onLoadedData={(e) => tryPlayVideo(e.currentTarget)}
@@ -375,6 +396,8 @@ export function StoryBentoVideo({
   plain = false,
   className = "",
   lazyVideo = false,
+  poster,
+  preload = "metadata",
 }) {
   const [fallback, setFallback] = useState(false);
   const onErr = useCallback(() => setFallback(true), []);
@@ -399,14 +422,20 @@ export function StoryBentoVideo({
       return (
         <figure
           ref={ref}
-          className={`relative ${shell} h-full min-h-[min(55vw,300px)] w-full min-w-0 overflow-hidden bg-neutral-950 dark:bg-black sm:min-h-[320px]${extra}`}
+          className={`relative ${shell} h-full min-h-[min(55vw,300px)] w-full min-w-0 overflow-hidden bg-neutral-800/40 dark:bg-neutral-900/60 sm:min-h-[320px]${extra}`}
         >
+          {poster ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={poster} alt="" className="absolute inset-0 h-full w-full object-cover" aria-hidden />
+          ) : null}
           {!active ? <div className={videoSkeleton} aria-hidden /> : null}
           {active ? (
             <BentoVideoInner
               src={src}
               label={label}
               onErr={onErr}
+              poster={poster}
+              preload={preload}
               className="absolute inset-0 h-full w-full object-cover contrast-[0.95] saturate-[0.92]"
             />
           ) : null}
@@ -414,13 +443,19 @@ export function StoryBentoVideo({
       );
     }
     return (
-      <figure ref={ref} className={`relative ${shell} aspect-[478/850] w-full overflow-hidden bg-neutral-950 dark:bg-black${extra}`}>
+      <figure ref={ref} className={`relative ${shell} aspect-[478/850] w-full overflow-hidden bg-neutral-800/40 dark:bg-neutral-900/60${extra}`}>
+        {poster ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={poster} alt="" className="absolute inset-0 h-full w-full object-cover" aria-hidden />
+        ) : null}
         {!active ? <div className={videoSkeleton} aria-hidden /> : null}
         {active ? (
           <BentoVideoInner
             src={src}
             label={label}
             onErr={onErr}
+            poster={poster}
+            preload={preload}
             className="absolute inset-0 h-full w-full object-cover contrast-[0.95] saturate-[0.92]"
           />
         ) : null}
@@ -429,13 +464,19 @@ export function StoryBentoVideo({
   }
 
   return (
-    <figure ref={ref} className={`relative ${shell} ${aspectClass} w-full${extra}`}>
+    <figure ref={ref} className={`relative ${shell} ${aspectClass} w-full overflow-hidden bg-neutral-800/40 dark:bg-neutral-900/60${extra}`}>
+      {poster ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={poster} alt="" className="absolute inset-0 h-full w-full object-cover" aria-hidden />
+      ) : null}
       {!active ? <div className={videoSkeleton} aria-hidden /> : null}
       {active ? (
         <BentoVideoInner
           src={src}
           label={label}
           onErr={onErr}
+          poster={poster}
+          preload={preload}
           className="absolute inset-0 h-full w-full object-cover contrast-[0.95] saturate-[0.92]"
         />
       ) : null}
@@ -448,7 +489,7 @@ export function StoryBentoVideo({
  */
 export function StoryBentoPortraitTile({ src, alt, objectPosition = "object-top", priority = false }) {
   const [fallback, setFallback] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const { loaded, onLoad } = useImageLoaded();
 
   if (fallback) {
     return (
@@ -465,19 +506,21 @@ export function StoryBentoPortraitTile({ src, alt, objectPosition = "object-top"
 
   return (
     <figure
-      className={`relative ${bentoFrame} aspect-[9/16] w-full max-h-[min(40vh,360px)] overflow-hidden sm:max-h-[min(42vh,380px)] bg-neutral-100/40 dark:bg-white/[0.04]`}
+      className={`relative ${bentoFrame} aspect-[9/16] w-full max-h-[min(40vh,360px)] overflow-hidden sm:max-h-[min(42vh,380px)] bg-neutral-100/50 dark:bg-white/[0.06]`}
     >
-      {!loaded ? <div className={imageSkeleton} aria-hidden /> : null}
+      <div className={`${imageSkeleton} ${loaded ? "opacity-0" : "opacity-100"}`} aria-hidden />
       <Image
         src={src}
         alt={alt}
+        title={alt}
         fill
         priority={priority}
         loading={priority ? undefined : "lazy"}
         decoding="async"
-        className={`object-cover contrast-[0.97] saturate-[0.93] ${objectPosition}`}
+        {...ABOUT_IMAGE}
+        className={`object-cover ${imageReveal} ${objectPosition} ${loaded ? "opacity-100" : "opacity-0"}`}
         sizes="(max-width: 640px) 100vw, 45vw"
-        onLoadingComplete={() => setLoaded(true)}
+        onLoad={onLoad}
         onError={() => setFallback(true)}
       />
     </figure>
@@ -490,7 +533,7 @@ const portraitHeroFrame =
 /** Tall portrait: intrinsic 899×1599 (tweak props), object-contain + max-height — never squashed to a wide box. */
 export function StoryBentoPortraitCenter({ src, alt, width = 899, height = 1599, priority = false }) {
   const [fallback, setFallback] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const { loaded, onLoad } = useImageLoaded();
 
   if (fallback) {
     return (
@@ -504,20 +547,22 @@ export function StoryBentoPortraitCenter({ src, alt, width = 899, height = 1599,
   }
 
   return (
-    <figure className={`relative mx-auto w-fit max-w-full ${portraitHeroFrame} bg-neutral-100/40 dark:bg-white/[0.04]`}>
-      {!loaded ? <div className={imageSkeleton} aria-hidden /> : null}
+    <figure className={`relative mx-auto w-fit max-w-full ${portraitHeroFrame} bg-neutral-100/50 dark:bg-white/[0.06]`}>
+      <div className={`${imageSkeleton} ${loaded ? "opacity-0" : "opacity-100"}`} aria-hidden />
       <Image
         src={src}
         alt={alt}
+        title={alt}
         width={width}
         height={height}
         priority={priority}
         loading={priority ? undefined : "lazy"}
         decoding="async"
+        {...ABOUT_IMAGE}
         sizes="(max-width: 640px) 92vw, 45vw"
-        className="block h-auto w-auto max-w-full object-contain object-center contrast-[0.97] saturate-[0.93] max-h-[min(42vh,360px)] sm:max-h-[min(46vh,420px)] md:max-h-[min(50vh,480px)]"
+        className={`block h-auto w-auto max-w-full object-contain object-center ${imageReveal} max-h-[min(42vh,360px)] sm:max-h-[min(46vh,420px)] md:max-h-[min(50vh,480px)] ${loaded ? "opacity-100" : "opacity-0"}`}
         style={{ width: "auto", height: "auto" }}
-        onLoadingComplete={() => setLoaded(true)}
+        onLoad={onLoad}
         onError={() => setFallback(true)}
       />
     </figure>

@@ -5,8 +5,9 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 
-# Sitemap
+# Sitemaps
 Sitemap: https://safdarali.in/sitemap.xml
+Sitemap: https://safdarali.in/sitemap-images.xml
 
 # LLMs.txt — AI crawler guidance
 # https://safdarali.in/llms.txt

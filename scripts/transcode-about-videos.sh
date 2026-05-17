@@ -30,5 +30,14 @@ ffmpeg -y -i "$INPUT_CRICKET" \
   -vf "scale=1280:-2" -an -movflags +faststart \
   "$OUT/clip-cricket-bowl.mp4"
 
+FFMPEG="${FFMPEG:-ffmpeg}"
+for pair in "clip-desk-loop:poster-desk-loop.webp" "clip-cricket-bowl:poster-cricket-bowl.webp" "clip-bike-riding:poster-bike-riding.webp"; do
+  clip="${pair%%:*}"
+  poster="${pair##*:}"
+  if [[ -f "$OUT/${clip}.mp4" ]]; then
+    "$FFMPEG" -y -ss 0.5 -i "$OUT/${clip}.mp4" -vframes 1 -vf "scale=960:-2" "$OUT/$poster" 2>/dev/null || true
+  fi
+done
+
 echo "Done. Sizes:"
-ls -lh "$OUT"/*.mp4
+ls -lh "$OUT"/*.mp4 "$OUT"/poster-*.webp 2>/dev/null || ls -lh "$OUT"/*.mp4

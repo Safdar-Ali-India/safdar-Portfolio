@@ -9,22 +9,49 @@ import {
   StoryImageSlot,
   StoryVideoSlot,
 } from "../../components/about/MediaSlot"
+import AboutPageJsonLd from "../../components/about/AboutPageJsonLd"
 import WhereImBasedSection from "../../components/about/WhereImBasedSection"
+import { ABOUT_PAGE_URL, ABOUT_PHOTOS, absoluteMediaUrl } from "../../lib/about-media-seo"
 
-const SITE = "https://safdarali.in"
+const heroPhoto = ABOUT_PHOTOS[0]
 
 export const metadata = {
-  title: "About",
-  description: "About Safdar Ali — frontend engineer at Cube, YouTuber, Bengaluru. Create & code, life beyond the keyboard, travel—and how to collaborate.",
-  keywords: ["Safdar Ali YouTube", "React developer India", "Next.js developer Bengaluru", "Safdar Ali developer", "frontend developer Cube"],
+  title: "About Safdar Ali — Photos, Story & Bengaluru Life",
+  description:
+    "About Safdar Ali — frontend engineer at Cube, YouTuber, and React developer in Bengaluru. Photos, cricket, cycling, travel, and how to collaborate.",
+  keywords: [
+    "Safdar Ali",
+    "Safdar Ali photos",
+    "Safdar Ali images",
+    "Safdar Ali developer",
+    "Safdar Ali YouTube",
+    "Safdar Ali Bengaluru",
+    "React developer India",
+    "Next.js developer Bengaluru",
+    "frontend developer Cube",
+  ],
   alternates: {
-    canonical: `${SITE}/about`,
+    canonical: ABOUT_PAGE_URL,
   },
   openGraph: {
-    title: "About | Safdar Ali",
-    url: `${SITE}/about`,
-    description: "Story-led about page: engineering, creativity, Bengaluru life, travel, and highlights.",
+    title: "About Safdar Ali — Photos & Story",
+    url: ABOUT_PAGE_URL,
+    description:
+      "Photos and story of Safdar Ali — engineering, YouTube, cricket, cycling, and travel from Bengaluru.",
+    type: "profile",
     images: [
+      {
+        url: absoluteMediaUrl(heroPhoto.path),
+        width: heroPhoto.width,
+        height: heroPhoto.height,
+        alt: heroPhoto.alt,
+      },
+      {
+        url: absoluteMediaUrl("/safdar-ali.jpg"),
+        width: 1200,
+        height: 1200,
+        alt: "Safdar Ali — software engineer and Next.js developer in Bengaluru, India",
+      },
       {
         url: "https://safdarali.in/opengraph-image",
         width: 1200,
@@ -32,6 +59,21 @@ export const metadata = {
         alt: "Safdar Ali — Frontend Engineer Bengaluru",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Safdar Ali — Photos & Story",
+    description: "Photos and story of Safdar Ali — developer, YouTuber, Bengaluru.",
+    images: [absoluteMediaUrl(heroPhoto.path)],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
   },
 }
 
@@ -64,6 +106,15 @@ const sectionMediaTop = "mt-10"
 
 function page() {
   return (
+    <>
+      <AboutPageJsonLd />
+      <link
+        rel="preload"
+        as="image"
+        href="/about/photo-hero-desk-wide.webp"
+        type="image/webp"
+        fetchPriority="high"
+      />
     <div className="relative pb-36 sm:pb-40">
       <div className="pointer-events-none fixed inset-0 -z-10 h-screen w-full" aria-hidden="true">
         <DeferredSparkles
@@ -79,7 +130,7 @@ function page() {
 
       <article className="relative mx-auto max-w-6xl px-4 pt-12 sm:pt-16 lg:px-6">
         <header className="relative mb-12 mt-10 sm:mt-14">
-          <h1 className={pageTitleClass}>About</h1>
+          <h1 className={pageTitleClass}>About Safdar Ali</h1>
           <BackToHomeLink />
         </header>
 
@@ -89,7 +140,7 @@ function page() {
             <StoryImageSlot
               priority
               src="/about/photo-hero-desk-wide.webp"
-              alt="Safdar at his desk with monitors, keyboard, and coding setup indoors"
+              alt={heroPhoto.alt}
               caption=""
               aspectClass="min-h-[280px] aspect-[4/5] sm:min-h-[360px]"
             />
@@ -149,14 +200,13 @@ function page() {
             <StoryVideoSlot
               src="/about/clip-desk-loop.mp4"
               poster="/about/poster-desk-loop.webp"
-              preload="auto"
+              preload="metadata"
               label="Recording a YouTube tutorial"
               aspectClass="aspect-[1600/963]"
             />
             <StoryImageSlot
-              priority
               src="/about/photo-cafe-laptop.webp"
-              alt="Safdar Ali Coding YouTube channel banner: wide dark art with channel title, subscribe graphic, and social links"
+              alt={ABOUT_PHOTOS[1].alt}
               caption="YouTube banner — 1600×963"
               aspectClass="aspect-[1600/963] w-full min-h-0"
             />
@@ -173,33 +223,37 @@ function page() {
           </p>
           <div className={`${sectionMediaTop} grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:items-start`}>
             <div className="min-h-0 min-w-0 sm:col-start-1 sm:row-start-1">
-              <StoryBentoVideo src="/about/clip-cricket-bowl.mp4" label="Bowling at the cricket ground" />
+              <StoryBentoVideo
+                src="/about/clip-cricket-bowl.mp4"
+                poster="/about/poster-cricket-bowl.webp"
+                label="Bowling at the cricket ground"
+              />
             </div>
             <div className="min-h-0 min-w-0 sm:col-start-2 sm:row-start-1">
               <StoryBentoImage
                 src="/about/photo-swimming-pool.webp"
-                alt="Safdar at the swimming pool, water and deck in frame"
+                alt={ABOUT_PHOTOS[2].alt}
                 aspectClass="aspect-video"
               />
             </div>
             <div className="min-h-0 min-w-0 sm:col-start-1 sm:row-start-2">
               <StoryBentoPortraitTile
                 src="/about/photo-sunglasses-sitting.webp"
-                alt="Safdar sitting outdoors wearing sunglasses, relaxed portrait"
+                alt={ABOUT_PHOTOS[3].alt}
                 objectPosition="object-top"
               />
             </div>
             <div className="min-h-0 min-w-0 sm:col-start-2 sm:row-start-2">
               <StoryBentoPortraitTile
                 src="/about/photo-cycling.webp"
-                alt="Safdar cycling in Bengaluru, daylight ride"
+                alt={ABOUT_PHOTOS[4].alt}
                 objectPosition="object-top"
               />
             </div>
             <div className="flex min-h-0 min-w-0 justify-center sm:col-span-2 sm:row-start-3">
               <StoryBentoPortraitCenter
                 src="/about/photo-cube-teammates-bbq.webp"
-                alt="Cube teammates gathered for a barbecue, grilling and group moment"
+                alt={ABOUT_PHOTOS[5].alt}
                 width={899}
                 height={1599}
               />
@@ -218,34 +272,35 @@ function page() {
           <div className={`${sectionMediaTop} grid w-full min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto]`}>
             <StoryBentoImage
               src="/about/photo-pondicherry-beach.webp"
-              alt="Pondicherry beach, sand and shoreline"
+              alt={ABOUT_PHOTOS[6].alt}
               aspectClass="aspect-square w-full"
               plain
               className="lg:col-start-1 lg:row-start-1"
             />
             <StoryBentoImage
               src="/about/photo-wander-cafe.webp"
-              alt="Café interior, warm light and tables"
+              alt={ABOUT_PHOTOS[7].alt}
               aspectClass="aspect-[1511/1600] w-full"
               plain
               className="lg:col-start-2 lg:row-start-1"
             />
             <StoryBentoImage
               src="/about/photo-wander-cycle.webp"
-              alt="Cycle outdoors, square crop"
+              alt={ABOUT_PHOTOS[8].alt}
               aspectClass="aspect-square w-full"
               plain
               className="lg:col-start-1 lg:row-start-2"
             />
             <StoryBentoImage
               src="/about/photo-airbnb-sunglasses.webp"
-              alt="Safdar standing in an Airbnb wearing sunglasses"
+              alt={ABOUT_PHOTOS[9].alt}
               aspectClass="aspect-square w-full"
               plain
               className="lg:col-start-2 lg:row-start-2"
             />
             <StoryBentoVideo
               src="/about/clip-bike-riding.mp4"
+              poster="/about/poster-bike-riding.webp"
               label="Bike riding clip"
               contain
               fillParent
@@ -270,6 +325,7 @@ function page() {
         </footer>
       </article>
     </div>
+    </>
   )
 }
 

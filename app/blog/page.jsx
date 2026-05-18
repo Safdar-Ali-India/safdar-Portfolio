@@ -48,7 +48,7 @@ export default function BlogPage() {
         </div>
 
         <p className="mt-2 text-sm text-neutral-500 text-center dark:text-ink/50">
-          Native posts coming soon at safdarali.in — currently writing on{" "}
+          Native case studies on safdarali.in — also on{" "}
           <a href="https://dev.to/safdarali25" className="underline underline-offset-2">
             DEV
           </a>{" "}
@@ -73,20 +73,31 @@ export default function BlogPage() {
         </p>
 
         <ul className="mt-12 space-y-10">
-          {blogPosts.map((post) => (
+          {blogPosts.map((post) => {
+            const isNative = post.native || post.href.startsWith("/");
+            return (
             <li
               key={post.href}
               className="border border-neutral-200 rounded-xl p-6 bg-white/80 dark:border-white/[0.1] dark:bg-white/[0.04]"
             >
               <p className="text-xs uppercase font-bold text-neutral-500 dark:text-ink/60 mb-2">{post.date}</p>
               <div className="mb-2 flex flex-wrap items-center gap-2">
+                {post.native ? (
+                  <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300">
+                    On safdarali.in
+                  </span>
+                ) : null}
                 {post.popular ? (
                   <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-900/30 dark:text-amber-300">
                     Most popular
                   </span>
                 ) : null}
                 <h2 className="text-xl font-bold text-neutral-950 dark:text-ink">
-                  <Link href={post.href} target="_blank" rel="noopener noreferrer" className="hover:underline dark:decoration-white/35">
+                  <Link
+                    href={post.href}
+                    {...(isNative ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                    className="hover:underline dark:decoration-white/35"
+                  >
                     {post.title}
                   </Link>
                 </h2>
@@ -95,14 +106,14 @@ export default function BlogPage() {
               <p className="text-xs text-neutral-500 dark:text-ink/65 mb-4">{post.reactions}</p>
               <Link
                 href={post.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(isNative ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                 className="inline-block text-sm font-semibold rounded-2xl border border-slate-400/60 bg-white/90 text-slate-900 backdrop-blur-md px-4 py-2 hover:bg-neutral-50 dark:border-white/[0.12] dark:bg-white/[0.06] dark:text-ink dark:hover:bg-white/[0.1]"
               >
-                {post.href.includes("dev.to") ? "Read on DEV →" : "Read on Medium →"}
+                {isNative ? "Read article →" : post.href.includes("dev.to") ? "Read on DEV →" : "Read on Medium →"}
               </Link>
             </li>
-          ))}
+            );
+          })}
         </ul>
 
         <p className="mt-12 text-center text-sm text-neutral-500 dark:text-ink/70">

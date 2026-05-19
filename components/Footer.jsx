@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+// Optional legal links (Privacy / Terms): import LegalLinks from "./legal/LegalLinks";
+// and render <LegalLinks className="mt-8" /> below the quote when you choose placement.
 
 const QUOTES = [
   {

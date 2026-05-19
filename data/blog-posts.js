@@ -2,12 +2,24 @@
 export const blogPosts = [
   {
     date: "May 2026",
+    title: "React Server Components vs Client Components — When to Use Which",
+    reactions: "safdarali.in · Guide",
+    popular: true,
+    native: true,
+    subTitle:
+      "Decision flowchart, three production patterns, bundle −38%, and the mistakes that inflate client JS.",
+    excerpt:
+      "Practical RSC vs client guide for Next.js App Router — when to use each, real code, bundle before/after, and performance impact.",
+    href: "/blog/rsc-vs-client-components",
+  },
+  {
+    date: "May 2026",
     title: "How I Cut Load Time by 60% Using Next.js App Router",
     reactions: "safdarali.in · Case study",
     popular: true,
     native: true,
     subTitle:
-      "Production case study from Adsclique Media — LCP 4.2s → 1.7s, Lighthouse 54 → 91, with the exact App Router, next/image, and caching steps.",
+      "Production case study from a client marketing site — LCP 4.2s → 1.7s, Lighthouse 54 → 91, with the exact App Router, next/image, and caching steps.",
     excerpt:
       "A real production case study — Pages Router to App Router, next/image, next/font, Server Components, and CDN caching with before/after metrics.",
     href: "/blog/nextjs-performance-60-percent",

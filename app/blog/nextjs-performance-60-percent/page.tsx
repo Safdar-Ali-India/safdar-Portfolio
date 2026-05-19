@@ -5,11 +5,12 @@ import DeferredSparkles from "../../../components/ui/DeferredSparkles";
 
 const SITE = "https://safdarali.in";
 const CANONICAL = `${SITE}/blog/nextjs-performance-60-percent`;
+const OG_IMAGE = `${SITE}/opengraph-image`;
 
 export const metadata: Metadata = {
   title: "How I Cut Load Time by 60% Using Next.js App Router",
   description:
-    "A real production case study from a frontend engineer at a Sequoia-backed startup — exactly what I changed, why it worked, and the metrics before and after.",
+    "A real production case study from a frontend engineer — exactly what I changed, why it worked, and the metrics before and after.",
   keywords: [
     "Next.js App Router performance",
     "Next.js LCP optimization",
@@ -31,12 +32,21 @@ export const metadata: Metadata = {
     authors: ["Safdar Ali"],
     description:
       "Production case study: Pages Router to App Router, next/image, next/font, RSC data fetching, and CDN caching — with before/after metrics.",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Safdar Ali — Next.js and React developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "How I Cut Load Time by 60% Using Next.js App Router",
     description:
-      "Real metrics: LCP 4.2s → 1.7s, Lighthouse 54 → 91. What I changed at Adsclique Media and why it worked.",
+      "Real metrics: LCP 4.2s → 1.7s, Lighthouse 54 → 91. What I changed on a client marketing site and why it worked.",
+    images: [OG_IMAGE],
   },
   robots: {
     index: true,
@@ -66,7 +76,7 @@ const blogPostingLd = {
   headline: "How I Cut Load Time by 60% Using Next.js App Router",
   description:
     "A real production case study — Pages Router to App Router, next/image, next/font, Server Components, and caching headers with before/after metrics.",
-  image: `${SITE}/opengraph-image`,
+  image: OG_IMAGE,
   datePublished: "2026-05-17",
   dateModified: "2026-05-17",
   author: {
@@ -132,8 +142,8 @@ export default function NextjsPerformancePostPage() {
 
         <div className={`${prose} space-y-6`}>
           <p>
-            I&apos;m Safdar Ali. In early 2024 I was the frontend lead on a client marketing site at{" "}
-            <strong>Adsclique Media</strong>, a US digital agency. The stack was Next.js, but the site behaved like a
+            I&apos;m Safdar Ali. In early 2024 I was the frontend lead on a client marketing site for{" "}
+            a US digital agency. The stack was Next.js, but the site behaved like a
             2019 SPA: heavy client bundles, hero images served as full-resolution PNGs, and fonts pulled in through{" "}
             <code className="rounded bg-neutral-200/80 px-1.5 py-0.5 text-sm dark:bg-white/10">@import</code> in global
             CSS. Lighthouse on production hovered around the mid-50s. Nobody cared until the client opened the site on

@@ -122,15 +122,14 @@ export function StoryVideoSlot({
   intrinsic = false,
   capIntrinsicHeight = true,
   poster,
-  preload = "metadata",
-  /** Defer loading until near viewport to avoid empty tiles and bandwidth on scroll. */
-  /** Default off: IntersectionObserver + React Strict Mode made clips stay blank; set true to defer off-screen mounts. */
-  lazyVideo = false,
+  preload = "none",
+  lazyVideo = true,
 }) {
   const [fallback, setFallback] = useState(false);
   const onErr = useCallback(() => setFallback(true), []);
   const { ref, active } = useVideoInView(lazyVideo);
   const videoRef = useRef(null);
+  const videoPreload = active ? (preload === "none" ? "metadata" : preload) : "none";
 
   useLayoutEffect(() => {
     if (!active) return;
@@ -164,7 +163,7 @@ export function StoryVideoSlot({
             defaultMuted
             loop
             playsInline
-            preload={preload}
+            preload={videoPreload}
             poster={poster}
             className={`block h-auto w-full rounded-2xl object-contain contrast-[0.95] saturate-[0.92] ${cap}`}
             onError={onErr}
@@ -190,7 +189,7 @@ export function StoryVideoSlot({
           defaultMuted
           loop
           playsInline
-          preload={preload}
+          preload={videoPreload}
           poster={poster}
           className="h-full w-full rounded-2xl object-cover contrast-[0.95] saturate-[0.92]"
           onError={onErr}
@@ -360,7 +359,7 @@ export function StoryBentoImage({
   );
 }
 
-function BentoVideoInner({ src, label, onErr, className, poster, preload = "metadata" }) {
+function BentoVideoInner({ src, label, onErr, className, poster, preload = "none" }) {
   const vRef = useRef(null);
   useLayoutEffect(() => {
     tryPlayVideo(vRef.current);
@@ -395,15 +394,16 @@ export function StoryBentoVideo({
   fillParent = false,
   plain = false,
   className = "",
-  lazyVideo = false,
+  lazyVideo = true,
   poster,
-  preload = "metadata",
+  preload = "none",
 }) {
   const [fallback, setFallback] = useState(false);
   const onErr = useCallback(() => setFallback(true), []);
   const shell = plain ? plainTileFrame : bentoFrame;
   const extra = className ? ` ${className}` : "";
   const { ref, active } = useVideoInView(lazyVideo);
+  const videoPreload = active ? (preload === "none" ? "metadata" : preload) : "none";
 
   if (fallback) {
     return (
@@ -435,7 +435,7 @@ export function StoryBentoVideo({
               label={label}
               onErr={onErr}
               poster={poster}
-              preload={preload}
+              preload={videoPreload}
               className="absolute inset-0 h-full w-full object-cover contrast-[0.95] saturate-[0.92]"
             />
           ) : null}
@@ -446,7 +446,7 @@ export function StoryBentoVideo({
       <figure ref={ref} className={`relative ${shell} aspect-[478/850] w-full overflow-hidden bg-neutral-800/40 dark:bg-neutral-900/60${extra}`}>
         {poster ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={poster} alt="" className="absolute inset-0 h-full w-full object-cover" aria-hidden />
+          <img src={poster} alt="" className="absolute inset-0 h-full w-full object-cover" aria-hidden loading="lazy" decoding="async" />
         ) : null}
         {!active ? <div className={videoSkeleton} aria-hidden /> : null}
         {active ? (
@@ -455,7 +455,7 @@ export function StoryBentoVideo({
             label={label}
             onErr={onErr}
             poster={poster}
-            preload={preload}
+            preload={videoPreload}
             className="absolute inset-0 h-full w-full object-cover contrast-[0.95] saturate-[0.92]"
           />
         ) : null}
@@ -476,7 +476,7 @@ export function StoryBentoVideo({
           label={label}
           onErr={onErr}
           poster={poster}
-          preload={preload}
+          preload={videoPreload}
           className="absolute inset-0 h-full w-full object-cover contrast-[0.95] saturate-[0.92]"
         />
       ) : null}

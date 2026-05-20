@@ -1,9 +1,7 @@
 import Link from "next/link"
 import { SiGithub, SiInstagram, SiLinkedin, SiYoutube } from "react-icons/si"
+import LazyGoogleMap from "./LazyGoogleMap"
 import { socialLinks } from "../../lib/social-links"
-
-const mapEmbedSrc =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.84916296526!2d77.09510031640759!3d12.953790614097319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b43e6d%3A0xf8dfc2e01ac4ecb!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1709836800000!5m2!1sen!2sin"
 
 const linkClass =
   "underline font-semibold text-neutral-900 decoration-neutral-400/80 underline-offset-2 hover:text-neutral-950 dark:text-ink dark:decoration-white/30 dark:hover:text-ink"
@@ -66,20 +64,7 @@ export default function WhereImBasedSection() {
 
         {/* Map + 2×2: ~50/50 split so each tile is ~¼ of bento width × full height — not ¼ of entire article. */}
         <div className="grid min-h-0 min-w-0 grid-cols-1 items-stretch gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1.08fr)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
-          <div className="relative aspect-[16/11] min-h-[200px] overflow-hidden rounded-2xl border border-neutral-200/90 bg-neutral-100/80 ring-1 ring-neutral-200/80 dark:border-white/10 dark:bg-night/40 dark:ring-white/10 sm:aspect-[16/10] sm:min-h-[220px] md:aspect-auto md:min-h-[260px] md:h-full lg:min-h-[min(100%,300px)]">
-            <iframe
-              title="Bengaluru on Google Maps"
-              src={mapEmbedSrc}
-              className="absolute inset-0 h-full w-full border-0 grayscale-[0.12] sepia-[0.05] dark:opacity-[0.94]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-            <span
-              className="pointer-events-none absolute bottom-[18%] left-1/2 z-[1] h-3.5 w-3.5 -translate-x-1/2 rounded-full border-2 border-white bg-sky-500 shadow-[0_0_0_5px_rgba(14,165,233,0.22)] dark:border-night md:h-4 md:w-4 md:shadow-[0_0_0_6px_rgba(14,165,233,0.25)]"
-              aria-hidden
-            />
-          </div>
+          <LazyGoogleMap />
 
           <div className="grid min-h-0 min-w-0 grid-cols-2 grid-rows-2 gap-4 md:h-full md:min-h-[260px] md:auto-rows-[minmax(0,1fr)]">
             <SocialTile

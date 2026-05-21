@@ -1,8 +1,8 @@
 import Theming from "../theme/Theming";
 import Header from "../components/Navbar";
 import Footer from "../components/Footer";
-import { ABOUT_PERSON_IMAGES, PERSON_ALTERNATE_NAMES } from "../lib/about-media-seo";
-import { CONTACT_EMAIL } from "../lib/site";
+import JsonLd from "../components/seo/JsonLd";
+import { buildSiteGraph } from "../lib/structured-data";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
@@ -12,32 +12,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 const SITE_URL = "https://safdarali.in";
 
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": `${SITE_URL}#person`,
-  name: "Safdar Ali",
-  alternateName: PERSON_ALTERNATE_NAMES,
-  url: SITE_URL,
-  jobTitle: "Software Engineer & Frontend Developer",
-  image: ABOUT_PERSON_IMAGES,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Bengaluru",
-    addressRegion: "Karnataka",
-    addressCountry: "IN",
-  },
-  email: CONTACT_EMAIL,
-  sameAs: [
-    "https://github.com/Safdar-Ali-India",
-    "https://www.linkedin.com/in/safdarali25/",
-    "https://www.youtube.com/@safdarali_",
-    "https://twitter.com/safdarali___",
-    "https://www.instagram.com/codewithsafdar",
-    "https://dev.to/safdarali25",
-    "https://linktr.ee/safdaralii",
-  ],
-};
+const siteGraph = buildSiteGraph();
 
 /** Google Search Console (HTML tag method). Override locally with NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION if you rotate the token. */
 const googleSiteVerification =
@@ -107,10 +82,7 @@ export default function RootLayout({ children }) {
         <a href="#main-content" className="skip-to-main">
           Skip to main content
         </a>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-        />
+        <JsonLd data={siteGraph} />
         <Theming>
           <Header />
           <main id="main-content" tabIndex={-1}>

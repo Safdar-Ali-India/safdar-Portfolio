@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BackToHomeLink from "../../../components/BackToHomeLink";
+import PageStructuredData from "../../../components/seo/PageStructuredData";
 import DeferredSparkles from "../../../components/ui/DeferredSparkles";
+import { buildBlogPostingGraph } from "../../../lib/structured-data";
 
 const SITE = "https://safdarali.in";
 const CANONICAL = `${SITE}/blog/nextjs-performance-60-percent`;
@@ -70,38 +72,20 @@ const preClass =
 
 const codeClass = "font-mono text-[0.8125rem]";
 
-const blogPostingLd = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
+const blogGraph = buildBlogPostingGraph({
+  canonical: CANONICAL,
   headline: "How I Cut Load Time by 60% Using Next.js App Router",
   description:
     "A real production case study — Pages Router to App Router, next/image, next/font, Server Components, and caching headers with before/after metrics.",
-  image: OG_IMAGE,
   datePublished: "2026-05-17",
   dateModified: "2026-05-17",
-  author: {
-    "@type": "Person",
-    name: "Safdar Ali",
-    url: SITE,
-  },
-  publisher: {
-    "@type": "Person",
-    name: "Safdar Ali",
-    url: SITE,
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": CANONICAL,
-  },
-};
+  image: OG_IMAGE,
+});
 
 export default function NextjsPerformancePostPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingLd) }}
-      />
+      <PageStructuredData graph={blogGraph} />
       <div className="w-full absolute inset-0 min-h-screen -z-10" aria-hidden="true">
         <DeferredSparkles
           id="tsparticlesblogpost"

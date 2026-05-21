@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LegalPageLayout, { h2Class, linkClass } from "../../components/legal/LegalPageLayout";
+import PageStructuredData from "../../components/seo/PageStructuredData";
 import {
   DATA_CONTROLLER,
   DATA_CONTROLLER_LOCATION,
@@ -9,6 +10,7 @@ import {
   SITE_NAME,
   SITE_URL,
 } from "../../lib/legal-config";
+import { buildLegalPageGraph } from "../../lib/structured-data";
 
 export const metadata = {
   title: "Privacy Policy",
@@ -30,6 +32,15 @@ export const metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
+    <>
+      <PageStructuredData
+        graph={buildLegalPageGraph({
+          canonical: LEGAL_PAGES.privacy.canonical,
+          title: "Privacy Policy",
+          description:
+            "How Safdar Ali (safdarali.in) collects, uses, and protects personal data — including rights for visitors in the EU, UK, and United States.",
+        })}
+      />
     <LegalPageLayout
       title="Privacy Policy"
       intro="This notice explains how personal data is handled when you visit safdarali.in. It is written for visitors in India, the European Economic Area (EEA), the United Kingdom, and the United States."
@@ -278,5 +289,6 @@ export default function PrivacyPolicyPage() {
         .
       </p>
     </LegalPageLayout>
+    </>
   );
 }

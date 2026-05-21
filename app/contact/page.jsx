@@ -2,6 +2,8 @@ import Link from "next/link";
 import BackToHomeLink from "../../components/BackToHomeLink";
 import DeferredSparkles from "../../components/ui/DeferredSparkles";
 import Contact from "../../components/Contact";
+import PageStructuredData from "../../components/seo/PageStructuredData";
+import { buildContactPageGraph } from "../../lib/structured-data";
 
 const SITE = "https://safdarali.in";
 
@@ -22,6 +24,8 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
+    <>
+      <PageStructuredData graph={buildContactPageGraph()} />
     <div>
       <div className="w-full absolute inset-0 min-h-screen -z-10" aria-hidden="true">
         <DeferredSparkles
@@ -103,5 +107,6 @@ export default function ContactPage() {
         </p>
       </div>
     </div>
+    </>
   );
 }

@@ -1,4 +1,6 @@
 import HomePage from "../components/HomePage";
+import PageStructuredData from "../components/seo/PageStructuredData";
+import { buildHomePageGraph } from "../lib/structured-data";
 
 const SITE = "https://safdarali.in";
 
@@ -26,5 +28,10 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <HomePage />;
+  return (
+    <>
+      <PageStructuredData graph={buildHomePageGraph()} />
+      <HomePage />
+    </>
+  );
 }

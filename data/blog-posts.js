@@ -76,3 +76,8 @@ export const blogPosts = [
     href: "https://medium.com/@safdaralii/mastering-the-art-of-writing-effective-github-commit-messages-270a3bc7f1b6",
   },
 ];
+
+/** On-site articles only — used for blog index ItemList JSON-LD. */
+export function getNativeBlogPosts() {
+  return blogPosts.filter((post) => post.native);
+}

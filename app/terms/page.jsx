@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LegalPageLayout, { h2Class, linkClass } from "../../components/legal/LegalPageLayout";
+import PageStructuredData from "../../components/seo/PageStructuredData";
 import {
   DATA_CONTROLLER,
   DATA_CONTROLLER_LOCATION,
@@ -9,6 +10,7 @@ import {
   SITE_NAME,
   SITE_URL,
 } from "../../lib/legal-config";
+import { buildLegalPageGraph } from "../../lib/structured-data";
 
 export const metadata = {
   title: "Terms & Conditions",
@@ -30,6 +32,15 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
+    <>
+      <PageStructuredData
+        graph={buildLegalPageGraph({
+          canonical: LEGAL_PAGES.terms.canonical,
+          title: "Terms & Conditions",
+          description:
+            "Terms of use for safdarali.in — rules for using this portfolio website, intellectual property, disclaimers, and governing law.",
+        })}
+      />
     <LegalPageLayout
       title="Terms & Conditions"
       intro="Please read these terms before using safdarali.in. By accessing the Site, you agree to them."
@@ -198,5 +209,6 @@ export default function TermsPage() {
         .
       </p>
     </LegalPageLayout>
+    </>
   );
 }

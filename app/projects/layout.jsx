@@ -1,3 +1,7 @@
+import PageStructuredData from "../../components/seo/PageStructuredData";
+import { featuredProjects } from "../../data/featured-projects";
+import { buildProjectsGraph } from "../../lib/structured-data";
+
 const SITE = "https://safdarali.in";
 
 export const metadata = {
@@ -22,5 +26,10 @@ export const metadata = {
 };
 
 export default function ProjectsLayout({ children }) {
-  return children;
+  return (
+    <>
+      <PageStructuredData graph={buildProjectsGraph(featuredProjects)} />
+      {children}
+    </>
+  );
 }

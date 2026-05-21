@@ -5,6 +5,8 @@ import BackToHomeLink from "../../components/BackToHomeLink";
 import DeferredSparkles from "../../components/ui/DeferredSparkles";
 
 import * as assets from "../../assets";
+import PageStructuredData from "../../components/seo/PageStructuredData";
+import { buildSkillsPageGraph } from "../../lib/structured-data";
 
 const SITE = "https://safdarali.in";
 
@@ -126,6 +128,8 @@ const skills = [
 
 function page() {
   return (
+    <>
+      <PageStructuredData graph={buildSkillsPageGraph()} />
     <div className="lg:h-screen">
       <div className="w-full absolute inset-0 h-screen -z-10" aria-hidden="true">
           <DeferredSparkles
@@ -170,6 +174,7 @@ function page() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

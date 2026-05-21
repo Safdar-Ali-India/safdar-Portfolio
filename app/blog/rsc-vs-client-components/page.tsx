@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BackToHomeLink from "../../../components/BackToHomeLink";
+import PageStructuredData from "../../../components/seo/PageStructuredData";
 import DeferredSparkles from "../../../components/ui/DeferredSparkles";
+import { buildBlogPostingGraph } from "../../../lib/structured-data";
 
 const SITE = "https://safdarali.in";
 const CANONICAL = `${SITE}/blog/rsc-vs-client-components`;
@@ -69,38 +71,20 @@ const preClass =
 
 const codeClass = "font-mono text-[0.8125rem]";
 
-const blogPostingLd = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
+const blogGraph = buildBlogPostingGraph({
+  canonical: CANONICAL,
   headline: "React Server Components vs Client Components — When to Use Which",
   description:
     "Practical guide to choosing React Server Components vs client components in Next.js — decision flowchart, code examples, bundle size, and performance impact.",
-  image: OG_IMAGE,
   datePublished: "2026-05-19",
   dateModified: "2026-05-19",
-  author: {
-    "@type": "Person",
-    name: "Safdar Ali",
-    url: SITE,
-  },
-  publisher: {
-    "@type": "Person",
-    name: "Safdar Ali",
-    url: SITE,
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": CANONICAL,
-  },
-};
+  image: OG_IMAGE,
+});
 
 export default function RscVsClientComponentsPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingLd) }}
-      />
+      <PageStructuredData graph={blogGraph} />
       <div className="w-full absolute inset-0 min-h-screen -z-10" aria-hidden="true">
         <DeferredSparkles
           id="tsparticlesblogrsc"

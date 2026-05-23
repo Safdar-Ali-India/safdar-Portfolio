@@ -115,10 +115,14 @@ export function ThemeToggleNav({ mouseX }) {
       aria-pressed={mounted ? resolvedTheme === "dark" : undefined}
       onClick={() => setTheme(otherTheme)}
     >
-      {resolvedTheme === "dark" ? (
-        <PiMoonLight className="w-[50%] h-auto transition text-current" aria-hidden />
+      {mounted ? (
+        resolvedTheme === "dark" ? (
+          <PiMoonLight className="w-[50%] h-auto transition text-current" aria-hidden />
+        ) : (
+          <PiCloudSunLight className="w-[50%] h-auto transition text-current" aria-hidden />
+        )
       ) : (
-        <PiCloudSunLight className="w-[50%] h-auto transition text-current" aria-hidden />
+        <span className="w-[50%] aspect-square" aria-hidden />
       )}
     </motion.button>
   );

@@ -56,7 +56,7 @@ const skills = [
     type: "Frontend",
   },
    { imageUrl: assets.wordpres,
-    name: "Wordpres",
+    name: "WordPress",
     type: "Frontend",
   },
   {
@@ -126,14 +126,14 @@ const skills = [
   },
 ];
 
-function page() {
+function SkillsPage() {
   return (
     <>
       <PageStructuredData graph={buildSkillsPageGraph()} />
     <div className="lg:h-screen">
       <div className="w-full absolute inset-0 h-screen -z-10" aria-hidden="true">
           <DeferredSparkles
-            id="tsparticlesfullpage"
+            id="tsparticles-skills"
             background="transparent"
             minSize={0.6}
             maxSize={1.4}
@@ -178,4 +178,4 @@ function page() {
   );
 }
 
-export default page;
+export default SkillsPage;

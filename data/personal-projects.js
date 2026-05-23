@@ -1,0 +1,75 @@
+import cdi from "../assets/cdi.png";
+import fdl from "../assets/fdl.png";
+import hadith from "../assets/hadith.png";
+import mapmyrecipe from "../assets/mapmyrecipe.png";
+import powerrite from "../assets/powerrite.png";
+import restaurant from "../assets/restaurant.png";
+import swag from "../assets/swag.png";
+import weatherapp from "../assets/weatherapp.png";
+
+export const personalProjects = [
+  {
+    title: "Fdl Beauty Bar",
+    subtitle:
+      "Attained a 400% surge in consultation bookings in 2 months via strategic use of search ads, social media, and targeted email marketing.",
+    imgLink: fdl,
+    codeLink: "https://www.fdlbeautybar.com/",
+    liveLink: "https://www.fdlbeautybar.com/",
+  },
+  {
+    title: "Map My Recipe",
+    subtitle:
+      "Recipe Book application developed using React. The application allows users to view a list of recipes, search for specific recipes, and view individual recipe details.",
+    imgLink: mapmyrecipe,
+    codeLink: "https://github.com/Safdar-Ali-India/Recipe-Book-application-using-React",
+    liveLink: "https://map-my-recipe.vercel.app/",
+  },
+  {
+    title: "Safdar Restaurant",
+    subtitle:
+      "This project showcases the development of a dynamic menu system for Safdar Restaurant, created using React. The application is built to filter and display menu items according to the selected meal time, providing users with a seamless and interactive experience.",
+    imgLink: restaurant,
+    codeLink: "https://github.com/Safdar-Ali-India/Safdar-restaurant",
+    liveLink: "https://safdar-restaurant.vercel.app/",
+  },
+  {
+    title: "Power Rite Electric Inc.",
+    subtitle:
+      "Doubled the conversion rate, cut CPA by 25%, securing high-quality leads for Pool and Lanai Lights business. Started by understanding the lighting industry intricacies, crafting tailored messaging for effective communication.",
+    imgLink: powerrite,
+    codeLink: "https://powerriteelectric.com",
+    liveLink: "https://powerriteelectric.com",
+  },
+  {
+    title: "Swag Brands",
+    subtitle:
+      "Achieved a 40% sales surge through digital channels with the highest ROAS growth of +172%. The Swag Brands website would love help promote your business with Promotions That Work.",
+    imgLink: swag,
+    codeLink: "https://www.swagbrands.com/",
+    liveLink: "https://www.swagbrands.com/",
+  },
+  {
+    title: "CDI25",
+    subtitle:
+      "From abstracts to landscapes and everything in between, we have the perfect piece of art to inspire your next interior design project. At Creative Displays and Designs, Inc., it's easy for you to find all the finishing touches you need to complete your decorating and design projects.",
+    imgLink: cdi,
+    codeLink: "https://www.cdi25.com/",
+    liveLink: "https://www.cdi25.com/",
+  },
+  {
+    title: "Safdar's Weather App",
+    subtitle:
+      "This project showcases the development of a fully-featured weather application using React. The application integrates with a weather API to fetch real-time weather data and presents it in a clean and user-friendly interface.",
+    imgLink: weatherapp,
+    codeLink: "https://github.com/Safdar-Ali-India/Safdar-s-Weather-app",
+    liveLink: "https://safdar-s-weather-app.vercel.app/",
+  },
+  {
+    title: "Hadith Generator",
+    subtitle:
+      "Explore the wisdom and teachings of the Prophet Muhammad (PBUH) with the Hadith Generator. It lets you read hadiths from the top Hadith Books while keeping track of your progress.",
+    imgLink: hadith,
+    codeLink: "https://github.com/Safdar-Ali-India/Hadith-Generator",
+    liveLink: "https://hadith-generator-alpha.vercel.app/",
+  },
+];

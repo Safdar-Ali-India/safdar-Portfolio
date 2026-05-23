@@ -76,7 +76,7 @@ export default function HomePage() {
       <div className="max-w-5xl mx-auto px-5">
         <div className="w-full absolute inset-0 h-screen -z-10" aria-hidden="true">
           <DeferredSparkles
-            id="tsparticlesfullpage"
+            id="tsparticles-home"
             background="transparent"
             minSize={0.6}
             maxSize={1.4}

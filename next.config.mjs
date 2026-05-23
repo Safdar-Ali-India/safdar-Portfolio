@@ -42,7 +42,7 @@ const nextConfig = {
   },
   /** Smaller client bundles for icon imports (Navbar, etc.). */
   experimental: {
-    optimizePackageImports: ["react-icons"],
+    optimizePackageImports: ["react-icons", "framer-motion"],
   },
   async headers() {
     return [

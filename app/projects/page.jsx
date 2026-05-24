@@ -1,9 +1,11 @@
+import Link from "next/link";
 import BackToHomeLink from "../../components/BackToHomeLink";
 import ProjectCard from "../../components/ProjectCard";
 import CaseStudyCard from "../../components/CaseStudyCard";
 import DeferredSparkles from "../../components/ui/DeferredSparkles";
 import { caseStudies } from "../../data/case-studies";
 import { personalProjects } from "../../data/personal-projects";
+import { dockPill } from "../../lib/ui-classes";
 
 export default function ProjectsPage() {
   return (
@@ -32,8 +34,8 @@ export default function ProjectsPage() {
             Professional Case Studies
           </h2>
 
-          <div className="mb-8 p-4 bg-neutral-800/20 border border-neutral-700/30 rounded-lg max-w-4xl mx-auto">
-            <p className="text-sm text-neutral-600 dark:text-ink/80 text-center">
+          <div className="mb-8 p-3 bg-neutral-800/20 border border-neutral-700/30 rounded-lg max-w-4xl mx-auto">
+            <p className="text-xs text-neutral-600 dark:text-ink/80 text-center leading-relaxed">
               <span className="font-semibold text-neutral-800 dark:text-ink">Disclaimer:</span> I am not the owner of
               these websites. These projects were developed during my employment with various agencies and companies.
               All intellectual property rights belong to the respective clients and organizations.
@@ -67,6 +69,13 @@ export default function ProjectsPage() {
               />
             ))}
           </div>
+        </div>
+
+        <div className="mt-16 text-center pb-4">
+          <p className="text-sm text-neutral-600 dark:text-ink/75 mb-4">Interested in similar work?</p>
+          <Link href="/contact" className={dockPill}>
+            Get in touch
+          </Link>
         </div>
       </div>
     </section>

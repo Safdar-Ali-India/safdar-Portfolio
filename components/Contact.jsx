@@ -1,7 +1,19 @@
-import React from "react"
-import { MAILTO_HREF } from "../lib/site"
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { MAILTO_HREF } from "../lib/site";
+
+const FORM_ACTION =
+  "https://getform.io/f/raeqwwma?redirect=https://safdarali.in/contact?sent=1";
 
 const Contact = () => {
+  const [sent, setSent] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setSent(params.get("sent") === "1");
+  }, []);
+
   return (
     <section className="mb-14" aria-labelledby="contact-heading">
       <h2 id="contact-heading" className="sr-only">
@@ -18,9 +30,19 @@ const Contact = () => {
             Open in your mail app
           </a>
         </p>
+
+        {sent ? (
+          <div
+            className="mb-8 rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center text-sm text-neutral-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-ink/85"
+            role="status"
+          >
+            Thanks — your message was sent. I&apos;ll reply when I can.
+          </div>
+        ) : null}
+
         <form
           method="POST"
-          action="https://getform.io/f/raeqwwma"
+          action={FORM_ACTION}
           className="space-y-8"
           aria-label="Send a message to Safdar Ali"
         >
@@ -79,7 +101,7 @@ const Contact = () => {
         </form>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

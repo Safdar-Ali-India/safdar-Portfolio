@@ -19,7 +19,6 @@ import {
   PiCodeThin,
 } from "react-icons/pi";
 
-/** Blog stays at /blog for SEO; dock stays minimal (no duplicate “writing” entry). */
 export const generalLinks = [
   { href: "/", label: "Home", Icon: PiHouseThin },
   { href: "/about", label: "About", Icon: PiPersonSimpleWalkThin },

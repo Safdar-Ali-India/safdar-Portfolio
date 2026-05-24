@@ -66,7 +66,7 @@ function Footer() {
       <span className="relative mx-36 flex justify-center">
         <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75" />
       </span>
-      <div className="mb-48 mt-10 px-10 py-12 text-center light:text-slate-800 lg:mb-28 lg:mt-10">
+      <div className="mb-36 mt-10 px-10 py-10 text-center light:text-slate-800 lg:mb-28 lg:mt-10 lg:py-12">
         <blockquote cite={current.cite} className="font-InterBold text-lg font-semibold dark:text-ink">
           <p>&quot;{current.text}&quot;</p>
           <footer className="mt-2 text-base font-normal not-italic light:text-slate-700 dark:text-ink/75">

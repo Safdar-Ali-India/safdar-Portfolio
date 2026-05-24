@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import BackToHomeLink from "../../../components/BackToHomeLink";
+import BackToBlogLink from "../../../components/BackToBlogLink";
 import PageStructuredData from "../../../components/seo/PageStructuredData";
 import DeferredSparkles from "../../../components/ui/DeferredSparkles";
 import ArticleSupportCTA from "../../../components/blog/ArticleSupportCTA";
@@ -101,7 +101,7 @@ export default function NextjsPerformancePostPage() {
 
       <article className="relative mx-auto max-w-3xl px-4 pb-24 pt-14">
         <header className="relative mb-10">
-          <BackToHomeLink />
+          <BackToBlogLink />
           <p className="text-center text-xs font-bold uppercase tracking-wide text-neutral-500 dark:text-ink/60">
             May 2026 · Case study · ~9 min read
           </p>
@@ -114,14 +114,6 @@ export default function NextjsPerformancePostPage() {
               Safdar Ali
             </Link>{" "}
             — frontend engineer, Bengaluru
-          </p>
-          <p className="mt-6 text-center">
-            <Link
-              href="/blog"
-              className="text-sm font-semibold text-neutral-600 underline underline-offset-2 hover:text-neutral-950 dark:text-ink/80 dark:hover:text-ink"
-            >
-              ← All posts
-            </Link>
           </p>
         </header>
 

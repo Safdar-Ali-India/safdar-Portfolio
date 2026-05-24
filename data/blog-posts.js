@@ -49,6 +49,7 @@ export const blogPosts = [
   {
     date: "Feb 2025",
     title: "From Chaos to Claws: How OpenClaw Won Open Source in a Single Week",
+    popular: true,
     reactions: "DEV.to",
     subTitle:
       "Triple rebrand, six-figure stars, and a reference architecture for agentic AI — momentum, clarity, and building in public.",
@@ -92,4 +93,16 @@ export const blogPosts = [
 /** On-site articles only — used for blog index ItemList JSON-LD. */
 export function getNativeBlogPosts() {
   return blogPosts.filter((post) => post.native);
+}
+
+/** Homepage spotlight — 1 native + 1 popular DEV + 1 popular Medium. */
+export function getSpotlightPosts() {
+  const native = blogPosts.find((post) => post.native);
+  const dev =
+    blogPosts.find((post) => post.href.includes("dev.to") && post.popular) ??
+    blogPosts.find((post) => post.href.includes("dev.to"));
+  const medium =
+    blogPosts.find((post) => post.href.includes("medium.com") && post.popular) ??
+    blogPosts.find((post) => post.href.includes("medium.com"));
+  return [native, dev, medium].filter(Boolean);
 }

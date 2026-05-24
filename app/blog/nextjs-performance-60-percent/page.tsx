@@ -3,6 +3,7 @@ import Link from "next/link";
 import BackToHomeLink from "../../../components/BackToHomeLink";
 import PageStructuredData from "../../../components/seo/PageStructuredData";
 import DeferredSparkles from "../../../components/ui/DeferredSparkles";
+import ArticleSupportCTA from "../../../components/blog/ArticleSupportCTA";
 import { buildBlogPostingGraph } from "../../../lib/structured-data";
 
 const SITE = "https://safdarali.in";
@@ -471,6 +472,7 @@ async headers() {
             </Link>{" "}
             — I&apos;m happy to skim a Lighthouse export and tell you which of these five levers fits your repo first.
           </p>
+          <ArticleSupportCTA />
         </div>
       </article>
     </>

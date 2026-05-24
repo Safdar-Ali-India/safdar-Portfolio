@@ -2,6 +2,18 @@
 export const blogPosts = [
   {
     date: "May 2026",
+    title: "How I Use Cursor + Claude to Ship React Code 3x Faster",
+    reactions: "safdarali.in · Workflow",
+    popular: true,
+    native: true,
+    subTitle:
+      "My real daily Cursor AI + Claude setup for React — analyze-first prompts, review gates, server/client rules, and honest timing numbers.",
+    excerpt:
+      "Not generic AI hype — Safdar Ali's Cursor AI React workflow: Agent mode, production review checklist, and how I ship Next.js 3× faster without slop.",
+    href: "/blog/cursor-claude-react-workflow-2026",
+  },
+  {
+    date: "May 2026",
     title: "React Server Components vs Client Components — When to Use Which",
     reactions: "safdarali.in · Guide",
     popular: true,

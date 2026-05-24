@@ -3,6 +3,7 @@ import Link from "next/link";
 import BackToHomeLink from "../../../components/BackToHomeLink";
 import PageStructuredData from "../../../components/seo/PageStructuredData";
 import DeferredSparkles from "../../../components/ui/DeferredSparkles";
+import ArticleSupportCTA from "../../../components/blog/ArticleSupportCTA";
 import { buildBlogPostingGraph } from "../../../lib/structured-data";
 
 const SITE = "https://safdarali.in";
@@ -466,6 +467,7 @@ export function SiteHeader() {
             </Link>
             .
           </p>
+          <ArticleSupportCTA />
         </div>
       </article>
     </>

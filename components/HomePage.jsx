@@ -6,11 +6,17 @@ import logo from "../assets/logo.jpeg";
 import Image from "next/image";
 import Contact from "./Contact";
 import DeferredSparkles from "./ui/DeferredSparkles";
-import { SocialRailDesktop, SocialRailMobile } from "./SocialRail";
 import { getSpotlightPosts } from "../data/blog-posts";
 import { featuredProjects } from "../data/featured-projects";
 import { dockPill, linkInline } from "../lib/ui-classes";
 import { socialLinks } from "../lib/social-links";
+
+const GithubLink = socialLinks.github;
+const LinkedInLink = socialLinks.linkedin;
+const InstagramLink = socialLinks.instagram;
+const YoutubeLink = socialLinks.youtube;
+const TwitterLink = socialLinks.twitter;
+const LinkTree = socialLinks.linktree;
 
 function SectionDivider() {
   return (
@@ -31,6 +37,23 @@ function isExternalHref(href) {
 export default function HomePage() {
   return (
     <>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossOrigin="anonymous"
+        referrerPolicy="no-referrer"
+      />
+      <noscript>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+      </noscript>
+
       <div className="max-w-5xl mx-auto px-5">
         <div className="w-full absolute inset-0 h-screen -z-10" aria-hidden="true">
           <DeferredSparkles
@@ -118,11 +141,99 @@ export default function HomePage() {
             </div>
 
             <div className="hidden w-1/12 my-10 ml-auto lg:flex justify-center">
-              <SocialRailDesktop />
+              <ul
+                className="social-rail text-lg wrapper list-none p-0 m-0 text-neutral-800 dark:text-ink"
+                aria-label="Social and profile links"
+              >
+                <li className="icon link mt-10 list-none">
+                  <Link href={LinkTree} target="_blank" rel="noopener noreferrer" aria-label="All links (Linktree)">
+                    <span aria-hidden="true">
+                      <i className="fas fa-link " />
+                    </span>
+                  </Link>
+                </li>
+                <li className="icon github my-10 list-none">
+                  <Link href={GithubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                    <span aria-hidden="true">
+                      <i className="fab fa-github " />
+                    </span>
+                  </Link>
+                </li>
+                <li className="icon linkedin my-10 list-none">
+                  <Link href={LinkedInLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                    <span aria-hidden="true">
+                      <i className="fab fa-linkedin-in " />
+                    </span>
+                  </Link>
+                </li>
+                <li className="icon dev list-none">
+                  <Link href={YoutubeLink} target="_blank" rel="noopener noreferrer" aria-label="YouTube channel">
+                    <span aria-hidden="true">
+                      <i className="fab fa-youtube " />
+                    </span>
+                  </Link>
+                </li>
+                <li className="icon instagram my-10 list-none">
+                  <Link href={InstagramLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+                    <span aria-hidden="true">
+                      <i className="fab fa-instagram " />
+                    </span>
+                  </Link>
+                </li>
+              </ul>
             </div>
 
-            <div>
-              <SocialRailMobile />
+            <div className="">
+              <h2 className="lg:hidden inline-block text-neutral-600 dark:text-ink/80 text-xs font-InterBold uppercase font-bold my-10 tracking-wide">
+                Socials
+              </h2>
+              <ul
+                className="social-rail text-lg wrapper lg:hidden flex flex-row gap-x-10 justify-center list-none p-0 m-0 text-neutral-800 dark:text-ink"
+                aria-label="Social and profile links"
+              >
+                <li className="icon link list-none">
+                  <Link href={LinkTree} target="_blank" rel="noopener noreferrer" aria-label="All links (Linktree)">
+                    <span aria-hidden="true">
+                      <i className="fas fa-link " />
+                    </span>
+                  </Link>
+                </li>
+                <li className="icon github list-none">
+                  <Link href={GithubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                    <span aria-hidden="true">
+                      <i className="fab fa-github " />
+                    </span>
+                  </Link>
+                </li>
+                <li className="icon linkedin list-none">
+                  <Link href={LinkedInLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                    <span aria-hidden="true">
+                      <i className="fab fa-linkedin-in " />
+                    </span>
+                  </Link>
+                </li>
+                <li className="icon twitter list-none">
+                  <Link href={TwitterLink} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter) profile">
+                    <span aria-hidden="true">
+                      <i className="fab fa-twitter " />
+                    </span>
+                  </Link>
+                </li>
+                <li className="icon instagram list-none">
+                  <Link href={InstagramLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+                    <span aria-hidden="true">
+                      <i className="fab fa-instagram " />
+                    </span>
+                  </Link>
+                </li>
+                <li className="icon dev list-none">
+                  <Link href={YoutubeLink} target="_blank" rel="noopener noreferrer" aria-label="YouTube channel">
+                    <span aria-hidden="true">
+                      <i className="fab fa-youtube " />
+                    </span>
+                  </Link>
+                </li>
+              </ul>
             </div>
           </section>
 

@@ -5,10 +5,14 @@ import PageStructuredData from "../../../components/seo/PageStructuredData";
 import DeferredSparkles from "../../../components/ui/DeferredSparkles";
 import ArticleSupportCTA from "../../../components/blog/ArticleSupportCTA";
 import { buildBlogPostingGraph } from "../../../lib/structured-data";
+import { requirePublishedBlogPost } from "../../../lib/require-published-blog-post";
+import { getPostByHref } from "../../../data/blog-posts";
 
 const SITE = "https://safdarali.in";
-const CANONICAL = `${SITE}/blog/nextjs-performance-60-percent`;
+const POST_HREF = "/blog/nextjs-performance-60-percent";
+const CANONICAL = `${SITE}${POST_HREF}`;
 const OG_IMAGE = `${SITE}/opengraph-image`;
+const postMeta = getPostByHref(POST_HREF);
 
 export const metadata: Metadata = {
   title: "How I Cut Load Time by 60% Using Next.js App Router",
@@ -31,7 +35,7 @@ export const metadata: Metadata = {
     title: "How I Cut Load Time by 60% Using Next.js App Router",
     url: CANONICAL,
     type: "article",
-    publishedTime: "2026-05-17T00:00:00.000Z",
+    publishedTime: postMeta?.seoPublishedTime ?? "2026-05-31T03:30:00.000Z",
     authors: ["Safdar Ali"],
     description:
       "Production case study: Pages Router to App Router, next/image, next/font, RSC data fetching, and CDN caching — with before/after metrics.",
@@ -78,12 +82,14 @@ const blogGraph = buildBlogPostingGraph({
   headline: "How I Cut Load Time by 60% Using Next.js App Router",
   description:
     "A real production case study — Pages Router to App Router, next/image, next/font, Server Components, and caching headers with before/after metrics.",
-  datePublished: "2026-05-17",
-  dateModified: "2026-05-17",
+  datePublished: postMeta?.seoDatePublished ?? "2026-05-31",
+  dateModified: postMeta?.seoDatePublished ?? "2026-05-31",
   image: OG_IMAGE,
 });
 
 export default function NextjsPerformancePostPage() {
+  requirePublishedBlogPost(POST_HREF);
+
   return (
     <>
       <PageStructuredData graph={blogGraph} />

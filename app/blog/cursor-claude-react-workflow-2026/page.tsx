@@ -5,10 +5,14 @@ import PageStructuredData from "../../../components/seo/PageStructuredData"
 import DeferredSparkles from "../../../components/ui/DeferredSparkles"
 import ArticleSupportCTA from "../../../components/blog/ArticleSupportCTA"
 import { buildBlogPostingGraph } from "../../../lib/structured-data"
+import { requirePublishedBlogPost } from "../../../lib/require-published-blog-post"
+import { getPostByHref } from "../../../data/blog-posts"
 
 const SITE = "https://safdarali.in"
-const CANONICAL = `${SITE}/blog/cursor-claude-react-workflow-2026`
+const POST_HREF = "/blog/cursor-claude-react-workflow-2026"
+const CANONICAL = `${SITE}${POST_HREF}`
 const OG_IMAGE = `${SITE}/opengraph-image`
+const postMeta = getPostByHref(POST_HREF)
 
 export const metadata: Metadata = {
   title: "How I Use Cursor + Claude to Ship React Code 3x Faster",
@@ -21,7 +25,7 @@ export const metadata: Metadata = {
     title: "How I Use Cursor + Claude to Ship React Code 3x Faster",
     url: CANONICAL,
     type: "article",
-    publishedTime: "2026-05-23T00:00:00.000Z",
+    publishedTime: postMeta?.seoPublishedTime ?? "2026-05-24T03:30:00.000Z",
     authors: ["Safdar Ali"],
     description: "My real daily workflow with Cursor and Claude for React — prompt patterns, review gates, and the rules that keep AI output production-ready.",
     images: [
@@ -61,12 +65,14 @@ const blogGraph = buildBlogPostingGraph({
   canonical: CANONICAL,
   headline: "How I Use Cursor + Claude to Ship React Code 3x Faster",
   description: "A practical Cursor AI React workflow — daily setup, prompt patterns, review gates, and production rules from Safdar Ali.",
-  datePublished: "2026-05-23",
-  dateModified: "2026-05-23",
+  datePublished: postMeta?.seoDatePublished ?? "2026-05-24",
+  dateModified: postMeta?.seoDatePublished ?? "2026-05-24",
   image: OG_IMAGE,
 })
 
 export default function CursorClaudeReactWorkflowPage() {
+  requirePublishedBlogPost(POST_HREF);
+
   return (
     <>
       <PageStructuredData graph={blogGraph} />
@@ -94,7 +100,7 @@ export default function CursorClaudeReactWorkflowPage() {
             <Link href="/about" className={linkClass}>
               Safdar Ali
             </Link>
-            . I build React and Next.js for a living — frontend at Cube, client work on the side, and this portfolio you&apos;re reading on{" "}
+            . I build React and Next.js for a living — client work on the side, and this portfolio you&apos;re reading on{" "}
             <Link href="/" className={linkClass}>
               safdarali.in
             </Link>

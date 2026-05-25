@@ -1,7 +1,7 @@
 import Link from "next/link";
 import BackToHomeLink from "../../components/BackToHomeLink";
 import DeferredSparkles from "../../components/ui/DeferredSparkles";
-import { blogPosts, getNativeBlogPosts } from "../../data/blog-posts";
+import { getPublishedPosts, getNativeBlogPosts } from "../../data/blog-posts";
 import PageStructuredData from "../../components/seo/PageStructuredData";
 import { buildBlogIndexGraph } from "../../lib/structured-data";
 
@@ -77,7 +77,7 @@ export default function BlogPage() {
         </p>
 
         <ul className="mt-12 space-y-10">
-          {blogPosts.map((post) => {
+          {getPublishedPosts().map((post) => {
             const isNative = post.native || post.href.startsWith("/");
             return (
             <li

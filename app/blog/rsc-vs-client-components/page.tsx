@@ -5,10 +5,14 @@ import PageStructuredData from "../../../components/seo/PageStructuredData";
 import DeferredSparkles from "../../../components/ui/DeferredSparkles";
 import ArticleSupportCTA from "../../../components/blog/ArticleSupportCTA";
 import { buildBlogPostingGraph } from "../../../lib/structured-data";
+import { requirePublishedBlogPost } from "../../../lib/require-published-blog-post";
+import { getPostByHref } from "../../../data/blog-posts";
 
 const SITE = "https://safdarali.in";
-const CANONICAL = `${SITE}/blog/rsc-vs-client-components`;
+const POST_HREF = "/blog/rsc-vs-client-components";
+const CANONICAL = `${SITE}${POST_HREF}`;
 const OG_IMAGE = `${SITE}/opengraph-image`;
+const postMeta = getPostByHref(POST_HREF);
 
 export const metadata: Metadata = {
   title: "React Server Components vs Client Components — When to Use Which",
@@ -30,7 +34,7 @@ export const metadata: Metadata = {
     title: "React Server Components vs Client Components — When to Use Which",
     url: CANONICAL,
     type: "article",
-    publishedTime: "2026-05-19T00:00:00.000Z",
+    publishedTime: postMeta?.seoPublishedTime ?? "2026-05-24T03:30:00.000Z",
     authors: ["Safdar Ali"],
     description:
       "Practical RSC vs client guide: decision flowchart, three code patterns, bundle before/after, and performance table — from real App Router production work.",
@@ -77,12 +81,14 @@ const blogGraph = buildBlogPostingGraph({
   headline: "React Server Components vs Client Components — When to Use Which",
   description:
     "Practical guide to choosing React Server Components vs client components in Next.js — decision flowchart, code examples, bundle size, and performance impact.",
-  datePublished: "2026-05-19",
-  dateModified: "2026-05-19",
+  datePublished: postMeta?.seoDatePublished ?? "2026-05-24",
+  dateModified: postMeta?.seoDatePublished ?? "2026-05-24",
   image: OG_IMAGE,
 });
 
 export default function RscVsClientComponentsPage() {
+  requirePublishedBlogPost(POST_HREF);
+
   return (
     <>
       <PageStructuredData graph={blogGraph} />

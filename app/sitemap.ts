@@ -1,16 +1,8 @@
 import type { MetadataRoute } from "next";
+import { getNativeBlogPosts } from "../data/blog-posts";
+import { getPublishInstant } from "../lib/blog-schedule";
 
 const baseUrl = "https://safdarali.in";
-
-// If you add dynamic blog posts or project detail routes, fetch them here and merge into the array below.
-// Example:
-// const posts = await fetch(`${baseUrl}/api/posts`).then((r) => r.json());
-// const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
-//   url: `${baseUrl}/blog/${post.slug}`,
-//   lastModified: new Date(post.updatedAt),
-//   changeFrequency: "monthly",
-//   priority: 0.6,
-// }));
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -47,24 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/blog/cursor-claude-react-workflow-2026`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/rsc-vs-client-components`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/blog/nextjs-performance-60-percent`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/contact`,
       lastModified: now,
       changeFrequency: "yearly",
@@ -84,5 +58,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...staticPages];
+  const blogPages: MetadataRoute.Sitemap = getNativeBlogPosts().map((post, index) => ({
+    url: `${baseUrl}${post.href}`,
+    lastModified: new Date(getPublishInstant(post.publishedAt)),
+    changeFrequency: "monthly",
+    priority: 0.85 - index * 0.03,
+  }));
+
+  return [...staticPages, ...blogPages];
 }

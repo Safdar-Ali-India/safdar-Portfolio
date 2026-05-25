@@ -1,5 +1,5 @@
 import Link from "next/link";
-import BackToHomeLink from "../BackToHomeLink";
+import PageBackHeader from "../PageBackHeader";
 import DeferredSparkles from "../ui/DeferredSparkles";
 import { LEGAL_LAST_UPDATED } from "../../lib/legal-config";
 
@@ -30,8 +30,7 @@ export default function LegalPageLayout({ title, intro, children }) {
       </div>
 
       <article className="relative mx-auto max-w-3xl px-4 pb-24 pt-14">
-        <header className="relative mb-10">
-          <BackToHomeLink />
+        <PageBackHeader back="home">
           <p className="text-center text-xs font-bold uppercase tracking-wide text-neutral-500 dark:text-ink/60">
             Legal · Last updated {LEGAL_LAST_UPDATED}
           </p>
@@ -51,7 +50,7 @@ export default function LegalPageLayout({ title, intro, children }) {
               ← Home
             </Link>
           </p>
-        </header>
+        </PageBackHeader>
 
         <div className={`${prose} space-y-6`}>{children}</div>
       </article>

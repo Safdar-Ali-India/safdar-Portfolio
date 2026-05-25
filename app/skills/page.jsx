@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import BackToHomeLink from "../../components/BackToHomeLink";
+import PageBackHeader from "../../components/PageBackHeader";
 import DeferredSparkles from "../../components/ui/DeferredSparkles";
 
 import * as assets from "../../assets";
@@ -143,12 +143,11 @@ function SkillsPage() {
           />
         </div>
       <div className="relative max-w-5xl mx-auto px-4 pb-20">
-        <div className="relative mt-14">
+        <PageBackHeader className="mt-14" back="home">
           <h1 className="text-center font-InterBold uppercase font-extrabold font-InterBlack dark:text-ink light:text-black text-3xl">
             Skills
           </h1>
-          <BackToHomeLink />
-        </div>
+        </PageBackHeader>
 
         <div className="lg:mt-48 md:mt-30">
           <ul className="mt-16 flex flex-wrap md:gap-x-16 gap-x-8 gap-y-8 justify-center items-center list-none p-0 m-0" aria-label="Technologies and tools">

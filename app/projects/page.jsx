@@ -1,5 +1,5 @@
 import Link from "next/link";
-import BackToHomeLink from "../../components/BackToHomeLink";
+import PageBackHeader from "../../components/PageBackHeader";
 import ProjectCard from "../../components/ProjectCard";
 import CaseStudyCard from "../../components/CaseStudyCard";
 import DeferredSparkles from "../../components/ui/DeferredSparkles";
@@ -22,12 +22,11 @@ export default function ProjectsPage() {
         />
       </div>
       <div className="relative max-w-6xl mx-auto px-4 pb-20">
-        <div className="relative mt-14">
+        <PageBackHeader className="mt-14" back="home">
           <h1 className="text-center font-InterBold uppercase font-extrabold font-InterBlack dark:text-ink light:text-black text-3xl">
             Projects
           </h1>
-          <BackToHomeLink />
-        </div>
+        </PageBackHeader>
 
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-center mb-4 dark:text-ink light:text-black">

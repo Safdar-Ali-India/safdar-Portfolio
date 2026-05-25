@@ -1,5 +1,5 @@
 import Link from "next/link";
-import BackToHomeLink from "../../components/BackToHomeLink";
+import PageBackHeader from "../../components/PageBackHeader";
 import DeferredSparkles from "../../components/ui/DeferredSparkles";
 import { getPublishedPosts, getNativeBlogPosts } from "../../data/blog-posts";
 import PageStructuredData from "../../components/seo/PageStructuredData";
@@ -44,12 +44,11 @@ export default function BlogPage() {
         />
       </div>
       <div className="relative max-w-3xl mx-auto px-4 pb-24">
-        <div className="relative mt-14">
+        <PageBackHeader className="mt-14" back="home">
           <h1 className="text-center font-InterBold uppercase font-extrabold text-neutral-950 dark:text-ink text-3xl">
             Blog &amp; articles
           </h1>
-          <BackToHomeLink />
-        </div>
+        </PageBackHeader>
 
         <p className="mt-2 text-sm text-neutral-500 text-center dark:text-ink/50">
           Native case studies on safdarali.in — also on{" "}
@@ -63,20 +62,7 @@ export default function BlogPage() {
           .
         </p>
 
-        <p className="mt-10 text-center text-neutral-600 dark:text-ink/80 sm:text-lg max-w-2xl mx-auto">
-          Writing by <strong>Safdar Ali</strong> — featured posts on{" "}
-          <a
-            href="https://dev.to/safdarali25"
-            className="underline font-medium text-neutral-900 decoration-neutral-400 underline-offset-2 hover:text-neutral-950 dark:text-ink dark:decoration-white/30 dark:hover:text-ink"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            DEV
-          </a>{" "}
-          and longer reads on Medium.
-        </p>
-
-        <ul className="mt-12 space-y-10">
+        <ul className="mt-10 space-y-10">
           {getPublishedPosts().map((post) => {
             const isNative = post.native || post.href.startsWith("/");
             return (

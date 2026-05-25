@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic"
 import Link from "next/link"
-import BackToHomeLink from "../../components/BackToHomeLink"
+import PageBackHeader from "../../components/PageBackHeader"
 import AboutHeroImage from "../../components/about/AboutHeroImage"
 import AboutPageJsonLd from "../../components/about/AboutPageJsonLd"
 import { ABOUT_PAGE_URL, ABOUT_PHOTOS, absoluteMediaUrl } from "../../lib/about-media-seo"
@@ -109,10 +109,9 @@ function page() {
       />
     <div className="relative pb-36 sm:pb-40">
       <article className="relative mx-auto max-w-6xl px-4 pt-12 sm:pt-16 lg:px-6">
-        <header className="relative mb-12 mt-10 sm:mt-14">
+        <PageBackHeader className="mb-12 mt-10 sm:mt-14" back="home">
           <h1 className={pageTitleClass}>About Safdar Ali</h1>
-          <BackToHomeLink />
-        </header>
+        </PageBackHeader>
 
         {/* Hero — lead title is h2 so the route keeps a single h1 (matches Projects / Blog pattern) */}
         <section aria-labelledby="about-hero-heading" className="mb-28 grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-12">

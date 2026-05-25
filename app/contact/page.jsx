@@ -1,5 +1,5 @@
 import Link from "next/link";
-import BackToHomeLink from "../../components/BackToHomeLink";
+import PageBackHeader from "../../components/PageBackHeader";
 import DeferredSparkles from "../../components/ui/DeferredSparkles";
 import Contact from "../../components/Contact";
 import PageStructuredData from "../../components/seo/PageStructuredData";
@@ -39,12 +39,11 @@ export default function ContactPage() {
         />
       </div>
       <div className="relative max-w-5xl mx-auto px-4 pb-20">
-        <div className="relative mt-14">
+        <PageBackHeader className="mt-14" back="home">
           <h1 className="text-center font-InterBold text-3xl font-extrabold text-neutral-950 dark:text-ink light:text-black">
             Let&apos;s build something.
           </h1>
-          <BackToHomeLink />
-        </div>
+        </PageBackHeader>
 
         <p className="mt-8 max-w-xl mx-auto text-center text-neutral-600 dark:text-ink">
           Frontend engineer in <strong>Bengaluru</strong>. Use the form for roles, freelance, or collaboration—I&apos;ll reply when I can.

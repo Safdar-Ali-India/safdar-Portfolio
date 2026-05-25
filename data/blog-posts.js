@@ -324,7 +324,7 @@ export const blogPosts = [
   },
   {
     date: "May 2026",
-    publishedAt: "2026-06-02T09:00:00+05:30",
+    publishedAt: "2026-05-23",
     title: "How I Use Cursor + Claude to Ship React Code 3x Faster",
     reactions: "safdarali.in · Workflow",
     popular: true,

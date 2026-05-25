@@ -1,10 +1,18 @@
 /**
  * Assign Tue/Thu 09:00 IST slots to the 31-article pipeline (publish order).
+ * Does NOT touch already-live posts — see SKIP_HREFS.
  * Run: node scripts/reschedule-blog-posts.mjs
  */
 
 import { readFileSync, writeFileSync } from "fs";
 import { scheduleSlotAt0900Ist, formatBlogMonthLabel } from "../lib/blog-schedule.js";
+
+/** Already live — never overwrite publishedAt when rescheduling. */
+const SKIP_HREFS = new Set([
+  "/blog/cursor-claude-react-workflow-2026",
+  "/blog/rsc-vs-client-components",
+  "/blog/nextjs-performance-60-percent",
+]);
 
 const PUBLISH_ORDER = [
   "/blog/nextjs-vs-react-which-to-learn-2026",
@@ -45,6 +53,10 @@ let src = readFileSync(file, "utf8");
 
 for (let i = 0; i < PUBLISH_ORDER.length; i++) {
   const href = PUBLISH_ORDER[i];
+  if (SKIP_HREFS.has(href)) {
+    console.warn("skip (already live):", href);
+    continue;
+  }
   const publishedAt = scheduleSlotAt0900Ist(i);
   const dateLabel = formatBlogMonthLabel(publishedAt);
   const hrefIdx = src.indexOf(`href: "${href}"`);

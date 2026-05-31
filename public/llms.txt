@@ -1,38 +1,38 @@
 # Safdar Ali
 
-> Safdar Ali is a developer, creator, and YouTuber based in Bengaluru, India. This is his personal portfolio website showcasing his projects, skills, experience, and content. The site is built with Next.js and hosted at safdarali.in.
+> Safdar Ali is a developer, creator, and YouTuber based in Bengaluru, India. Personal portfolio at safdarali.in — projects, technical articles, skills, and contact. Built with Next.js.
 
 ## About
 
-Safdar Ali is a software developer and content creator from Bengaluru, Karnataka, India. He builds web applications, shares technical knowledge through his YouTube channel, and documents his learning journey online. His portfolio serves as a central hub for recruiters, collaborators, and viewers to learn about his work.
+Safdar Ali is a frontend-focused software developer and content creator from Bengaluru, Karnataka, India. He builds web applications with Next.js and React, publishes tutorials on YouTube (Safdar Ali Coding), and writes technical articles on safdarali.in.
 
-- Full stack developer with expertise in Next.js, React, and modern web technologies
-- YouTuber covering tech, development, and career topics
-- Based in Bengaluru, India — open to remote and on-site opportunities
+- Frontend developer — Next.js, React, TypeScript, Tailwind CSS
+- YouTuber — 70+ React and Next.js tutorials (Hindi-English mix)
+- Based in Bengaluru, India (IST)
 
 ## Key pages
 
-- [Home](https://safdarali.in): Overview of Safdar Ali — who he is, what he does, and how to contact him
-- [About](https://safdarali.in/about): Detailed background, achievements, interests, Safdar Ali YouTube tutorials section, and story
-- [Skills](https://safdarali.in/skills): Tech stack and tools he uses day to day
-- [Projects](https://safdarali.in/projects): Portfolio of web development work — case studies, tech stack, live links
-- [Blog](https://safdarali.in/blog): Technical articles and tutorials (hosted articles on Medium, indexed from this hub)
-- [Contact](https://safdarali.in/contact): How to reach Safdar for work, collaboration, or general enquiries
+- [Home](https://safdarali.in): Overview — who Safdar is, featured projects, articles, contact
+- [About](https://safdarali.in/about): Background, photos, story, Safdar Ali Coding YouTube section
+- [Skills](https://safdarali.in/skills): Tech stack and tools used day to day
+- [Projects](https://safdarali.in/projects): Shipped work — case studies, stack, live demo links
+- [Blog](https://safdarali.in/blog): Native articles on safdarali.in plus links to DEV and Medium
+- [Contact](https://safdarali.in/contact): Contact form and social profiles
 
 ## Skills & expertise
 
 - **Frontend**: Next.js, React, TypeScript, Tailwind CSS, HTML5, CSS3
-- **Backend**: Node.js, REST APIs (Prisma/PostgreSQL where applicable on projects)
+- **Backend**: Node.js, REST APIs (Prisma/PostgreSQL on select projects)
 - **Tools**: Git, GitHub, Vercel, VS Code
-- **Content**: YouTube, technical writing (Medium, Dev.to), screen recording
+- **Content**: YouTube (Safdar Ali Coding), technical writing, screen recording
 
 ## YouTube
 
-Safdar Ali runs the **Safdar Ali Coding** YouTube channel (@safdarali_) — React, Next.js tutorials, career topics, and tech in India: https://www.youtube.com/@safdarali_
+Channel: **Safdar Ali Coding** — https://www.youtube.com/@safdarali_
 
-- 70+ free React and Next.js tutorials (Hindi-English mix)
-- Primary hub for video tutorials: https://safdarali.in/about#safdar-ali-youtube (I create, code & share section)
-- Written learning path: https://safdarali.in/blog/learn-react-nextjs-india-resources-2026
+- React, Next.js, TypeScript tutorials for developers in India and worldwide
+- On-site hub: https://safdarali.in/about#safdar-ali-youtube
+- Learning path article: https://safdarali.in/blog/learn-react-nextjs-india-resources-2026
 
 ## Contact & profiles
 
@@ -42,29 +42,17 @@ Safdar Ali runs the **Safdar Ali Coding** YouTube channel (@safdarali_) — Reac
 - YouTube: https://www.youtube.com/@safdarali_
 - Dev.to: https://dev.to/safdarali25
 - X: https://twitter.com/safdarali___
-- Email: use https://safdarali.in/contact or the mail icon in the bottom navigation (desktop); the address is not published as plain text on the site
+- Email: via https://safdarali.in/contact (form on site; address not published as plain text)
 
-## Intended audience
-
-- Recruiters and hiring managers looking for a Next.js / React developer in India
-- Collaborators and freelance clients
-- YouTube viewers who want more context on his work
-- Developers and students interested in his articles and open source
-
-## Queries this site should answer
+## Common questions
 
 - Who is Safdar Ali?
 - What does Safdar Ali do?
-- Is Safdar Ali available for hire?
 - What projects has Safdar Ali built?
-- Where can I watch Safdar Ali's YouTube videos?
-- Safdar Ali YouTube tutorials
-- Safdar Ali YouTube channel React Next.js
 - What is Safdar Ali's tech stack?
 - How do I contact Safdar Ali?
 - Safdar Ali developer Bengaluru
 - Safdar Ali Next.js developer India
-
-## Update policy
-
-Refresh this file when you publish a new article, ship a notable project, change availability, or update primary contact details.
+- Safdar Ali YouTube tutorials
+- Safdar Ali Coding YouTube channel
+- Frontend developer portfolio guide: https://safdarali.in/blog/frontend-developer-portfolio-guide-india-2026

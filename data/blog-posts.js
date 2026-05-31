@@ -11,6 +11,56 @@ import { isPublished, sortByPublishedDesc, publishedAtDateOnly, toOpenGraphPubli
  */
 export const blogPosts = [
   {
+    date: "May 2026",
+    publishedAt: "2026-05-31",
+    title: "How to Build a Frontend Developer Portfolio That Stands Out",
+    reactions: "safdarali.in · Guide",
+    popular: true,
+    native: true,
+    subTitle:
+      "First-scroll clarity, project ideas, Next.js SEO, performance targets, and a publish checklist — patterns from safdarali.in.",
+    excerpt:
+      "Frontend developer portfolio guide for India — sections, React/Next.js examples, SEO, performance, personal branding, FAQ, and checklist to build and rank.",
+    href: "/blog/frontend-developer-portfolio-guide-india-2026",
+  },
+  {
+    date: "Jun 2026",
+    publishedAt: "2026-06-01T09:00:00+05:30",
+    title: "Stop Using Global State for Server Data in Next.js",
+    reactions: "safdarali.in · Guide",
+    native: true,
+    subTitle:
+      "Dashboard refactor — Server Actions + useActionState for mutations, fetch cache for rows, Zustand slice for UI-only state. No global Redux for server data.",
+    excerpt:
+      "Next.js Server Actions with Zustand — fetch caching vs global state, useActionState, and a localized UI slice. Full dashboard code example.",
+    href: "/blog/stop-global-state-server-data-nextjs",
+  },
+  {
+    date: "May 2026",
+    publishedAt: "2026-05-31T18:00:00+05:30",
+    title: "The Production-Ready .cursorrules Template for Next.js App Router Teams",
+    reactions: "safdarali.in · Workflow",
+    native: true,
+    subTitle:
+      "Copy-paste .cursor/rules for Next.js — RSC boundaries, env safety, TypeScript strict, build gates, and agentic coding guardrails for Cursor + Claude.",
+    excerpt:
+      "Best cursorrules for Next.js App Router — production template for Server Components, streaming, secrets, TypeScript, and Agent workflows.",
+    href: "/blog/cursorrules-nextjs-app-router-template",
+  },
+  {
+    date: "May 2026",
+    publishedAt: "2026-05-31T09:00:00+05:30",
+    title: "Why Your Next.js 15 App is Still Slow (And How to Fix the React 19 Hydration Lag)",
+    reactions: "safdarali.in · Performance",
+    popular: true,
+    native: true,
+    subTitle:
+      "Upgrading did not fix LCP or INP — DevTools traces, layout shift fixes, hydration error fixes, and a useMemo the React Compiler missed.",
+    excerpt:
+      "Next.js 15 performance optimization — fix INP, LCP layout shifts, React 19 hydration errors, and React Compiler gaps with a production DevTools workflow.",
+    href: "/blog/nextjs-15-still-slow-react-19-hydration-fix",
+  },
+  {
     date: "Sep 2026",
     publishedAt: "2026-09-15T09:00:00+05:30",
     title: "How React's Virtual DOM Actually Works — Visual Explanation",

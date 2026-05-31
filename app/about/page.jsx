@@ -18,17 +18,20 @@ const AboutStorySections = dynamic(() => import("../../components/about/AboutSto
 })
 
 const heroPhoto = ABOUT_PHOTOS[0]
+const ABOUT_OG_IMAGE = absoluteMediaUrl("/about/opengraph-image")
 
 export const metadata = {
   title: "About Safdar Ali — Photos, Story & Bengaluru Life",
   description:
-    "About Safdar Ali — frontend engineer at Cube, YouTuber, and React developer in Bengaluru. Photos, cricket, cycling, travel, and how to collaborate.",
+    "About Safdar Ali — frontend engineer, YouTuber (70+ React & Next.js tutorials), and developer in Bengaluru. Photos, story, YouTube channel, and how to collaborate.",
   keywords: [
     "Safdar Ali",
     "Safdar Ali photos",
     "Safdar Ali images",
     "Safdar Ali developer",
     "Safdar Ali YouTube",
+    "Safdar Ali Coding",
+    "Safdar Ali Coding YouTube",
     "Safdar Ali Bengaluru",
     "React developer India",
     "Next.js developer Bengaluru",
@@ -38,37 +41,25 @@ export const metadata = {
     canonical: ABOUT_PAGE_URL,
   },
   openGraph: {
-    title: "About Safdar Ali — Photos & Story",
+    title: "About Safdar Ali — Photos, Story & YouTube Tutorials",
     url: ABOUT_PAGE_URL,
     description:
-      "Photos and story of Safdar Ali — engineering, YouTube, cricket, cycling, and travel from Bengaluru.",
-    type: "profile",
+      "About Safdar Ali — Next.js developer in Bengaluru. 70+ free YouTube tutorials, photos, cricket, cycling, and travel.",
+    type: "website",
     images: [
       {
-        url: absoluteMediaUrl(heroPhoto.path),
-        width: heroPhoto.width,
-        height: heroPhoto.height,
-        alt: heroPhoto.alt,
-      },
-      {
-        url: absoluteMediaUrl("/safdar-ali.jpg"),
-        width: 1200,
-        height: 1200,
-        alt: "Safdar Ali — software engineer and Next.js developer in Bengaluru, India",
-      },
-      {
-        url: "https://safdarali.in/opengraph-image",
+        url: ABOUT_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Safdar Ali — Frontend Engineer Bengaluru",
+        alt: "About Safdar Ali — Next.js developer and YouTube educator in Bengaluru, India",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Safdar Ali — Photos & Story",
-    description: "Photos and story of Safdar Ali — developer, YouTuber, Bengaluru.",
-    images: [absoluteMediaUrl(heroPhoto.path)],
+    title: "About Safdar Ali — Photos, Story & YouTube",
+    description: "Safdar Ali YouTube — 70+ React & Next.js tutorials. Developer story and photos from Bengaluru.",
+    images: [ABOUT_OG_IMAGE],
   },
   robots: {
     index: true,

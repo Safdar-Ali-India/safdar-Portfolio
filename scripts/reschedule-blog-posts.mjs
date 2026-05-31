@@ -12,6 +12,10 @@ const SKIP_HREFS = new Set([
   "/blog/cursor-claude-react-workflow-2026",
   "/blog/rsc-vs-client-components",
   "/blog/nextjs-performance-60-percent",
+  "/blog/nextjs-15-still-slow-react-19-hydration-fix",
+  "/blog/cursorrules-nextjs-app-router-template",
+  "/blog/frontend-developer-portfolio-guide-india-2026",
+  "/blog/stop-global-state-server-data-nextjs",
 ]);
 
 const PUBLISH_ORDER = [

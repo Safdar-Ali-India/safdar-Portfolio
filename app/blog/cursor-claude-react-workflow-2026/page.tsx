@@ -73,7 +73,7 @@ const blogGraph = buildBlogPostingGraph({
 })
 
 export default function CursorClaudeReactWorkflowPage() {
-  requirePublishedBlogPost(POST_HREF);
+  requirePublishedBlogPost(POST_HREF)
 
   return (
     <>
@@ -84,12 +84,8 @@ export default function CursorClaudeReactWorkflowPage() {
 
       <article className="relative mx-auto max-w-3xl px-4 pb-24 pt-14">
         <PageBackHeader back="blog">
-          <p className="text-center text-xs font-bold uppercase tracking-wide text-neutral-500 dark:text-ink/60">
-            May 2026 · Workflow · ~9 min read
-          </p>
-          <h1 className={blogArticleTitleClass}>
-            How I Use Cursor + Claude to Ship React Code 3x Faster
-          </h1>
+          <p className="text-center text-xs font-bold uppercase tracking-wide text-neutral-500 dark:text-ink/60">May 2026 · Workflow · ~9 min read</p>
+          <h1 className={blogArticleTitleClass}>How I Use Cursor + Claude to Ship React Code 3x Faster</h1>
           <p className="mt-4 text-center text-sm text-neutral-600 dark:text-ink/75">
             By{" "}
             <Link href="/about" className={linkClass}>

@@ -10,11 +10,13 @@ export const metadata = {
   keywords: [
     "Safdar Ali",
     "Safdar Ali developer",
+    "Safdar Ali YouTube",
     "Next.js developer Bengaluru",
     "React developer India",
     "frontend developer India",
     "hire frontend developer India",
     "web development portfolio India",
+    "Safdar Ali YouTube tutorials",
   ],
   alternates: {
     canonical: SITE,

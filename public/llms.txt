@@ -13,7 +13,7 @@ Safdar Ali is a software developer and content creator from Bengaluru, Karnataka
 ## Key pages
 
 - [Home](https://safdarali.in): Overview of Safdar Ali — who he is, what he does, and how to contact him
-- [About](https://safdarali.in/about): Detailed background, achievements, interests, and story
+- [About](https://safdarali.in/about): Detailed background, achievements, interests, Safdar Ali YouTube tutorials section, and story
 - [Skills](https://safdarali.in/skills): Tech stack and tools he uses day to day
 - [Projects](https://safdarali.in/projects): Portfolio of web development work — case studies, tech stack, live links
 - [Blog](https://safdarali.in/blog): Technical articles and tutorials (hosted articles on Medium, indexed from this hub)
@@ -28,7 +28,11 @@ Safdar Ali is a software developer and content creator from Bengaluru, Karnataka
 
 ## YouTube
 
-Safdar Ali runs a YouTube channel focused on web development, tutorials, career topics, and tech in India: https://www.youtube.com/@safdarali_
+Safdar Ali runs the **Safdar Ali Coding** YouTube channel (@safdarali_) — React, Next.js tutorials, career topics, and tech in India: https://www.youtube.com/@safdarali_
+
+- 70+ free React and Next.js tutorials (Hindi-English mix)
+- Primary hub for video tutorials: https://safdarali.in/about#safdar-ali-youtube (I create, code & share section)
+- Written learning path: https://safdarali.in/blog/learn-react-nextjs-india-resources-2026
 
 ## Contact & profiles
 
@@ -54,6 +58,8 @@ Safdar Ali runs a YouTube channel focused on web development, tutorials, career 
 - Is Safdar Ali available for hire?
 - What projects has Safdar Ali built?
 - Where can I watch Safdar Ali's YouTube videos?
+- Safdar Ali YouTube tutorials
+- Safdar Ali YouTube channel React Next.js
 - What is Safdar Ali's tech stack?
 - How do I contact Safdar Ali?
 - Safdar Ali developer Bengaluru

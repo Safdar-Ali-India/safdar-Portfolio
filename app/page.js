@@ -1,6 +1,10 @@
 import HomePage from "../components/HomePage";
 import PageStructuredData from "../components/seo/PageStructuredData";
+import { getSpotlightPosts } from "../data/blog-posts";
 import { buildHomePageGraph } from "../lib/structured-data";
+
+/** Homepage blog spotlight respects publish schedule without redeploy. */
+export const dynamic = "force-dynamic";
 
 const SITE = "https://safdarali.in";
 
@@ -33,7 +37,7 @@ export default function Page() {
   return (
     <>
       <PageStructuredData graph={buildHomePageGraph()} />
-      <HomePage />
+      <HomePage spotlightPosts={getSpotlightPosts()} />
     </>
   );
 }

@@ -6,6 +6,7 @@ import PageStructuredData from "../../../components/seo/PageStructuredData";
 import DeferredSparkles from "../../../components/ui/DeferredSparkles";
 import ArticleSupportCTA from "../../../components/blog/ArticleSupportCTA";
 import RelatedPosts from "../../../components/blog/RelatedPosts";
+import PublishedBlogLink from "../../../components/blog/PublishedBlogLink";
 import { buildBlogPostingGraph } from "../../../lib/structured-data";
 import { requirePublishedBlogPost } from "../../../lib/require-published-blog-post";
 import { getPostByHref } from "../../../data/blog-posts";
@@ -135,9 +136,9 @@ export default function StopGlobalStateServerDataPage() {
           </ul>
           <p>
             Tooling comparison:{" "}
-            <Link href="/blog/zustand-vs-redux-toolkit-2026" className={linkClass}>
+            <PublishedBlogLink href="/blog/zustand-vs-redux-toolkit-2026" className={linkClass}>
               Zustand vs Redux Toolkit
-            </Link>{" "}
+            </PublishedBlogLink>{" "}
             — Redux still wins on huge teams with middleware ecosystems; for new App Router dashboards, global server
             data in either store is the mistake.
           </p>
@@ -248,9 +249,9 @@ export const useDashboardUi = create<DashboardUiState>((set) => ({
           </h2>
           <p>
             Full Server Actions patterns:{" "}
-            <Link href="/blog/react-server-actions-production-guide" className={linkClass}>
+            <PublishedBlogLink href="/blog/react-server-actions-production-guide" className={linkClass}>
               production guide
-            </Link>
+            </PublishedBlogLink>
             . Dashboard row archive example:
           </p>
           <pre className={preClass}>

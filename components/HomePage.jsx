@@ -28,13 +28,12 @@ function SectionDivider() {
 
 const DevLink = socialLinks.devto;
 
-const spotlightPosts = getSpotlightPosts();
-
 function isExternalHref(href) {
   return href.startsWith("http");
 }
 
-export default function HomePage() {
+export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
+  const spotlightPosts = spotlightPostsProp ?? getSpotlightPosts();
   return (
     <>
       <link

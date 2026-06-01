@@ -4,6 +4,9 @@ import { getPublishInstant } from "../lib/blog-schedule";
 
 const baseUrl = "https://safdarali.in";
 
+/** Include newly published posts without redeploying. */
+export const dynamic = "force-dynamic";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 

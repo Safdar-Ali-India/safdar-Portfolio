@@ -8,6 +8,7 @@ import Contact from "./Contact";
 import DeferredSparkles from "./ui/DeferredSparkles";
 import { getSpotlightPosts } from "../data/blog-posts";
 import { featuredProjects } from "../data/featured-projects";
+import FeaturedProjectCard from "./FeaturedProjectCard";
 import { dockPill, linkInline } from "../lib/ui-classes";
 import { socialLinks } from "../lib/social-links";
 
@@ -249,34 +250,7 @@ export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredProjects.map((proj) => (
-                <article
-                  key={proj.title}
-                  className="flex flex-col rounded-2xl border border-slate-400/55 bg-white/90 backdrop-blur-md overflow-hidden shadow-sm dark:border-white/[0.1] dark:bg-white/[0.04]"
-                >
-                  <div className="relative h-44 w-full bg-neutral-200 dark:bg-neutral-800">
-                    <Image
-                      src={proj.imgLink}
-                      alt={`${proj.title} — project screenshot`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width:768px) 100vw, 33vw"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                  <div className="p-4 flex flex-col flex-1 gap-3">
-                    <h3 className="font-bold text-lg text-neutral-950 dark:text-ink leading-snug">{proj.title}</h3>
-                    <p className="text-sm text-neutral-700 dark:text-ink/75 flex-1">{proj.subT}</p>
-                    <Link
-                      href={proj.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${dockPill} w-full justify-center text-xs py-2 mt-1`}
-                    >
-                      Live demo
-                    </Link>
-                  </div>
-                </article>
+                <FeaturedProjectCard key={proj.title} {...proj} />
               ))}
             </div>
           </section>

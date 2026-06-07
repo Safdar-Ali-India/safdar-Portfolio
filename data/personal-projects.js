@@ -1,3 +1,4 @@
+import framesnap from "../assets/framesnap.png";
 import cdi from "../assets/cdi.png";
 import fdl from "../assets/fdl.png";
 import hadith from "../assets/hadith.png";
@@ -8,6 +9,14 @@ import swag from "../assets/swag.png";
 import weatherapp from "../assets/weatherapp.png";
 
 export const personalProjects = [
+  {
+    title: "FrameSnap",
+    subtitle:
+      "Free video thumbnail generator — drag & drop MP4/WebM/MOV, auto-snap or scrub frames, export HD PNG or ZIP. 100% client-side: no upload, no signup, no watermark. Next.js 16 + TypeScript.",
+    imgLink: framesnap,
+    codeLink: "https://github.com/Safdar-Ali-India/FrameSnap",
+    liveLink: "https://framesnap.safdarali.in",
+  },
   {
     title: "Fdl Beauty Bar",
     subtitle:

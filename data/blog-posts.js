@@ -11,6 +11,19 @@ import { isPublished, sortByPublishedDesc, publishedAtDateOnly, toOpenGraphPubli
  */
 export const blogPosts = [
   {
+    date: "Jun 2026",
+    publishedAt: "2026-06-02",
+    title: "Free Video Thumbnail Generator Online — No Upload",
+    reactions: "safdarali.in · FrameSnap",
+    popular: true,
+    native: true,
+    subTitle:
+      "Why I built FrameSnap — 100% browser-local frame extraction from MP4/WebM/MOV. No signup, no watermark, HD export, ZIP auto-snap.",
+    excerpt:
+      "Free video thumbnail generator online — extract frames from video without upload. Browser-based, no watermark, YouTube thumbnail from MP4 workflow.",
+    href: "/blog/free-video-thumbnail-generator-online-no-upload",
+  },
+  {
     date: "May 2026",
     publishedAt: "2026-05-31",
     title: "How to Build a Frontend Developer Portfolio That Stands Out",

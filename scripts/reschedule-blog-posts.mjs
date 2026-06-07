@@ -16,6 +16,7 @@ const SKIP_HREFS = new Set([
   "/blog/cursorrules-nextjs-app-router-template",
   "/blog/frontend-developer-portfolio-guide-india-2026",
   "/blog/stop-global-state-server-data-nextjs",
+  "/blog/free-video-thumbnail-generator-online-no-upload",
 ]);
 
 const PUBLISH_ORDER = [

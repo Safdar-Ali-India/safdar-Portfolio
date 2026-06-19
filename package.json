@@ -7,6 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:all": "npm run test && npm run test:e2e",
     "about:images": "node scripts/optimize-about-images.mjs",
     "favicon:ico": "node scripts/make-favicon-ico.mjs"
   },
@@ -27,15 +31,22 @@
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
     "@types/node": "20.11.24",
     "@types/react": "18.2.63",
+    "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "ffmpeg-static": "^5.3.0",
+    "jsdom": "^25.0.1",
     "png-to-ico": "^3.0.1",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "typescript": "5.4.2"
+    "typescript": "5.4.2",
+    "vitest": "^2.1.9"
   }
 }

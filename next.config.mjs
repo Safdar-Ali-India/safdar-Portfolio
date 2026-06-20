@@ -25,6 +25,7 @@ const securityHeaders = [
 
 const nextConfig = {
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: "https",
@@ -42,7 +43,7 @@ const nextConfig = {
   },
   /** Smaller client bundles for icon imports (Navbar, etc.). */
   experimental: {
-    optimizePackageImports: ["react-icons", "framer-motion"],
+    optimizePackageImports: ["react-icons", "react-icons/fa", "framer-motion"],
   },
   async headers() {
     return [

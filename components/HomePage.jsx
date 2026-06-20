@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import logo from "../assets/logo.jpeg";
 import Image from "next/image";
-import Contact from "./Contact";
+import { FaGithub, FaInstagram, FaLink, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 import DeferredSparkles from "./ui/DeferredSparkles";
 import { getSpotlightPosts } from "../data/blog-posts";
 import { featuredProjects } from "../data/featured-projects";
@@ -12,12 +13,36 @@ import FeaturedProjectCard from "./FeaturedProjectCard";
 import { dockPill, linkInline } from "../lib/ui-classes";
 import { socialLinks } from "../lib/social-links";
 
-const GithubLink = socialLinks.github;
-const LinkedInLink = socialLinks.linkedin;
-const InstagramLink = socialLinks.instagram;
-const YoutubeLink = socialLinks.youtube;
-const TwitterLink = socialLinks.twitter;
-const LinkTree = socialLinks.linktree;
+const Contact = dynamic(() => import("./Contact"), { loading: () => null });
+
+const DevLink = socialLinks.devto;
+
+const DESKTOP_SOCIAL = [
+  { href: socialLinks.linktree, label: "All links (Linktree)", Icon: FaLink, liClass: "icon link mt-10" },
+  { href: socialLinks.github, label: "GitHub profile", Icon: FaGithub, liClass: "icon github my-10" },
+  { href: socialLinks.linkedin, label: "LinkedIn profile", Icon: FaLinkedinIn, liClass: "icon linkedin my-10" },
+  { href: socialLinks.youtube, label: "YouTube channel", Icon: FaYoutube, liClass: "icon dev" },
+  { href: socialLinks.instagram, label: "Instagram profile", Icon: FaInstagram, liClass: "icon instagram my-10" },
+];
+
+const MOBILE_SOCIAL = [
+  { href: socialLinks.linktree, label: "All links (Linktree)", Icon: FaLink, liClass: "icon link" },
+  { href: socialLinks.github, label: "GitHub profile", Icon: FaGithub, liClass: "icon github" },
+  { href: socialLinks.linkedin, label: "LinkedIn profile", Icon: FaLinkedinIn, liClass: "icon linkedin" },
+  { href: socialLinks.twitter, label: "X (Twitter) profile", Icon: FaTwitter, liClass: "icon twitter" },
+  { href: socialLinks.instagram, label: "Instagram profile", Icon: FaInstagram, liClass: "icon instagram" },
+  { href: socialLinks.youtube, label: "YouTube channel", Icon: FaYoutube, liClass: "icon dev" },
+];
+
+function SocialIconLink({ href, label, Icon, liClass }) {
+  return (
+    <li className={`${liClass} list-none`}>
+      <Link href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+        <Icon aria-hidden="true" />
+      </Link>
+    </li>
+  );
+}
 
 function SectionDivider() {
   return (
@@ -27,8 +52,6 @@ function SectionDivider() {
   );
 }
 
-const DevLink = socialLinks.devto;
-
 function isExternalHref(href) {
   return href.startsWith("http");
 }
@@ -37,23 +60,6 @@ export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
   const spotlightPosts = spotlightPostsProp ?? getSpotlightPosts();
   return (
     <>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossOrigin="anonymous"
-        referrerPolicy="no-referrer"
-      />
-      <noscript>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
-        />
-      </noscript>
-
       <div className="max-w-5xl mx-auto px-5">
         <div className="w-full absolute inset-0 h-screen -z-10" aria-hidden="true">
           <DeferredSparkles
@@ -61,7 +67,7 @@ export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
             background="transparent"
             minSize={0.6}
             maxSize={1.4}
-            particleDensity={100}
+            particleDensity={80}
             className="w-full h-full"
             particleColor="#777"
           />
@@ -145,41 +151,9 @@ export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
                 className="social-rail text-lg wrapper list-none p-0 m-0 text-neutral-800 dark:text-ink"
                 aria-label="Social and profile links"
               >
-                <li className="icon link mt-10 list-none">
-                  <Link href={LinkTree} target="_blank" rel="noopener noreferrer" aria-label="All links (Linktree)">
-                    <span aria-hidden="true">
-                      <i className="fas fa-link " />
-                    </span>
-                  </Link>
-                </li>
-                <li className="icon github my-10 list-none">
-                  <Link href={GithubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                    <span aria-hidden="true">
-                      <i className="fab fa-github " />
-                    </span>
-                  </Link>
-                </li>
-                <li className="icon linkedin my-10 list-none">
-                  <Link href={LinkedInLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-                    <span aria-hidden="true">
-                      <i className="fab fa-linkedin-in " />
-                    </span>
-                  </Link>
-                </li>
-                <li className="icon dev list-none">
-                  <Link href={YoutubeLink} target="_blank" rel="noopener noreferrer" aria-label="YouTube channel">
-                    <span aria-hidden="true">
-                      <i className="fab fa-youtube " />
-                    </span>
-                  </Link>
-                </li>
-                <li className="icon instagram my-10 list-none">
-                  <Link href={InstagramLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
-                    <span aria-hidden="true">
-                      <i className="fab fa-instagram " />
-                    </span>
-                  </Link>
-                </li>
+                {DESKTOP_SOCIAL.map((item) => (
+                  <SocialIconLink key={item.label} {...item} />
+                ))}
               </ul>
             </div>
 
@@ -191,48 +165,9 @@ export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
                 className="social-rail text-lg wrapper lg:hidden flex flex-row gap-x-10 justify-center list-none p-0 m-0 text-neutral-800 dark:text-ink"
                 aria-label="Social and profile links"
               >
-                <li className="icon link list-none">
-                  <Link href={LinkTree} target="_blank" rel="noopener noreferrer" aria-label="All links (Linktree)">
-                    <span aria-hidden="true">
-                      <i className="fas fa-link " />
-                    </span>
-                  </Link>
-                </li>
-                <li className="icon github list-none">
-                  <Link href={GithubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                    <span aria-hidden="true">
-                      <i className="fab fa-github " />
-                    </span>
-                  </Link>
-                </li>
-                <li className="icon linkedin list-none">
-                  <Link href={LinkedInLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-                    <span aria-hidden="true">
-                      <i className="fab fa-linkedin-in " />
-                    </span>
-                  </Link>
-                </li>
-                <li className="icon twitter list-none">
-                  <Link href={TwitterLink} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter) profile">
-                    <span aria-hidden="true">
-                      <i className="fab fa-twitter " />
-                    </span>
-                  </Link>
-                </li>
-                <li className="icon instagram list-none">
-                  <Link href={InstagramLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
-                    <span aria-hidden="true">
-                      <i className="fab fa-instagram " />
-                    </span>
-                  </Link>
-                </li>
-                <li className="icon dev list-none">
-                  <Link href={YoutubeLink} target="_blank" rel="noopener noreferrer" aria-label="YouTube channel">
-                    <span aria-hidden="true">
-                      <i className="fab fa-youtube " />
-                    </span>
-                  </Link>
-                </li>
+                {MOBILE_SOCIAL.map((item) => (
+                  <SocialIconLink key={item.label} {...item} />
+                ))}
               </ul>
             </div>
           </section>

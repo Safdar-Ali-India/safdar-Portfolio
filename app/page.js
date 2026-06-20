@@ -3,8 +3,8 @@ import PageStructuredData from "../components/seo/PageStructuredData";
 import { getSpotlightPosts } from "../data/blog-posts";
 import { buildHomePageGraph } from "../lib/structured-data";
 
-/** Homepage blog spotlight respects publish schedule without redeploy. */
-export const dynamic = "force-dynamic";
+/** Cached at the edge; refreshes so spotlight picks up scheduled posts without redeploy. */
+export const revalidate = 60;
 
 const SITE = "https://safdarali.in";
 

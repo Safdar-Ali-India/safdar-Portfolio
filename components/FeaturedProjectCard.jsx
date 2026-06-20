@@ -7,7 +7,7 @@ import { dockPill } from "../lib/ui-classes";
 
 const external = { target: "_blank", rel: "noopener noreferrer" };
 
-export default function FeaturedProjectCard({ title, subT, imgLink, liveLink, codeLink }) {
+export default function FeaturedProjectCard({ title, subT, imgLink, liveLink, codeLink, priority = false }) {
   const [expanded, setExpanded] = useState(false);
   const needsReadMore = subT.length > 140;
 
@@ -25,7 +25,8 @@ export default function FeaturedProjectCard({ title, subT, imgLink, liveLink, co
           fill
           className="object-cover object-top transition-opacity group-hover:opacity-90"
           sizes="(max-width:768px) 100vw, 33vw"
-          loading="lazy"
+          priority={priority}
+          loading={priority ? undefined : "lazy"}
           decoding="async"
         />
       </Link>

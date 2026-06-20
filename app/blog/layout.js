@@ -1,8 +1,8 @@
 /**
- * Blog routes evaluate isPublished() on each request so scheduled posts
- * appear at their publishedAt time (IST) without a production redeploy.
+ * ISR: isPublished() re-evaluates when the cache expires so scheduled posts
+ * appear within ~60s of their slot without hitting the server on every request.
  */
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export default function BlogLayout({ children }) {
   return children;

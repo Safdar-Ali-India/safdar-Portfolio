@@ -60,7 +60,7 @@ html.dark .skip-to-main:focus {
   }
 }
 
-/* Font Awesome (CDN) defaults to low-contrast greys — match site foreground on dark theme */
+/* Homepage social rail — readable on dark theme */
 html.dark ul.social-rail a {
   color: #fafafa;
 }

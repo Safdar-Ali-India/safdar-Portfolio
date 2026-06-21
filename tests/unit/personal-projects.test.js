@@ -53,12 +53,19 @@ describe("productionProjects", () => {
 });
 
 describe("clientWork", () => {
-  it("has exactly three collapsible client projects", () => {
-    expect(clientWork).toHaveLength(3);
+  it("has five collapsible client projects", () => {
+    expect(clientWork).toHaveLength(5);
     expect(clientWork.map((c) => c.title)).toEqual([
+      "Lorazzo",
+      "Dr. Disha Dinakar",
       "M Salon Beverly Hills",
       "Sommet Beauty",
       "IndependentMed",
     ]);
+  });
+
+  it("includes Lorazzo and Dr. Disha Dinakar live links", () => {
+    expect(clientWork[0].liveLink).toBe("https://lorazzo.com");
+    expect(clientWork[1].liveLink).toBe("https://drdishadinakar.com");
   });
 });

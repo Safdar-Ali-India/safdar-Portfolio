@@ -1,16 +1,13 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import FeaturedProjectCard from "../../components/FeaturedProjectCard";
 
 const shortProject = {
   title: "Test Project",
-  subT: "Short description.",
+  subtitle: "Short description.",
   imgLink: { src: "/test.png" },
   liveLink: "https://example.com",
+  codeLink: "https://github.com/example/repo",
 };
-
-const longSubT =
-  "Free video thumbnail generator I built and open-sourced — drop MP4/WebM/MOV, scrub or auto-snap frames, export HD PNG or ZIP. Runs entirely in your browser: no upload, no signup, no watermark.";
 
 describe("FeaturedProjectCard", () => {
   it("renders title and description", () => {
@@ -21,48 +18,47 @@ describe("FeaturedProjectCard", () => {
 
   it("links thumbnail to live site", () => {
     render(<FeaturedProjectCard {...shortProject} />);
-    const thumb = screen.getByRole("link", { name: "View Test Project" });
+    const thumb = screen.getByRole("link", { name: "Open Test Project" });
     expect(thumb).toHaveAttribute("href", "https://example.com");
     expect(thumb).toHaveAttribute("target", "_blank");
   });
 
-  it("shows View project CTA", () => {
+  it("shows Live demo and GitHub CTAs", () => {
     render(<FeaturedProjectCard {...shortProject} />);
-    expect(screen.getByRole("link", { name: /View project/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /Live demo/i })).toHaveAttribute(
       "href",
       "https://example.com"
     );
+    expect(screen.getByRole("link", { name: "GitHub" })).toHaveAttribute(
+      "href",
+      "https://github.com/example/repo"
+    );
   });
 
-  it("shows Source code when codeLink provided", () => {
+  it("shows Install for extension projects", () => {
     render(
       <FeaturedProjectCard
-        {...shortProject}
-        codeLink="https://github.com/Safdar-Ali-India/FrameSnap"
+        title="ReviewMate"
+        subtitle="VS Code extension."
+        imgLink={{ src: "/test.png" }}
+        installLink="https://github.com/example/setup"
+        codeLink="https://github.com/example/repo"
+        badge="Marketplace soon"
       />
     );
-    expect(screen.getByRole("link", { name: /Source code/i })).toHaveAttribute(
-      "href",
-      "https://github.com/Safdar-Ali-India/FrameSnap"
+    expect(screen.getByRole("link", { name: /Install/i })).toBeInTheDocument();
+    expect(screen.getByText("Marketplace soon")).toBeInTheDocument();
+  });
+
+  it("shows Visit when only liveLink is provided", () => {
+    render(
+      <FeaturedProjectCard
+        title="Client Site"
+        subtitle="Production build."
+        imgLink={{ src: "/test.png" }}
+        liveLink="https://example.com"
+      />
     );
-  });
-
-  it("hides Source code when no codeLink", () => {
-    render(<FeaturedProjectCard {...shortProject} />);
-    expect(screen.queryByRole("link", { name: /Source code/i })).not.toBeInTheDocument();
-  });
-
-  it("shows Read more for long descriptions and toggles", async () => {
-    const user = userEvent.setup();
-    render(<FeaturedProjectCard {...shortProject} subT={longSubT} />);
-
-    expect(screen.getByRole("button", { name: "Read more" })).toBeInTheDocument();
-    await user.click(screen.getByRole("button", { name: "Read more" }));
-    expect(screen.getByRole("button", { name: "Read less" })).toBeInTheDocument();
-  });
-
-  it("does not show Read more for short descriptions", () => {
-    render(<FeaturedProjectCard {...shortProject} />);
-    expect(screen.queryByRole("button", { name: "Read more" })).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Visit" })).toHaveAttribute("href", "https://example.com");
   });
 });

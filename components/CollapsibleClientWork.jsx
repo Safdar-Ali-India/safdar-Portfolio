@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import ProjectCard from "./ProjectCard";
+import ProjectGrid from "./ProjectGrid";
 
 export default function CollapsibleClientWork({ studies }) {
   const [open, setOpen] = useState(false);
@@ -34,16 +34,21 @@ export default function CollapsibleClientWork({ studies }) {
       </div>
 
       {open ? (
-        <div id={panelId} className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-          {studies.map((study) => (
-            <ProjectCard key={study.title} {...study} />
-          ))}
-        </div>
-      ) : null}
+        <>
+          <div
+            id={panelId}
+            className="mt-8 max-w-3xl mx-auto mb-8 rounded-xl border border-neutral-200/80 bg-neutral-50/80 px-4 py-3 dark:border-white/10 dark:bg-white/[0.03]"
+          >
+            <p className="text-xs text-neutral-600 dark:text-ink/70 text-center leading-relaxed">
+              <span className="font-semibold text-neutral-800 dark:text-ink">Disclaimer:</span> I am not the owner
+              of these websites. These projects were developed during my employment with various agencies and
+              companies. All intellectual property rights belong to the respective clients and organizations.
+            </p>
+          </div>
 
-      <p className="mt-6 text-center text-[11px] text-neutral-400 dark:text-ink/45">
-        Agency employment · client IP
-      </p>
+          <ProjectGrid projects={studies} />
+        </>
+      ) : null}
     </section>
   );
 }

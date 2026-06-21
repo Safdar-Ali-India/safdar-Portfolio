@@ -22,21 +22,22 @@ test.describe("Static pages", () => {
 });
 
 test.describe("Homepage", () => {
-  test("shows featured projects including FrameSnap", async ({ page }) => {
+  test("shows featured projects including FrameSnap and ReviewMate", async ({ page }) => {
     await page.goto("/");
     await expect(page.getByRole("heading", { name: "Featured projects" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "FrameSnap" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Adsclique Media" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: /Cube/i })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "ReviewMate" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "SafDash" })).toBeVisible();
   });
 
   test("FrameSnap card links to live site and GitHub", async ({ page }) => {
     await page.goto("/");
     const featured = page.locator("section", { has: page.getByRole("heading", { name: "Featured projects" }) });
-    await expect(
-      featured.getByRole("link", { name: "View project →" }).first()
-    ).toHaveAttribute("href", "https://framesnap.safdarali.in");
-    await expect(featured.getByRole("link", { name: /Source code/i })).toHaveAttribute(
+    await expect(featured.getByRole("link", { name: /Live demo/i }).first()).toHaveAttribute(
+      "href",
+      "https://framesnap.safdarali.in"
+    );
+    await expect(featured.getByRole("link", { name: "GitHub" }).first()).toHaveAttribute(
       "href",
       "https://github.com/Safdar-Ali-India/FrameSnap"
     );
@@ -102,9 +103,11 @@ test.describe("Projects page", () => {
     await page.goto("/projects");
     await expect(page.getByRole("heading", { name: "Selected Client Work" })).toBeVisible();
     await expect(page.getByRole("button", { name: /View more/i })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Sommet Beauty" })).not.toBeVisible();
+    await expect(page.getByRole("heading", { name: "Lorazzo" })).not.toBeVisible();
     await page.getByRole("button", { name: /View more/i }).click();
-    await expect(page.getByRole("heading", { name: "Sommet Beauty" })).toBeVisible();
+    await expect(page.getByText(/Disclaimer:.*I am not the owner/i)).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Lorazzo" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Dr. Disha Dinakar" })).toBeVisible();
   });
 });
 

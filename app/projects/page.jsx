@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageBackHeader from "../../components/PageBackHeader";
-import ProjectCard from "../../components/ProjectCard";
+import ProjectGrid from "../../components/ProjectGrid";
 import CollapsibleClientWork from "../../components/CollapsibleClientWork";
 import DeferredSparkles from "../../components/ui/DeferredSparkles";
 import { clientWork } from "../../data/client-work";
@@ -40,11 +40,7 @@ export default function ProjectsPage() {
             Open Source &amp; Tools
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 justify-items-center">
-            {openSourceProjects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
-            ))}
-          </div>
+          <ProjectGrid projects={openSourceProjects} />
         </div>
 
         <div className="mt-16">
@@ -55,11 +51,7 @@ export default function ProjectsPage() {
             Production Frontend
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center max-w-4xl mx-auto">
-            {productionProjects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
-            ))}
-          </div>
+          <ProjectGrid projects={productionProjects} />
         </div>
 
         <CollapsibleClientWork studies={clientWork} />

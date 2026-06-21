@@ -1,29 +1,37 @@
 import framesnap from "../assets/framesnap.png";
-import adsclique from "../assets/adsclique.png";
-import cubehq from "../assets/cubehq.png";
+import reviewmate from "../assets/reviewmate.png";
+import safdash from "../assets/safdash.png";
 
-/** Shown on the homepage; full grid lives on /projects */
+/**
+ * Homepage featured trio — your strongest builder signals in ~5 seconds.
+ * Production client work (Adsclique, Cube) lives on /projects only.
+ */
 export const featuredProjects = [
   {
     title: "FrameSnap",
-    subT:
-      "Free video thumbnail generator I built and open-sourced — drop MP4/WebM/MOV, scrub or auto-snap frames, export HD PNG or ZIP. Runs entirely in your browser: no upload, no signup, no watermark.",
+    subtitle:
+      "Free browser-local thumbnail generator — MP4/WebM/MOV, HD export, no upload or signup.",
+    stack: ["Next.js", "TypeScript"],
     imgLink: framesnap,
     liveLink: "https://framesnap.safdarali.in",
     codeLink: "https://github.com/Safdar-Ali-India/FrameSnap",
   },
   {
-    title: "Adsclique Media",
-    subT:
-      "Primary website for a U.S. digital marketing agency — custom theme, Swiper case-study carousel, services hub, and CMS the team edits daily. Built from scratch as Senior Frontend Developer; still the agency's public storefront.",
-    imgLink: adsclique,
-    liveLink: "https://adsclique.com",
+    title: "ReviewMate",
+    subtitle:
+      "VS Code extension — AI code review, bug scan, and explainers. TypeScript + Claude API.",
+    stack: ["TypeScript", "VS Code"],
+    badge: "Marketplace soon",
+    imgLink: reviewmate,
+    codeLink: "https://github.com/Safdar-Ali-India/ReviewMate",
   },
   {
-    title: "Cube — AI Customer Engagement Platform",
-    subT:
-      "Built the frontend interface for cubehq.ai — an AI-native conversational platform for enterprise customer support. Focused on performance, accessibility, and scalable UI architecture. Full-time role at Cube (Sequoia Capital-backed).",
-    imgLink: cubehq,
-    liveLink: "https://cubehq.ai",
+    title: "SafDash",
+    subtitle:
+      "Developer dashboard — GitHub activity, dev news, tasks, and Pomodoro. React 19 + Vite.",
+    stack: ["React", "TypeScript"],
+    imgLink: safdash,
+    liveLink: "https://saf-dash.vercel.app",
+    codeLink: "https://github.com/Safdar-Ali-India/SafDash",
   },
 ];

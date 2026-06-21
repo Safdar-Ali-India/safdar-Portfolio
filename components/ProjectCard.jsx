@@ -41,7 +41,7 @@ export default function ProjectCard({
   );
 
   return (
-    <article className="flex w-full max-w-md flex-col rounded-2xl border border-neutral-200/80 bg-white/90 p-5 shadow-sm dark:border-white/[0.1] dark:bg-white/[0.04]">
+    <article className="flex w-[min(100%,28rem)] max-w-md flex-col rounded-2xl border border-neutral-200/80 bg-white/90 p-5 shadow-sm dark:border-white/[0.1] dark:bg-white/[0.04]">
       <div className="flex flex-wrap items-center gap-2">
         <h3 className="text-lg font-bold text-neutral-900 dark:text-ink">{title}</h3>
         {badge ? (

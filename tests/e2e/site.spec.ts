@@ -76,10 +76,35 @@ test.describe("Blog", () => {
 });
 
 test.describe("Projects page", () => {
-  test("shows personal projects section", async ({ page }) => {
+  test("shows open source projects including FrameSnap and ReviewMate", async ({ page }) => {
     await page.goto("/projects");
-    await expect(page.getByRole("heading", { name: /Personal.*Featured Projects/i })).toBeVisible();
-    await expect(page.getByText("FrameSnap")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Open Source & Tools" })).toBeVisible();
+    await expect(page.getByText("FrameSnap", { exact: true })).toBeVisible();
+    await expect(page.getByText("ReviewMate", { exact: true })).toBeVisible();
+    await expect(page.getByText("SafDash", { exact: true })).toBeVisible();
+    await expect(page.getByText("ConvoFlow", { exact: true })).toBeVisible();
+  });
+
+  test("FrameSnap card links to live site and GitHub", async ({ page }) => {
+    await page.goto("/projects");
+    const openSource = page.locator("#open-source").locator("..");
+    await expect(openSource.getByRole("link", { name: /Live demo/i }).first()).toHaveAttribute(
+      "href",
+      "https://framesnap.safdarali.in"
+    );
+    await expect(openSource.getByRole("link", { name: "GitHub" }).first()).toHaveAttribute(
+      "href",
+      "https://github.com/Safdar-Ali-India/FrameSnap"
+    );
+  });
+
+  test("selected client work is collapsed by default", async ({ page }) => {
+    await page.goto("/projects");
+    await expect(page.getByRole("heading", { name: "Selected Client Work" })).toBeVisible();
+    await expect(page.getByRole("button", { name: /View more/i })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Sommet Beauty" })).not.toBeVisible();
+    await page.getByRole("button", { name: /View more/i }).click();
+    await expect(page.getByRole("heading", { name: "Sommet Beauty" })).toBeVisible();
   });
 });
 

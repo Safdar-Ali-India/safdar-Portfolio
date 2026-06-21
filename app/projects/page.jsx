@@ -1,10 +1,10 @@
 import Link from "next/link";
 import PageBackHeader from "../../components/PageBackHeader";
 import ProjectCard from "../../components/ProjectCard";
-import CaseStudyCard from "../../components/CaseStudyCard";
+import CollapsibleClientWork from "../../components/CollapsibleClientWork";
 import DeferredSparkles from "../../components/ui/DeferredSparkles";
-import { caseStudies } from "../../data/case-studies";
-import { personalProjects } from "../../data/personal-projects";
+import { clientWork } from "../../data/client-work";
+import { openSourceProjects, productionProjects } from "../../data/personal-projects";
 import { dockPill } from "../../lib/ui-classes";
 
 export default function ProjectsPage() {
@@ -16,7 +16,7 @@ export default function ProjectsPage() {
           background="transparent"
           minSize={0.6}
           maxSize={1.4}
-          particleDensity={100}
+          particleDensity={80}
           className="w-full h-full"
           particleColor="#777"
         />
@@ -28,47 +28,41 @@ export default function ProjectsPage() {
           </h1>
         </PageBackHeader>
 
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold text-center mb-4 dark:text-ink light:text-black">
-            Professional Case Studies
-          </h2>
+        <p className="mt-5 max-w-xl mx-auto text-center text-sm text-neutral-600 dark:text-ink/70">
+          React, Next.js, and TypeScript — open source, production, and client work.
+        </p>
 
-          <div className="mb-8 p-3 bg-neutral-800/20 border border-neutral-700/30 rounded-lg max-w-4xl mx-auto">
-            <p className="text-xs text-neutral-600 dark:text-ink/80 text-center leading-relaxed">
-              <span className="font-semibold text-neutral-800 dark:text-ink">Disclaimer:</span> I am not the owner of
-              these websites. These projects were developed during my employment with various agencies and companies.
-              All intellectual property rights belong to the respective clients and organizations.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {caseStudies.map((study, index) => (
-              <CaseStudyCard key={study.title} study={study} index={index} />
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-20">
+        <div className="mt-14">
           <h2
-            id="featured-projects"
-            className="text-2xl font-bold text-center mb-8 dark:text-ink light:text-black scroll-mt-24"
+            id="open-source"
+            className="text-xl font-bold text-center mb-8 dark:text-ink light:text-black scroll-mt-24"
           >
-            Personal & Featured Projects
+            Open Source &amp; Tools
           </h2>
 
-          <div className="flex flex-wrap justify-center gap-x-8">
-            {personalProjects.map((project) => (
-              <ProjectCard
-                key={project.title}
-                title={project.title}
-                subtitle={project.subtitle}
-                imgLink={project.imgLink}
-                codeLink={project.codeLink}
-                liveLink={project.liveLink}
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 justify-items-center">
+            {openSourceProjects.map((project) => (
+              <ProjectCard key={project.title} {...project} />
             ))}
           </div>
         </div>
+
+        <div className="mt-16">
+          <h2
+            id="production"
+            className="text-xl font-bold text-center mb-8 dark:text-ink light:text-black scroll-mt-24"
+          >
+            Production Frontend
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center max-w-4xl mx-auto">
+            {productionProjects.map((project) => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
+          </div>
+        </div>
+
+        <CollapsibleClientWork studies={clientWork} />
 
         <div className="mt-16 text-center pb-4">
           <p className="text-sm text-neutral-600 dark:text-ink/75 mb-4">Interested in similar work?</p>

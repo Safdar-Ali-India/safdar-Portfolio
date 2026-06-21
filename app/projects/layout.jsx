@@ -7,13 +7,13 @@ const SITE = "https://safdarali.in";
 export const metadata = {
   title: "Projects",
   description:
-    "Safdar Ali — professional case studies (WordPress, Shopify, Wix) and personal React & Next.js projects. Web development portfolio India.",
+    "Safdar Ali — React, Next.js, and TypeScript projects. Open source tools, VS Code extensions, and production frontend work. Bengaluru, India.",
   keywords: [
     "Safdar Ali projects",
-    "web development portfolio India",
-    "WordPress developer portfolio",
-    "Shopify developer",
-    "React projects",
+    "Next.js developer portfolio",
+    "React open source",
+    "VS Code extension developer",
+    "TypeScript projects India",
   ],
   alternates: {
     canonical: `${SITE}/projects`,
@@ -21,7 +21,8 @@ export const metadata = {
   openGraph: {
     title: "Projects | Safdar Ali",
     url: `${SITE}/projects`,
-    description: "Case studies and featured builds — agency work and personal apps.",
+    description:
+      "Open source tools, VS Code extensions, and production frontend work — FrameSnap, ReviewMate, SafDash, and more.",
   },
 };
 

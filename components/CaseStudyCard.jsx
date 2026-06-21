@@ -15,7 +15,7 @@ export default function CaseStudyCard({ study, index }) {
         src={study.imgLink}
         alt={`${study.title} — case study preview`}
         fill
-        className="object-cover transition-transform duration-300 hover:scale-105"
+        className="object-cover transition-transform duration-300"
         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         loading="lazy"
         decoding="async"

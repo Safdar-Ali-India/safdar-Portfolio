@@ -1,8 +1,8 @@
-import msalonbeverlyhills from "../assets/msalonbeverlyhills.png";
-import sommetbeauty from "../assets/sommetbeauty.png";
-import independentmed from "../assets/independentmed.png";
-import lorazzo from "../assets/lorazzo.png";
-import drdishadinakar from "../assets/drdishadinakar.png";
+import msalonbeverlyhills from "../assets/msalonbeverlyhills.webp";
+import sommetbeauty from "../assets/sommetbeauty.webp";
+import independentmed from "../assets/independentmed.webp";
+import lorazzo from "../assets/lorazzo.webp";
+import drdishadinakar from "../assets/drdishadinakar.webp";
 
 /** Selected agency client work — collapsible section on /projects */
 export const clientWork = [

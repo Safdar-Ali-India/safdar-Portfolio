@@ -1,6 +1,6 @@
-import framesnap from "../assets/framesnap.png";
-import reviewmate from "../assets/reviewmate.png";
-import safdash from "../assets/safdash.png";
+import framesnap from "../assets/framesnap.webp";
+import reviewmate from "../assets/reviewmate.webp";
+import safdash from "../assets/safdash.webp";
 
 /**
  * Homepage featured trio — your strongest builder signals in ~5 seconds.

@@ -1,10 +1,10 @@
-import framesnap from "../assets/framesnap.png"
-import reviewmate from "../assets/reviewmate.png"
-import safdash from "../assets/safdash.png"
-import convoflow from "../assets/convoflow.png"
-import chatComponent from "../assets/chat-component.png"
-import adsclique from "../assets/adsclique.png"
-import cubehq from "../assets/cubehq.png"
+import framesnap from "../assets/framesnap.webp";
+import reviewmate from "../assets/reviewmate.webp";
+import safdash from "../assets/safdash.webp";
+import convoflow from "../assets/convoflow.webp";
+import chatComponent from "../assets/chat-component.webp";
+import adsclique from "../assets/adsclique.webp";
+import cubehq from "../assets/cubehq.webp";
 
 /** Flagship open-source and production builds on /projects */
 export const openSourceProjects = [

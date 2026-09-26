@@ -79,9 +79,9 @@ export default function ReactFormsWithoutALibraryPage() {
             .{" "}
             The contact form on this site is a plain form that posts. No client state, no schema library. The browser checks the required fields. The server checks them again, because the browser check is not a security boundary.
           </p>
-          <p>A few fields with inline errors can live in useState or in a server action's returned state. React 19's form actions cover the pending and error text without a third package. I reach for that first on a Next.js app.</p>
+          <p>A few fields with inline errors can live in useState or in a server action&apos;s returned state. React 19&apos;s form actions cover the pending and error text without a third package. I reach for that first on a Next.js app.</p>
           <p>I add a form library when there are many fields, field arrays, and rules that depend on other fields, and the team will otherwise invent a worse version. The cost is bundle size and a second way of thinking about state. Pay it when the form is the product, not when the form is an email field.</p>
-          <p>Either way, do not trust the client. Validate on the server. Show the server's error next to the field. A green client check that the server rejects is the bug users remember.</p>
+          <p>Either way, do not trust the client. Validate on the server. Show the server&apos;s error next to the field. A green client check that the server rejects is the bug users remember.</p>
           <ArticleSupportCTA />
           <RelatedPosts currentHref={POST_HREF} />
         </div>

@@ -81,7 +81,7 @@ export default function KeyboardAccessibilityReactPatternsPage() {
           </p>
           <p>A div with an onClick is not a button. It is not in the tab order, and it does not activate on Enter unless you reimplement the platform. Use a button. Style it however the design needs.</p>
           <p>Dialogs need a focus move into the dialog when they open, a way to close from the keyboard, and a return of focus to the control that opened them. A focus trap that cannot escape is worse than no trap. Test it by tabbing, not by reading the attribute list.</p>
-          <p>Do not remove the focus outline unless you draw a visible replacement. The outline is how a keyboard user knows where they are. I have watched people ship a design pass that deleted :focus-visible and then file a "the menu is confusing" bug the next week.</p>
+          <p>Do not remove the focus outline unless you draw a visible replacement. The outline is how a keyboard user knows where they are. I have watched people ship a design pass that deleted :focus-visible and then file a &quot;the menu is confusing&quot; bug the next week.</p>
           <p>Icons that do something need an accessible name. The icon is decoration. The name is the button. aria-label or visible text, not a title attribute nobody hears.</p>
           <ArticleSupportCTA />
           <RelatedPosts currentHref={POST_HREF} />

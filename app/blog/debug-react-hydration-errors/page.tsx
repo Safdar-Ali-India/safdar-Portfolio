@@ -77,10 +77,10 @@ export default function DebugReactHydrationErrorsPage() {
               Safdar Ali
             </Link>
             .{" "}
-            Hydration is React attaching to HTML the server already sent. A mismatch means the client's first render produced different markup. React will tell you, often with a diff that is longer than the bug.
+            Hydration is React attaching to HTML the server already sent. A mismatch means the client&apos;s first render produced different markup. React will tell you, often with a diff that is longer than the bug.
           </p>
           <p>I look for values that differ between server and browser: new Date() formatted in a local timezone, Math.random, window, localStorage, and a condition on the user agent. Those are different on purpose. They cannot be in the first render of a shared tree.</p>
-          <p>Invalid HTML is the second cause. A div inside a p, or a p inside a p, gets "fixed" by the browser before React hydrates, so the DOM React expected is already gone. The fix is valid markup, not a suppressHydrationWarning.</p>
+          <p>Invalid HTML is the second cause. A div inside a p, or a p inside a p, gets &quot;fixed&quot; by the browser before React hydrates, so the DOM React expected is already gone. The fix is valid markup, not a suppressHydrationWarning.</p>
           <p>suppressHydrationWarning is for the rare text node you have accepted will differ, such as a timestamp. It is not a way to silence a broken tree. If I cannot name why the two renders differ, I do not suppress the warning.</p>
           <p>The Next.js 15 hydration post goes further into traces. This is the order I use on an ordinary mismatch: find the text that differs, find the value that produced it, render that value only after mount or only on the server in a way both sides share.</p>
           <ArticleSupportCTA />

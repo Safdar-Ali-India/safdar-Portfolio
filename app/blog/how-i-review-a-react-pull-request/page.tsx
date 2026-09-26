@@ -79,10 +79,10 @@ export default function HowIReviewAReactPullRequestPage() {
             .{" "}
             I start with the description. If I cannot tell what changed for the user, I ask for that before I read the diff. A review of unnamed files is how nits replace bugs.
           </p>
-          <p>Then I look for behaviour: loading, empty, error, and the success path. Client state that duplicates server data. A "use client" that climbed onto a parent. Secrets and env values that are now public. Those are the comments that save a release.</p>
+          <p>Then I look for behaviour: loading, empty, error, and the success path. Client state that duplicates server data. A &quot;use client&quot; that climbed onto a parent. Secrets and env values that are now public. Those are the comments that save a release.</p>
           <p>Keys, effects, and effects that fetch are next. An effect that loads data on mount is usually a server fetch that got stuck on the client. An effect with a missing dependency is a stale bug waiting for the second visit.</p>
-          <p>Style comments go last, and only when the name lies or the pattern fights the rest of the repo. I do not rewrite the author's formatting in a comment. The formatter does that.</p>
-          <p>A useful comment names the failure and the change. "This list uses the index as a key and the rows can be filtered, so state will stick to the wrong row. Use the id." That can be applied. "Maybe rethink this" cannot.</p>
+          <p>Style comments go last, and only when the name lies or the pattern fights the rest of the repo. I do not rewrite the author&apos;s formatting in a comment. The formatter does that.</p>
+          <p>A useful comment names the failure and the change. &quot;This list uses the index as a key and the rows can be filtered, so state will stick to the wrong row. Use the id.&quot; That can be applied. &quot;Maybe rethink this&quot; cannot.</p>
           <ArticleSupportCTA />
           <RelatedPosts currentHref={POST_HREF} />
         </div>

@@ -77,9 +77,9 @@ export default function JavascriptThisKeywordExplainedPage() {
               Safdar Ali
             </Link>
             .{" "}
-            this is not the function's owner. It is set by the call. obj.method() sets this to obj. A bare method() call does not, which is why pulling a method off an object and passing it as a callback loses this.
+            this is not the function&apos;s owner. It is set by the call. obj.method() sets this to obj. A bare method() call does not, which is why pulling a method off an object and passing it as a callback loses this.
           </p>
-          <p>Arrow functions take this from the surrounding scope. They do not rebind it. That is why an arrow is the right callback inside a class method or a React component when you meant the outer value, and the wrong tool when you wanted the method's own this.</p>
+          <p>Arrow functions take this from the surrounding scope. They do not rebind it. That is why an arrow is the right callback inside a class method or a React component when you meant the outer value, and the wrong tool when you wanted the method&apos;s own this.</p>
           <p>In function components I almost never need this. Hooks closed over state. The bugs I still see are in class components and in plain objects passed to event emitters: someone extracted the function.</p>
           <p>If you must pass a method, wrap the call so the receiver is obvious, or use bind once. Do not sprinkle bind in render so a new function appears every time and defeats a memoised child. Prefer a function that takes the object as an argument. Explicit data is easier than a binding rule.</p>
           <ArticleSupportCTA />

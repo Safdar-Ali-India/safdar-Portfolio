@@ -79,10 +79,10 @@ export default function NextjsEnvironmentVariablesPage() {
             .{" "}
             A variable prefixed with NEXT_PUBLIC is shipped to the browser. That is not a hint. It is the build inlining the value into client JavaScript. API keys, database URLs, and private tokens do not get that prefix.
           </p>
-          <p>Server Components, route handlers, and server actions can read process.env.SECRET. A client component cannot, unless you passed the value in as a prop — which is the same as publishing it. Do not "fix" a missing client env by adding NEXT_PUBLIC.</p>
-          <p>I keep .env.local out of git. The example file lists the names and a dummy value, never a real secret. Production values live in the host's env settings, which for this site is Vercel.</p>
+          <p>Server Components, route handlers, and server actions can read process.env.SECRET. A client component cannot, unless you passed the value in as a prop — which is the same as publishing it. Do not &quot;fix&quot; a missing client env by adding NEXT_PUBLIC.</p>
+          <p>I keep .env.local out of git. The example file lists the names and a dummy value, never a real secret. Production values live in the host&apos;s env settings, which for this site is Vercel.</p>
           <p>Before a release I search the built client chunks for a string that should only exist on the server. If it shows up, something imported a server module into a client file, or a public prefix slipped in. The search takes a minute. Rotating a leaked key takes an afternoon.</p>
-          <p>Empty string and undefined are different. A missing env should fail the server action with a clear error, not silently call an API with "undefined" in the URL.</p>
+          <p>Empty string and undefined are different. A missing env should fail the server action with a clear error, not silently call an API with &quot;undefined&quot; in the URL.</p>
           <ArticleSupportCTA />
           <RelatedPosts currentHref={POST_HREF} />
         </div>

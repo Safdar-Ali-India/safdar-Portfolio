@@ -77,7 +77,7 @@ export default function NextjsLoadingAndStreamingPage() {
               Safdar Ali
             </Link>
             .{" "}
-            loading.js shows while the page's content is still resolving. The layout around it can paint first. That is streaming: HTML starts, then the slow part fills in. Users see the frame instead of a white browser tab.
+            loading.js shows while the page&apos;s content is still resolving. The layout around it can paint first. That is streaming: HTML starts, then the slow part fills in. Users see the frame instead of a white browser tab.
           </p>
           <p>If the slow fetch is in the layout, the loading file for the page does not cover it. Move the slow read into the page, or give that layout its own boundary. I have watched a team add loading.js and see no change because the await sat one level too high.</p>
           <p>The fallback should match the layout of the real content closely enough that the page does not jump when the data arrives. A tiny spinner in the corner of a page that then becomes a tall grid is a layout shift. A skeleton of the same grid is not exciting. It is the correct fallback.</p>

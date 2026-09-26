@@ -79,8 +79,8 @@ export default function JavascriptEventLoopExplainedPage() {
             .{" "}
             JavaScript on a page runs your code on one thread. If that thread is busy, clicks wait. The event loop is how the runtime decides what to run when the stack is clear.
           </p>
-          <p>The call stack is "what is running now." When it is empty, the runtime takes a task. Promise callbacks are microtasks. They run after the current stack, before the next timer task. That is why a Promise.then runs before a setTimeout of 0 that was scheduled first.</p>
-          <p>setTimeout(fn, 0) does not mean "now." It means "after the current work and after the microtasks, on a later turn." I use that fact when a bug only happens because a state update and a timer raced.</p>
+          <p>The call stack is &quot;what is running now.&quot; When it is empty, the runtime takes a task. Promise callbacks are microtasks. They run after the current stack, before the next timer task. That is why a Promise.then runs before a setTimeout of 0 that was scheduled first.</p>
+          <p>setTimeout(fn, 0) does not mean &quot;now.&quot; It means &quot;after the current work and after the microtasks, on a later turn.&quot; I use that fact when a bug only happens because a state update and a timer raced.</p>
           <p>A long loop blocks the loop. No paint, no click. Splitting work with timers or moving it off the main thread is a performance tool, not a style tool. The INP post is what that feels like to a user.</p>
           <p>You do not need the spec names in an interview. You need to say: the stack finishes, promise jobs run, then timers. If you can predict three lines of mixed Promise and setTimeout output, you have it.</p>
           <ArticleSupportCTA />

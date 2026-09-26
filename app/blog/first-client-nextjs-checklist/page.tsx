@@ -77,11 +77,11 @@ export default function FirstClientNextjsChecklistPage() {
               Safdar Ali
             </Link>
             .{" "}
-            I have shipped client sites and product UI. The first paid site fails when the scope is "a website" and the deadline is a date with no list behind it. Write the pages. Write what is not included. Get that in writing before you open the editor.
+            I have shipped client sites and product UI. The first paid site fails when the scope is &quot;a website&quot; and the deadline is a date with no list behind it. Write the pages. Write what is not included. Get that in writing before you open the editor.
           </p>
           <p>Version one is a fast marketing site: home, work, contact, and a form that sends mail. A blog, a dashboard, and three languages can wait. Each of those is a different project.</p>
           <p>You need real copy and real images before the build, or you will design around lorem and relitigate the layout. Hosting, a domain, and who pays the renewal belong in the kickoff, not the week of launch.</p>
-          <p>Measure once on a phone on a normal connection. A Lighthouse score on your laptop is not the client's visitor. The performance checklist on this site is the list I still run.</p>
+          <p>Measure once on a phone on a normal connection. A Lighthouse score on your laptop is not the client&apos;s visitor. The performance checklist on this site is the list I still run.</p>
           <p>Leave the repo in a state they can hand to the next developer: README, env example, and a note of where the form goes. That is part of the job, not a favour.</p>
           <ArticleSupportCTA />
           <RelatedPosts currentHref={POST_HREF} />

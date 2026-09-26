@@ -79,7 +79,7 @@ export default function WhyReactListsAreSlowPage() {
             .{" "}
             A list is slow for a boring reason: React is rendering more DOM than the screen can show, or it is recreating rows because the key changed. Memo on the row does not help the second case. The key tells React the row is a new one.
           </p>
-          <p>Use a stable id from the data. Index keys are acceptable only when the list is static, never sorted, and never filtered. The moment a row can move, index keys attach state to the wrong item. That looks like a "state bug" and it is a key bug.</p>
+          <p>Use a stable id from the data. Index keys are acceptable only when the list is static, never sorted, and never filtered. The moment a row can move, index keys attach state to the wrong item. That looks like a &quot;state bug&quot; and it is a key bug.</p>
           <p>If the list is a hundred simple rows, leave it. If it is a thousand rows with images, render the visible window. A virtualizer keeps a small set of DOM nodes and moves them. I do not add one until the profiler shows layout and paint on scroll, not because a blog said lists should be virtual.</p>
           <p>Filter and slice on the server or before the map, not inside the row. A row component that receives two hundred siblings it does not display still costs the parent.</p>
           <p>The same discipline is in the virtual DOM article: keys are how reconciliation knows what moved. Get the key right before you reach for memo.</p>

@@ -77,12 +77,12 @@ export default function NextjsCachingExplainedPage() {
               Safdar Ali
             </Link>
             .{" "}
-            Next.js has more than one cache. Fetch results can be stored. The full route can be stored. The client router keeps a cache of pages you already visited. A "stale content" bug is usually one of those, and the fix for the wrong one does nothing.
+            Next.js has more than one cache. Fetch results can be stored. The full route can be stored. The client router keeps a cache of pages you already visited. A &quot;stale content&quot; bug is usually one of those, and the fix for the wrong one does nothing.
           </p>
-          <p>A fetch in a Server Component is cached according to the options you pass and the version's defaults. If the data changes when someone submits a form, the mutation should revalidate the path or the tag you used. Hoping the next request is fresh is how yesterday's headline stays on the homepage.</p>
-          <p>The client router cache is why the back button feels instant and why an edit sometimes does not show until a refresh. router.refresh() or a revalidation from a server action addresses that. A hard reload "fixing" it is the clue.</p>
+          <p>A fetch in a Server Component is cached according to the options you pass and the version&apos;s defaults. If the data changes when someone submits a form, the mutation should revalidate the path or the tag you used. Hoping the next request is fresh is how yesterday&apos;s headline stays on the homepage.</p>
+          <p>The client router cache is why the back button feels instant and why an edit sometimes does not show until a refresh. router.refresh() or a revalidation from a server action addresses that. A hard reload &quot;fixing&quot; it is the clue.</p>
           <p>I do not turn caching off globally to make a bug go away. Uncached fetches are slower and hide the path you forgot to revalidate. Opt out on the fetch that must be live. Leave the rest.</p>
-          <p>Static assets on this site use a long cache because the filename changes when the file changes. HTML should not get that header unless you enjoy serving last week's page. Match the lifetime to how often the bytes change.</p>
+          <p>Static assets on this site use a long cache because the filename changes when the file changes. HTML should not get that header unless you enjoy serving last week&apos;s page. Match the lifetime to how often the bytes change.</p>
           <ArticleSupportCTA />
           <RelatedPosts currentHref={POST_HREF} />
         </div>

@@ -77,12 +77,12 @@ export default function ReactUseeffectMistakesPage() {
               Safdar Ali
             </Link>
             .{" "}
-            useEffect is for synchronising with a system outside React: a subscription, a timer, a browser API. It is not "componentDidMount for everything I forgot earlier."
+            useEffect is for synchronising with a system outside React: a subscription, a timer, a browser API. It is not &quot;componentDidMount for everything I forgot earlier.&quot;
           </p>
           <p>Fetching in an effect is the mistake I comment on most. The user sees an empty screen, then the data. On a Next.js page the fetch belongs on the server. I wrote that up on its own because it keeps coming back.</p>
           <p>A missing dependency is a stale closure. The effect captured old props and will not see the new ones. Adding the dependency is the fix. If that makes the effect re-run too often, the effect is doing too much, not the array.</p>
           <p>An empty dependency array with a lint disable is a decision to freeze the first render. Say so in a comment if you mean it. Do not use it to silence a warning you did not understand.</p>
-          <p>Code that runs because someone clicked belongs in the click handler. Putting it in an effect that watches a "clicked" flag is an extra render and an extra bug. Effects react to rendered output. Events are the user.</p>
+          <p>Code that runs because someone clicked belongs in the click handler. Putting it in an effect that watches a &quot;clicked&quot; flag is an extra render and an extra bug. Effects react to rendered output. Events are the user.</p>
           <p>Clean up subscriptions and timers. The function the effect returns exists so Strict Mode and a fast navigation do not leave two listeners. If you cannot describe the cleanup, you probably did not need the effect.</p>
           <ArticleSupportCTA />
           <RelatedPosts currentHref={POST_HREF} />

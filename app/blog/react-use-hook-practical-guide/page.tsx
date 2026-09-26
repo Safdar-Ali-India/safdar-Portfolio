@@ -79,7 +79,7 @@ export default function ReactUseHookPracticalGuidePage() {
             .{" "}
             use() lets a component read a promise or a context while it renders. If the promise is pending, the nearest Suspense boundary shows its fallback. That is the feature. It is not a replacement for thinking about where data should load.
           </p>
-          <p>On the server, I still fetch in the Server Component and pass data down. use() is interesting when a promise is already created and a child needs to unwrap it under Suspense. It is a poor fit for "call fetch inside every client card."</p>
+          <p>On the server, I still fetch in the Server Component and pass data down. use() is interesting when a promise is already created and a child needs to unwrap it under Suspense. It is a poor fit for &quot;call fetch inside every client card.&quot;</p>
           <p>Context with use() can be conditional, which useContext cannot. That is the case I actually want: read context only on the branch that needs it. I do not migrate every useContext in a working app for symmetry.</p>
           <p>The React 19 article covers the wider release. This hook is one tool in it. If the data is known on the server, render it on the server. Suspense around a client fetch is a fallback for data you could not get earlier, not the architecture.</p>
           <ArticleSupportCTA />

@@ -79,9 +79,9 @@ export default function ReactErrorBoundariesGuidePage() {
             .{" "}
             An error boundary is a component that catches a JavaScript error in its child tree during render and shows a fallback instead of unmounting the whole app. In the App Router, error.js is that boundary for a route segment.
           </p>
-          <p>It does not catch errors inside event handlers, async code, or the server's own logging. A click handler needs its own try/catch and a message in the UI. People wrap the page in a boundary and then wonder why the button failure still vanished into the console.</p>
+          <p>It does not catch errors inside event handlers, async code, or the server&apos;s own logging. A click handler needs its own try/catch and a message in the UI. People wrap the page in a boundary and then wonder why the button failure still vanished into the console.</p>
           <p>Put the boundary where a failure should be contained. A broken widget should not take down the article. A broken article can take down the article route and leave the nav, which lives in a parent layout that did not error.</p>
-          <p>The fallback needs a way forward: retry, or a link home. A sentence that says "something went wrong" with no action is a dead end. Log the error on the server or your error reporter so you hear about it before the user emails you.</p>
+          <p>The fallback needs a way forward: retry, or a link home. A sentence that says &quot;something went wrong&quot; with no action is a dead end. Log the error on the server or your error reporter so you hear about it before the user emails you.</p>
           <p>Do not catch errors by rendering null. That hides the bug and leaves a hole. Show the fallback and fix the throw.</p>
           <ArticleSupportCTA />
           <RelatedPosts currentHref={POST_HREF} />

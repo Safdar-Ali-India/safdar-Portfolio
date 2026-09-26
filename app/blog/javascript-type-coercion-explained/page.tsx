@@ -129,7 +129,7 @@ Number(qty) + price; // 501
           </pre>
           <p>
             Parse at the boundary: when the value enters your function, not in the middle of a JSX expression.{" "}
-            <code className="rounded bg-neutral-200/80 px-1.5 py-0.5 text-sm dark:bg-white/10">Number("")</code> is{" "}
+            <code className="rounded bg-neutral-200/80 px-1.5 py-0.5 text-sm dark:bg-white/10">Number(&quot;&quot;)</code> is{" "}
             <code className="rounded bg-neutral-200/80 px-1.5 py-0.5 text-sm dark:bg-white/10">0</code>, which is often the
             wrong default for a price. Prefer an explicit check for empty string before you convert.
           </p>

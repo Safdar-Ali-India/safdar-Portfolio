@@ -77,11 +77,11 @@ export default function FrontendDeveloperResumeIndiaPage() {
               Safdar Ali
             </Link>
             .{" "}
-            A resume is one page of evidence. A list of every library you have imported is not evidence. "Built the marketing site, LCP from 4s to under 2s, still live at this URL" is evidence.
+            A resume is one page of evidence. A list of every library you have imported is not evidence. &quot;Built the marketing site, LCP from 4s to under 2s, still live at this URL&quot; is evidence.
           </p>
           <p>Put two or three projects with a link, the stack, and what you personally did. If the project was a team, say your part. Reviewers can tell when five people claim the same architecture sentence.</p>
           <p>Skills should be things you can talk about for ten minutes. Next.js, React, TypeScript, and CSS are enough of a core. A wall of badges makes me assume none of them are deep.</p>
-          <p>Skip the objective paragraph. Skip "passionate about learning." Start with the work. If you are early in your career, a deployed project beats a certificate. The portfolio guide on this site is the longer version of that advice.</p>
+          <p>Skip the objective paragraph. Skip &quot;passionate about learning.&quot; Start with the work. If you are early in your career, a deployed project beats a certificate. The portfolio guide on this site is the longer version of that advice.</p>
           <p>PDF that opens, links that work, and a file name with your name. I have failed to open resumes that were a screenshot. That is not a design preference. It is the reviewer on a phone between meetings.</p>
           <ArticleSupportCTA />
           <RelatedPosts currentHref={POST_HREF} />

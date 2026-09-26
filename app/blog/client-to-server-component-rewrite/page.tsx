@@ -77,12 +77,12 @@ export default function ClientToServerComponentRewritePage() {
               Safdar Ali
             </Link>
             .{" "}
-            The rewrite was a marketing page that fetched nothing secret and still started with "use client" because a newsletter form lived at the bottom. The form needed state. The rest of the page did not.
+            The rewrite was a marketing page that fetched nothing secret and still started with &quot;use client&quot; because a newsletter form lived at the bottom. The form needed state. The rest of the page did not.
           </p>
           <p>I moved the page back to a Server Component and left a small form component as the client leaf. The hero, the proof points, and the images rendered as HTML. The form still hydrated.</p>
           <p>The first load of JavaScript for that route dropped because the copy was no longer part of the client graph. LCP improved because the text was in the first HTML response, not behind a spinner. I did not touch the CDN.</p>
-          <p>What broke: a date formatted with the visitor's locale inside the server render. Server and client disagreed on the string, and React warned about hydration. I formatted a stable ISO date on the server and let the form, which is client-only, show a local time if it needed one.</p>
-          <p>What I refused to move: the form's validation messages and the analytics click handler. Those need the browser. Forcing them onto the server would have been a stunt.</p>
+          <p>What broke: a date formatted with the visitor&apos;s locale inside the server render. Server and client disagreed on the string, and React warned about hydration. I formatted a stable ISO date on the server and let the form, which is client-only, show a local time if it needed one.</p>
+          <p>What I refused to move: the form&apos;s validation messages and the analytics click handler. Those need the browser. Forcing them onto the server would have been a stunt.</p>
           <p>If a page is mostly text and one widget, the widget is the client island. That is the same rule as the RSC guide, measured on one URL instead of argued in the abstract.</p>
           <ArticleSupportCTA />
           <RelatedPosts currentHref={POST_HREF} />

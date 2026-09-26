@@ -80,7 +80,7 @@ export default function NextjsPartialPrerenderingPage() {
             A lot of pages are a static frame plus one dynamic piece: a header that knows who you are, or a price that depends on a session. Partial prerendering is Next serving the static frame immediately and streaming the dynamic hole.
           </p>
           <p>That only helps if the frame really is static. If the whole page reads cookies, there is no shell to prerender. I split the dynamic read into a small child and leave the layout alone. The Suspense boundary is the hole.</p>
-          <p>I try it on one route that is already slow because it waits on a personalised fragment, and I compare TTFB of the shell against the old full wait. I do not enable it across the app in one change. A mis-marked dynamic page can cache the wrong user's content if you are careless about cookies.</p>
+          <p>I try it on one route that is already slow because it waits on a personalised fragment, and I compare TTFB of the shell against the old full wait. I do not enable it across the app in one change. A mis-marked dynamic page can cache the wrong user&apos;s content if you are careless about cookies.</p>
           <p>If your hosting does not support the option yet, streaming with loading.js still gets you most of the user-visible win. The streaming post is the version you can ship without a new runtime flag.</p>
           <ArticleSupportCTA />
           <RelatedPosts currentHref={POST_HREF} />

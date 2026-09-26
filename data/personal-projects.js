@@ -1,4 +1,5 @@
 import framesnap from "../assets/framesnap.webp";
+import shipcheck from "../assets/shipcheck.jpg";
 import reviewmate from "../assets/reviewmate.webp";
 import safdash from "../assets/safdash.webp";
 import convoflow from "../assets/convoflow.webp";
@@ -15,6 +16,15 @@ export const openSourceProjects = [
     imgLink: framesnap,
     liveLink: "https://framesnap.safdarali.in",
     codeLink: "https://github.com/Safdar-Ali-India/FrameSnap",
+  },
+  {
+    title: "ShipCheck",
+    subtitle:
+      "Free browser smoke tests and visual diffs — paste a URL, get a real Chromium report. No signup.",
+    stack: ["Next.js", "TypeScript", "Playwright"],
+    imgLink: shipcheck,
+    liveLink: "https://shipcheck-seven.vercel.app",
+    codeLink: "https://github.com/Safdar-Ali-India/shipcheck",
   },
   {
     title: "ReviewMate",

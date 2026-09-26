@@ -2,9 +2,10 @@ import { openSourceProjects, productionProjects } from "../../data/personal-proj
 import { clientWork } from "../../data/client-work";
 
 describe("openSourceProjects", () => {
-  it("lists four flagship open-source projects in priority order", () => {
+  it("lists flagship open-source projects in priority order", () => {
     expect(openSourceProjects.map((p) => p.title)).toEqual([
       "FrameSnap",
+      "ShipCheck",
       "ReviewMate",
       "SafDash",
       "ConvoFlow",
@@ -18,27 +19,35 @@ describe("openSourceProjects", () => {
     expect(framesnap.codeLink).toBe("https://github.com/Safdar-Ali-India/FrameSnap");
   });
 
+  it("ShipCheck has live site and GitHub", () => {
+    const shipcheck = openSourceProjects[1];
+    expect(shipcheck.title).toBe("ShipCheck");
+    expect(shipcheck.liveLink).toBe("https://shipcheck-seven.vercel.app");
+    expect(shipcheck.codeLink).toBe("https://github.com/Safdar-Ali-India/shipcheck");
+    expect(shipcheck.stack).toEqual(["Next.js", "TypeScript", "Playwright"]);
+  });
+
   it("ReviewMate has Install and GitHub links", () => {
-    const reviewmate = openSourceProjects[1];
+    const reviewmate = openSourceProjects[2];
     expect(reviewmate.installLink).toContain("ReviewMate");
     expect(reviewmate.codeLink).toBe("https://github.com/Safdar-Ali-India/ReviewMate");
     expect(reviewmate.badge).toMatch(/Marketplace/i);
   });
 
   it("SafDash has live URL and GitHub", () => {
-    const safdash = openSourceProjects[2];
+    const safdash = openSourceProjects[3];
     expect(safdash.liveLink).toBe("https://saf-dash.vercel.app");
     expect(safdash.codeLink).toBe("https://github.com/Safdar-Ali-India/SafDash");
   });
 
   it("ConvoFlow has live demo and GitHub", () => {
-    const convo = openSourceProjects[3];
+    const convo = openSourceProjects[4];
     expect(convo.liveLink).toBe("https://convo-flow-chi.vercel.app");
     expect(convo.codeLink).toBe("https://github.com/Safdar-Ali-India/ConvoFlow");
   });
 
   it("React Chat Component is in progress without repo yet", () => {
-    const chat = openSourceProjects[4];
+    const chat = openSourceProjects[5];
     expect(chat.pendingCode).toBe(true);
     expect(chat.badge).toMatch(/progress/i);
   });

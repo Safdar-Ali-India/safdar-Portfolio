@@ -9,7 +9,9 @@ import { FaGithub, FaInstagram, FaLink, FaLinkedinIn, FaTwitter, FaYoutube } fro
 import DeferredSparkles from "./ui/DeferredSparkles";
 import { getSpotlightPosts } from "../data/blog-posts";
 import { featuredProjects } from "../data/featured-projects";
+import MobileSnapCarousel from "./MobileSnapCarousel";
 import FeaturedProjectCard from "./FeaturedProjectCard";
+import StatsRow from "./StatsRow";
 import { dockPill, linkInline } from "../lib/ui-classes";
 import { socialLinks } from "../lib/social-links";
 
@@ -105,11 +107,11 @@ export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
                   across India.
                 </p>
 
-                <div className="flex flex-wrap gap-3">
-                  <Link href="/projects" className={dockPill}>
+                <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3">
+                  <Link href="/projects" className={`${dockPill} justify-center text-center`}>
                     View projects
                   </Link>
-                  <Link href="/contact" className={dockPill}>
+                  <Link href="/contact" className={`${dockPill} justify-center text-center`}>
                     Get in touch
                   </Link>
                 </div>
@@ -118,19 +120,8 @@ export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
                   <h2 className="text-neutral-600 dark:text-ink/80 text-xs font-InterBold uppercase font-bold tracking-wide mb-3">
                     BY THE NUMBERS
                   </h2>
-                  <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-3">
-                    <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
-                      <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">70+</p>
-                      <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">YouTube Tutorials</p>
-                    </div>
-                    <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
-                      <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">30+</p>
-                      <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">Projects Shipped</p>
-                    </div>
-                    <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
-                      <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">4 Yrs</p>
-                      <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">Experience</p>
-                    </div>
+                  <div className="mt-2">
+                    <StatsRow />
                   </div>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {["Next.js", "React", "TypeScript", "Node.js", "Tailwind CSS"].map((skill) => (
@@ -183,11 +174,14 @@ export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
                 All projects →
               </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <MobileSnapCarousel
+              label="Featured projects"
+              className="md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3"
+            >
               {featuredProjects.map((proj, index) => (
                 <FeaturedProjectCard key={proj.title} {...proj} priority={index === 0} />
               ))}
-            </div>
+            </MobileSnapCarousel>
           </section>
 
           <SectionDivider />
@@ -221,7 +215,7 @@ export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
               </Link>
               .
             </p>
-            <div>
+            <MobileSnapCarousel label="Articles and tutorials" className="md:block" itemClassName="md:mb-8 md:w-full">
               {spotlightPosts.map((blog) => {
                 const external = isExternalHref(blog.href);
                 const linkProps = external
@@ -231,7 +225,7 @@ export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
                 return (
                   <article
                     key={blog.href}
-                    className="my-8 p-4 rounded-2xl border border-slate-300/80 bg-white/70 dark:border-white/[0.1] dark:bg-white/[0.04]"
+                    className="flex h-full flex-col p-4 rounded-2xl border border-slate-300/80 bg-white/70 dark:border-white/[0.1] dark:bg-white/[0.04]"
                   >
                     <div className="border border-neutral-400 dark:border-white/15 rounded-full w-fit px-2 py-1 flex items-center">
                       <span className="text-xs text-neutral-700 dark:text-ink/80">{blog.date}</span>
@@ -252,7 +246,7 @@ export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
                       </div>
                     </div>
 
-                    <p className="text-neutral-700 dark:text-ink/80 text-sm max-w-3xl">{blog.subTitle}</p>
+                    <p className="flex-1 text-neutral-700 dark:text-ink/80 text-sm max-w-3xl">{blog.subTitle}</p>
 
                     <Link
                       href={blog.href}
@@ -264,7 +258,7 @@ export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
                   </article>
                 );
               })}
-            </div>
+            </MobileSnapCarousel>
           </section>
 
           <SectionDivider />

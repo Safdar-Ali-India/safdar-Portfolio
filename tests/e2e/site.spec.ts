@@ -1,4 +1,19 @@
+import { readFileSync } from "fs";
+import { join } from "path";
 import { test, expect } from "@playwright/test";
+import { isPublished } from "../../lib/blog-schedule";
+
+/** Latest native post that is not live yet, so the 404 check does not expire on a fixed date. */
+function latestUnpublishedNativeHref() {
+  const src = readFileSync(join(process.cwd(), "data", "blog-posts.js"), "utf8");
+  const posts = [...src.matchAll(/publishedAt: "([^"]+)"[\s\S]*?href: "(\/blog\/[^"]+)"/g)].map((match) => ({
+    publishedAt: match[1],
+    href: match[2],
+  }));
+  const future = posts.filter((post) => !isPublished(post.publishedAt));
+  if (future.length === 0) return undefined;
+  return future.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))[0].href;
+}
 
 const STATIC_PAGES = [
   { path: "/", title: /Safdar Ali/i },
@@ -66,7 +81,9 @@ test.describe("Blog", () => {
   });
 
   test("scheduled future article returns 404", async ({ page }) => {
-    const response = await page.goto("/blog/react-virtual-dom-explained-2026");
+    const href = latestUnpublishedNativeHref();
+    test.skip(!href, "No future native posts are scheduled");
+    const response = await page.goto(href!);
     expect(response?.status()).toBe(404);
   });
 

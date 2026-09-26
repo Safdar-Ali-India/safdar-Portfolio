@@ -1,33 +1,52 @@
 import Link from "next/link";
 import PageBackHeader from "../../components/PageBackHeader";
 import DeferredSparkles from "../../components/ui/DeferredSparkles";
+import BlogPagination, { BLOG_PAGE_SIZE } from "../../components/blog/BlogPagination";
 import { getPublishedPosts, getNativeBlogPosts } from "../../data/blog-posts";
 import PageStructuredData from "../../components/seo/PageStructuredData";
 import { buildBlogIndexGraph } from "../../lib/structured-data";
 
 const SITE = "https://safdarali.in";
 
-export const metadata = {
-  title: "Blog",
-  description:
-    "Safdar Ali — technical articles on TypeScript, JavaScript, Git, and web development. Read on Medium; this page is the SEO hub at safdarali.in.",
-  keywords: [
-    "Safdar Ali blog",
-    "Next.js tutorials India",
-    "TypeScript beginner",
-    "JavaScript developer writing",
-  ],
-  alternates: {
-    canonical: `${SITE}/blog`,
-  },
-  openGraph: {
-    title: "Blog | Safdar Ali",
-    url: `${SITE}/blog`,
-    description: "Articles and tutorials by Safdar Ali — web development and career topics.",
-  },
-};
+function currentPage(searchParams, pageCount) {
+  const raw = Number(searchParams?.page);
+  const page = Number.isFinite(raw) && raw > 0 ? Math.floor(raw) : 1;
+  return Math.min(page, pageCount);
+}
 
-export default function BlogPage() {
+export function generateMetadata({ searchParams }) {
+  const pageCount = Math.max(1, Math.ceil(getPublishedPosts().length / BLOG_PAGE_SIZE));
+  const page = currentPage(searchParams, pageCount);
+  const canonical = page > 1 ? `${SITE}/blog?page=${page}` : `${SITE}/blog`;
+
+  return {
+    title: page > 1 ? `Blog — page ${page}` : "Blog",
+    description:
+      "Safdar Ali — technical articles on TypeScript, JavaScript, Git, and web development. Read on Medium; this page is the SEO hub at safdarali.in.",
+    keywords: [
+      "Safdar Ali blog",
+      "Next.js tutorials India",
+      "TypeScript beginner",
+      "JavaScript developer writing",
+    ],
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title: page > 1 ? `Blog — page ${page} | Safdar Ali` : "Blog | Safdar Ali",
+      url: canonical,
+      description: "Articles and tutorials by Safdar Ali — web development and career topics.",
+    },
+  };
+}
+
+export default function BlogPage({ searchParams }) {
+  const posts = getPublishedPosts();
+  const pageCount = Math.max(1, Math.ceil(posts.length / BLOG_PAGE_SIZE));
+  const page = currentPage(searchParams, pageCount);
+  const start = (page - 1) * BLOG_PAGE_SIZE;
+  const visible = posts.slice(start, start + BLOG_PAGE_SIZE);
+
   return (
     <>
       <PageStructuredData graph={buildBlogIndexGraph(getNativeBlogPosts())} />
@@ -62,8 +81,14 @@ export default function BlogPage() {
           .
         </p>
 
-        <ul className="mt-10 space-y-10">
-          {getPublishedPosts().map((post) => {
+        <p className="mt-8 text-center text-xs font-medium text-neutral-500 dark:text-ink/55">
+          {posts.length === 0
+            ? "No articles yet"
+            : `Showing ${start + 1}–${start + visible.length} of ${posts.length}`}
+        </p>
+
+        <ul className="mt-6 space-y-6">
+          {visible.map((post) => {
             const isNative = post.native || post.href.startsWith("/");
             return (
             <li
@@ -105,6 +130,8 @@ export default function BlogPage() {
             );
           })}
         </ul>
+
+        <BlogPagination page={page} pageCount={pageCount} />
 
         <p className="mt-12 text-center text-sm text-neutral-500 dark:text-ink/70">
           Also on{" "}

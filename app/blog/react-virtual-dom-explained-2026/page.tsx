@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "How React's Virtual DOM Actually Works — Visual Explanation",
     url: CANONICAL,
     type: "article",
-    publishedTime: postMeta?.seoPublishedTime ?? "2026-12-29T03:30:00.000Z",
+    publishedTime: postMeta?.seoPublishedTime ?? "2026-09-15T03:30:00.000Z",
     authors: ["Safdar Ali"],
     description: "Virtual DOM, reconciliation, keys — explained with code from production React and Next.js apps.",
     images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Safdar Ali — React virtual DOM" }],
@@ -65,8 +65,8 @@ const blogGraph = buildBlogPostingGraph({
   canonical: CANONICAL,
   headline: "How React's Virtual DOM Actually Works — Visual Explanation",
   description: "React virtual DOM explained — reconciliation, keys, diffing.",
-  datePublished: postMeta?.seoDatePublished ?? "2026-12-29",
-  dateModified: postMeta?.seoDatePublished ?? "2026-12-29",
+  datePublished: postMeta?.seoDatePublished ?? "2026-09-15",
+  dateModified: postMeta?.seoDatePublished ?? "2026-09-15",
   image: OG_IMAGE,
 });
 
@@ -91,7 +91,7 @@ export default function ReactVirtualDomExplained2026Page() {
       <article className="relative mx-auto max-w-3xl px-4 pb-24 pt-14">
         <PageBackHeader back="blog">
 <p className="text-center text-xs font-bold uppercase tracking-wide text-neutral-500 dark:text-ink/60">
-            Dec 2026 · Guide · ~11 min read
+            {postMeta?.date ?? "Sep 2026"} · Guide · ~11 min read
           </p>
           <h1 className={blogArticleTitleClass}>
             How React&apos;s Virtual DOM Actually Works — Visual Explanation

@@ -4,6 +4,7 @@ import PageBackHeader from "../../components/PageBackHeader"
 import AboutHeroImage from "../../components/about/AboutHeroImage"
 import AboutPageJsonLd from "../../components/about/AboutPageJsonLd"
 import { ABOUT_PAGE_URL, ABOUT_PHOTOS, absoluteMediaUrl } from "../../lib/about-media-seo"
+import StatsRow from "../../components/StatsRow"
 
 const WhereImBasedSection = dynamic(() => import("../../components/about/WhereImBasedSection"), {
   loading: () => (
@@ -127,25 +128,14 @@ function page() {
               ChatGPT for real work from early 2023; from 2024, Claude, Cursor, and v0 are how I prototype and ship every week.
               In 2026, skipping that stack is the outlier.
             </p>
-            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
-                <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">70+</p>
-                <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">YouTube Tutorials</p>
-              </div>
-              <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
-                <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">30+</p>
-                <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">Projects Shipped</p>
-              </div>
-              <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
-                <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">4 Yrs</p>
-                <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">Experience</p>
-              </div>
+            <div className="mt-8">
+              <StatsRow />
             </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/contact" className={dockPill}>
+            <div className="mt-6 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3">
+              <Link href="/contact" className={`${dockPill} justify-center text-center`}>
                 Say hello →
               </Link>
-              <Link href="/projects" className={dockPill}>
+              <Link href="/projects" className={`${dockPill} justify-center text-center`}>
                 View projects
               </Link>
             </div>

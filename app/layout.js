@@ -85,7 +85,7 @@ export default function RootLayout({ children }) {
         <JsonLd data={siteGraph} />
         <Theming>
           <Header />
-          <main id="main-content" tabIndex={-1}>
+          <main id="main-content" tabIndex={-1} className="pb-28 md:pb-8">
             {children}
           </main>
           <SpeedInsights />

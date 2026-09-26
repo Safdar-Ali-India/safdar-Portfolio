@@ -1,3 +1,4 @@
+import MobileSnapCarousel from "./MobileSnapCarousel";
 import ProjectCard from "./ProjectCard";
 
 /**
@@ -14,15 +15,15 @@ export default function ProjectGrid({ projects }) {
 
   return (
     <>
-      {/* Tablet & mobile — full list in 2-col grid */}
-      <div
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center xl:hidden
-          [&>*:last-child:nth-child(odd)]:md:col-span-2 [&>*:last-child:nth-child(odd)]:md:justify-self-center"
+      {/* Mobile: peek carousel. Tablet: 2-column grid. */}
+      <MobileSnapCarousel
+        label="Projects"
+        className="md:grid md:grid-cols-2 md:justify-items-center md:gap-8 xl:hidden [&>*:last-child:nth-child(odd)]:md:col-span-2 [&>*:last-child:nth-child(odd)]:md:justify-self-center"
       >
         {projects.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}
-      </div>
+      </MobileSnapCarousel>
 
       {/* Desktop xl — 3 columns with centered tail row */}
       <div className="hidden xl:block space-y-8">

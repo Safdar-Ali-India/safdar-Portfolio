@@ -18,7 +18,7 @@ export default function AboutHeroImage({ src, alt, aspectClass = "min-h-[280px] 
         fetchPriority="high"
         sizes="(max-width: 1024px) 100vw, 42vw"
         unoptimized
-        className="object-cover contrast-[0.97] saturate-[0.93]"
+        className="object-cover object-[center_22%] contrast-[0.97] saturate-[0.93] sm:object-center"
       />
     </figure>
   );

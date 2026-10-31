@@ -21,7 +21,7 @@ export default function ProjectsPage() {
           particleColor="#777"
         />
       </div>
-      <div className="relative max-w-6xl mx-auto px-4 pb-20">
+      <div className="relative max-w-6xl mx-auto px-4">
         <PageBackHeader className="mt-14" back="home">
           <h1 className="text-center font-InterBold uppercase font-extrabold font-InterBlack dark:text-ink light:text-black text-3xl">
             Projects

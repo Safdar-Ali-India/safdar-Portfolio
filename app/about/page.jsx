@@ -3,8 +3,8 @@ import Link from "next/link"
 import PageBackHeader from "../../components/PageBackHeader"
 import AboutHeroImage from "../../components/about/AboutHeroImage"
 import AboutPageJsonLd from "../../components/about/AboutPageJsonLd"
-import { ABOUT_PAGE_URL, ABOUT_PHOTOS, absoluteMediaUrl } from "../../lib/about-media-seo"
 import StatsRow from "../../components/StatsRow"
+import { ABOUT_PAGE_URL, ABOUT_PHOTOS, absoluteMediaUrl } from "../../lib/about-media-seo"
 
 const WhereImBasedSection = dynamic(() => import("../../components/about/WhereImBasedSection"), {
   loading: () => (
@@ -99,7 +99,7 @@ function page() {
         type="image/webp"
         fetchPriority="high"
       />
-    <div className="relative pb-36 sm:pb-40">
+    <div className="relative">
       <article className="relative mx-auto max-w-6xl px-4 pt-12 sm:pt-16 lg:px-6">
         <PageBackHeader className="mb-12 mt-10 sm:mt-14" back="home">
           <h1 className={pageTitleClass}>About Safdar Ali</h1>
@@ -131,11 +131,11 @@ function page() {
             <div className="mt-8">
               <StatsRow />
             </div>
-            <div className="mt-6 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3">
-              <Link href="/contact" className={`${dockPill} justify-center text-center`}>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/contact" className={dockPill}>
                 Say hello →
               </Link>
-              <Link href="/projects" className={`${dockPill} justify-center text-center`}>
+              <Link href="/projects" className={dockPill}>
                 View projects
               </Link>
             </div>

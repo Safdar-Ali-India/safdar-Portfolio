@@ -2,6 +2,9 @@
   "name": "portfolio3.0",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -26,6 +29,7 @@
     "next-themes": "^0.2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-github-calendar": "^5.0.9",
     "react-icons": "^5.0.1",
     "sharp": "^0.33.2",
     "tailwind-merge": "^2.2.1"

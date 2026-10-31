@@ -12,6 +12,7 @@ import { featuredProjects } from "../data/featured-projects";
 import MobileSnapCarousel from "./MobileSnapCarousel";
 import FeaturedProjectCard from "./FeaturedProjectCard";
 import StatsRow from "./StatsRow";
+import ContributionGraph from "./ContributionGraph";
 import { dockPill, linkInline } from "../lib/ui-classes";
 import { socialLinks } from "../lib/social-links";
 
@@ -132,6 +133,13 @@ export default function HomePage({ spotlightPosts: spotlightPostsProp }) {
                         {skill}
                       </span>
                     ))}
+                  </div>
+
+                  <div className="mt-8">
+                    <h2 className="text-neutral-600 dark:text-ink/80 text-xs font-InterBold uppercase font-bold tracking-wide mb-3">
+                      GitHub activity
+                    </h2>
+                    <ContributionGraph />
                   </div>
                 </div>
               </div>

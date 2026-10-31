@@ -125,3 +125,58 @@ html.dark ul.social-rail a:hover {
 .animate-fade-in {
   animation: fade-in 1s ease-in-out;
 }
+
+/* About mobile carousel: same card size via shared aspect ratio (keeps media visible) */
+@media (max-width: 639px) {
+  .about-equal-slide {
+    aspect-ratio: 3 / 4;
+    width: min(100%, 22.5rem) !important;
+    max-width: 92% !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .about-equal-slide > div {
+    display: flex;
+    height: 100%;
+    min-height: 0;
+    width: 100%;
+  }
+
+  .about-equal-slide a,
+  .about-equal-slide > div > div {
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+    height: 100% !important;
+  }
+
+  .about-equal-slide figure {
+    position: relative !important;
+    flex: 1 1 auto;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 12rem !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    margin: 0 !important;
+  }
+
+  .about-equal-slide img,
+  .about-equal-slide video {
+    opacity: 1 !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  /* Next/Image fill + non-fill */
+  .about-equal-slide figure img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
+}

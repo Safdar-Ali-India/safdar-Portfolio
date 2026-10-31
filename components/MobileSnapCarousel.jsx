@@ -1,12 +1,46 @@
 "use client";
 
-import { Children, useEffect, useRef, useState } from "react";
+import { Children, isValidElement, useEffect, useRef, useState } from "react";
+
+const BREAKPOINT = {
+  sm: {
+    scroller: "sm:mx-0 sm:snap-none sm:overflow-visible sm:px-0 sm:pb-0",
+    item: "sm:w-auto sm:shrink sm:max-w-none",
+    controls: "sm:hidden",
+  },
+  md: {
+    scroller: "md:mx-0 md:snap-none md:overflow-visible md:px-0 md:pb-0",
+    item: "md:w-auto md:shrink md:max-w-none",
+    controls: "md:hidden",
+  },
+};
+
+/** Grid/flex placement on children must live on the snap wrapper (the real grid item). */
+function layoutClassesFromChild(child) {
+  if (!isValidElement(child) || typeof child.props.className !== "string") return "";
+  return child.props.className
+    .split(/\s+/)
+    .filter(Boolean)
+    .filter((token) =>
+      /(^|:)(col|row)-(span|start|end)-/.test(token) ||
+      /(^|:)(justify-self-|self-|max-w-|min-h-|h-full|min-w-0|justify-center)/.test(token) ||
+      /(^|:)flex$/.test(token)
+    )
+    .join(" ");
+}
 
 /**
  * Horizontal snap row on small screens, with equal-height cards and
- * previous / next controls. From md up it follows the layout in className.
+ * previous / next controls. From `from` up it follows the layout in className.
  */
-export default function MobileSnapCarousel({ label, className = "", itemClassName = "", children }) {
+export default function MobileSnapCarousel({
+  label,
+  className = "",
+  itemClassName = "",
+  children,
+  from = "md",
+  align = "stretch",
+}) {
   const scrollerRef = useRef(null);
   const items = Children.toArray(children);
   const [index, setIndex] = useState(0);
@@ -44,24 +78,33 @@ export default function MobileSnapCarousel({ label, className = "", itemClassNam
     el.scrollTo({ left, behavior: "smooth" });
   };
 
+  const bp = BREAKPOINT[from] ?? BREAKPOINT.md;
+  const alignClass = align === "start" ? "items-start" : "items-stretch";
+
   return (
     <div>
       <div
         ref={scrollerRef}
-        className={`-mx-1 flex items-stretch snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain scroll-px-1 px-1 pb-1 no-scrollbar md:mx-0 md:snap-none md:overflow-visible md:px-0 md:pb-0 ${className}`}
+        className={`-mx-1 flex ${alignClass} snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain scroll-px-1 px-1 pb-1 no-scrollbar ${bp.scroller} ${className}`}
         role="region"
         aria-label={label}
         tabIndex={0}
       >
-        {items.map((child, i) => (
-          <div key={child.key ?? i} className={`flex w-[86%] shrink-0 snap-start md:w-auto md:shrink ${itemClassName}`}>
-            <div className="h-full w-full">{child}</div>
-          </div>
-        ))}
+        {items.map((child, i) => {
+          const lifted = layoutClassesFromChild(child);
+          return (
+            <div
+              key={child.key ?? i}
+              className={`flex w-[min(100%,22.5rem)] max-w-[92%] shrink-0 snap-start self-stretch ${bp.item} ${itemClassName} ${lifted}`}
+            >
+              <div className="h-full w-full min-w-0">{child}</div>
+            </div>
+          );
+        })}
       </div>
 
       {count > 1 ? (
-        <div className="mt-3 flex items-center justify-center gap-2 md:hidden">
+        <div className={`mt-3 flex items-center justify-center gap-2 ${bp.controls}`}>
           <button
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 bg-white text-lg text-neutral-900 disabled:opacity-30 dark:border-white/20 dark:bg-white/[0.06] dark:text-ink"

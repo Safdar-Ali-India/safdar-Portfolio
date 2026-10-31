@@ -5,10 +5,11 @@ import JsonLd from "../components/seo/JsonLd";
 import { buildSiteGraph } from "../lib/structured-data";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
+/** System stack avoids next/font Google fetch + local FS timeouts on Desktop/iCloud paths. */
+const bodyFontClass =
+  "antialiased [font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue',Arial,sans-serif]";
 
 const SITE_URL = "https://safdarali.in";
 
@@ -78,7 +79,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en-IN" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={bodyFontClass}>
         <a href="#main-content" className="skip-to-main">
           Skip to main content
         </a>

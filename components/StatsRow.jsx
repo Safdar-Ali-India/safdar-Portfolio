@@ -1,7 +1,7 @@
 const STATS = [
   { value: "70+", label: "YouTube Tutorials" },
   { value: "30+", label: "Projects Shipped" },
-  { value: "4 Yrs", label: "Experience" },
+  { value: "5 Yrs", label: "Experience" },
 ];
 
 /** Three equal stat tiles. One row on phones so the block stays short. */

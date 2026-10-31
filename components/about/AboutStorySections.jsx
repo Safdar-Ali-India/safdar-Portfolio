@@ -1,5 +1,6 @@
 "use client";
 
+import MobileSnapCarousel from "../MobileSnapCarousel";
 import {
   StoryBentoImage,
   StoryBentoPortraitCenter,
@@ -27,7 +28,7 @@ export default function AboutStorySections() {
           I create, code & share.
         </h2>
         <p className={`${sectionLead} max-w-2xl`}>
-          Four years in, I&apos;ve shipped production UI at a Sequoia-backed startup, built 30+ projects, and kept AI in the
+          Five years in, I&apos;ve shipped production UI at a Sequoia-backed startup, built 30+ projects, and kept AI in the
           loop as a force multiplier — not a crutch. My tutorials break down real engineering problems, not toy examples. My
           YouTube channel,{" "}
           <a
@@ -41,7 +42,11 @@ export default function AboutStorySections() {
           , started as notes-to-self — React, Next.js, and TypeScript walkthroughs. Now it helps thousands of developers get
           unstuck.
         </p>
-        <div className={`${sectionMediaTop} grid gap-6 sm:grid-cols-2`}>
+        <MobileSnapCarousel
+          from="sm"
+          label="YouTube studio photos and video"
+          className={`${sectionMediaTop} sm:grid sm:grid-cols-2 sm:gap-6`}
+        >
           <StoryVideoSlot
             src="/about/clip-desk-loop.mp4"
             poster="/about/poster-desk-loop.webp"
@@ -53,7 +58,7 @@ export default function AboutStorySections() {
             href={`${socialLinks.youtube}?sub_confirmation=1`}
             target="_blank"
             rel="noopener noreferrer"
-            className="block min-w-0 rounded-3xl transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 dark:focus-visible:outline-emerald-400"
+            className="block h-full min-w-0 rounded-3xl transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 dark:focus-visible:outline-emerald-400"
             aria-label="Safdar Ali Coding — open YouTube channel @safdarali_"
           >
             <StoryBentoImage
@@ -62,7 +67,7 @@ export default function AboutStorySections() {
               aspectClass="aspect-[1600/963] w-full min-h-0"
             />
           </a>
-        </div>
+        </MobileSnapCarousel>
       </section>
 
       <section id="beyond-keyboard" aria-labelledby="s2-heading" className={belowFoldSection}>
@@ -72,7 +77,12 @@ export default function AboutStorySections() {
         <p className={sectionLead}>
           Cricket, cycling, and slow mornings with strong chai. I move fast at work because I know how to genuinely switch off. You&apos;ll find me bowling on weekends, clocking kilometres on the bike, or rallying a group for a late-night barbecue. Small circle, real conversations — same energy I bring to team standups.
         </p>
-        <div className={`${sectionMediaTop} grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:items-start`}>
+        <MobileSnapCarousel
+          from="sm"
+          align="start"
+          label="Life beyond the keyboard"
+          className={`${sectionMediaTop} sm:grid sm:w-full sm:grid-cols-2 sm:items-start sm:gap-4`}
+        >
           <div className="min-h-0 min-w-0 sm:col-start-1 sm:row-start-1">
             <StoryBentoVideo
               src="/about/clip-cricket-bowl.mp4"
@@ -106,7 +116,7 @@ export default function AboutStorySections() {
               height={1599}
             />
           </div>
-        </div>
+        </MobileSnapCarousel>
       </section>
 
       <section id="wander" aria-labelledby="s3-heading" className={belowFoldSection}>
@@ -116,48 +126,57 @@ export default function AboutStorySections() {
         <p className={sectionLead}>
           Travel resets the mental model. Coorg for the mist and silence, the coast for perspective, Bengaluru&apos;s own pockets for everyday discoveries. I shoot on my phone, mostly — honest frames, no filters. The best ideas tend to arrive somewhere between a winding road and bad mobile signal.
         </p>
-        <div
-          className={`${sectionMediaTop} grid w-full min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto]`}
+        <MobileSnapCarousel
+          from="sm"
+          align="start"
+          label="Travel photos and video"
+          className={`${sectionMediaTop} sm:grid sm:w-full sm:min-w-0 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:grid-rows-[auto_auto]`}
         >
-          <StoryBentoImage
-            src="/about/photo-pondicherry-beach.webp"
-            alt={ABOUT_PHOTOS[6].alt}
-            aspectClass="aspect-square w-full"
-            plain
-            className="lg:col-start-1 lg:row-start-1"
-          />
-          <StoryBentoImage
-            src="/about/photo-wander-cafe.webp"
-            alt={ABOUT_PHOTOS[7].alt}
-            aspectClass="aspect-[1511/1600] w-full"
-            plain
-            className="lg:col-start-2 lg:row-start-1"
-          />
-          <StoryBentoImage
-            src="/about/photo-wander-cycle.webp"
-            alt={ABOUT_PHOTOS[8].alt}
-            aspectClass="aspect-square w-full"
-            plain
-            className="lg:col-start-1 lg:row-start-2"
-          />
-          <StoryBentoImage
-            src="/about/photo-airbnb-sunglasses.webp"
-            alt={ABOUT_PHOTOS[9].alt}
-            aspectClass="aspect-square w-full"
-            plain
-            className="lg:col-start-2 lg:row-start-2"
-          />
-          <StoryBentoVideo
-            src="/about/clip-bike-riding.mp4"
-            poster="/about/poster-bike-riding.webp"
-            label="Bike riding clip"
-            contain
-            fillParent
-            plain
-            lazyVideo
-            className="sm:col-span-2 sm:max-w-md sm:justify-self-center lg:col-span-1 lg:col-start-3 lg:row-start-1 lg:row-span-2 lg:h-full lg:min-h-0 lg:max-w-none lg:justify-self-stretch"
-          />
-        </div>
+          <div className="min-h-0 min-w-0 lg:col-start-1 lg:row-start-1">
+            <StoryBentoImage
+              src="/about/photo-pondicherry-beach.webp"
+              alt={ABOUT_PHOTOS[6].alt}
+              aspectClass="aspect-square w-full"
+              plain
+            />
+          </div>
+          <div className="min-h-0 min-w-0 lg:col-start-2 lg:row-start-1">
+            <StoryBentoImage
+              src="/about/photo-wander-cafe.webp"
+              alt={ABOUT_PHOTOS[7].alt}
+              aspectClass="aspect-[1511/1600] w-full"
+              plain
+            />
+          </div>
+          <div className="min-h-0 min-w-0 lg:col-start-1 lg:row-start-2">
+            <StoryBentoImage
+              src="/about/photo-wander-cycle.webp"
+              alt={ABOUT_PHOTOS[8].alt}
+              aspectClass="aspect-square w-full"
+              plain
+            />
+          </div>
+          <div className="min-h-0 min-w-0 lg:col-start-2 lg:row-start-2">
+            <StoryBentoImage
+              src="/about/photo-airbnb-sunglasses.webp"
+              alt={ABOUT_PHOTOS[9].alt}
+              aspectClass="aspect-square w-full"
+              plain
+            />
+          </div>
+          <div className="min-h-0 min-w-0 sm:col-span-2 sm:max-w-md sm:justify-self-center lg:col-span-1 lg:col-start-3 lg:row-start-1 lg:row-span-2 lg:h-full lg:min-h-0 lg:max-w-none lg:justify-self-stretch">
+            <StoryBentoVideo
+              src="/about/clip-bike-riding.mp4"
+              poster="/about/poster-bike-riding.webp"
+              label="Bike riding clip"
+              contain
+              fillParent
+              plain
+              lazyVideo
+              className="h-full"
+            />
+          </div>
+        </MobileSnapCarousel>
       </section>
     </>
   );

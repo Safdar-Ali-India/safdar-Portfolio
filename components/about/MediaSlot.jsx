@@ -233,6 +233,7 @@ export function StoryImageSlot({ src, alt, caption, aspectClass = "aspect-[4/3]"
         className={`object-cover ${imageReveal} ${loaded ? "opacity-100" : "opacity-0"}`}
         sizes="(max-width:768px) 100vw, 45vw"
         onLoad={onLoad}
+        onLoadingComplete={onLoad}
         onError={() => setFallback(true)}
       />
     </figure>
@@ -283,6 +284,7 @@ export function StoryImageNatural({
           className={`object-contain p-1 ${imageReveal} ${loaded ? "opacity-100" : "opacity-0"}`}
           sizes="(max-width: 768px) 100vw, 45vw"
           onLoad={onLoad}
+          onLoadingComplete={onLoad}
           onError={() => setFallback(true)}
         />
       </figure>
@@ -305,6 +307,7 @@ export function StoryImageNatural({
         className={`h-auto w-full ${imageReveal} ${loaded ? "opacity-100" : "opacity-0"}`}
         style={{ width: "100%", height: "auto" }}
         onLoad={onLoad}
+        onLoadingComplete={onLoad}
         onError={() => setFallback(true)}
       />
     </figure>
@@ -353,6 +356,7 @@ export function StoryBentoImage({
         className={`object-cover ${imageReveal} ${objectPosition} ${loaded ? "opacity-100" : "opacity-0"}`}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         onLoad={onLoad}
+        onLoadingComplete={onLoad}
         onError={() => setFallback(true)}
       />
     </figure>
@@ -521,6 +525,7 @@ export function StoryBentoPortraitTile({ src, alt, objectPosition = "object-top"
         className={`object-cover ${imageReveal} ${objectPosition} ${loaded ? "opacity-100" : "opacity-0"}`}
         sizes="(max-width: 640px) 100vw, 45vw"
         onLoad={onLoad}
+        onLoadingComplete={onLoad}
         onError={() => setFallback(true)}
       />
     </figure>
@@ -530,14 +535,13 @@ export function StoryBentoPortraitTile({ src, alt, objectPosition = "object-top"
 const portraitHeroFrame =
   "overflow-hidden rounded-3xl border border-neutral-200/90 dark:border-white/10";
 
-/** Tall portrait: intrinsic 899×1599 (tweak props), object-contain + max-height — never squashed to a wide box. */
+/** Tall portrait centered in grid; fill + cover so carousel equal-height slides stay full-frame. */
 export function StoryBentoPortraitCenter({ src, alt, width = 899, height = 1599, priority = false }) {
   const [fallback, setFallback] = useState(false);
   const { loaded, onLoad } = useImageLoaded();
-
   if (fallback) {
     return (
-      <figure className={`mx-auto w-fit max-w-full ${portraitHeroFrame} px-6 py-10`}>
+      <figure className={`relative mx-auto w-full max-w-md ${portraitHeroFrame} aspect-[899/1599] max-h-[min(50vh,480px)]`}>
         <div className={placeholderClass}>
           <span className="font-medium dark:text-ink/80">{alt}</span>
           <span className="mt-2 max-w-xs text-xs opacity-90">Place image at {src}</span>
@@ -547,22 +551,23 @@ export function StoryBentoPortraitCenter({ src, alt, width = 899, height = 1599,
   }
 
   return (
-    <figure className={`relative mx-auto w-fit max-w-full ${portraitHeroFrame} bg-neutral-100/50 dark:bg-white/[0.06]`}>
+    <figure
+      className={`relative mx-auto h-full w-full max-w-md overflow-hidden ${portraitHeroFrame} aspect-[899/1599] max-h-[min(42vh,360px)] bg-neutral-100/50 dark:bg-white/[0.06] sm:max-h-[min(46vh,420px)] md:max-h-[min(50vh,480px)]`}
+    >
       <div className={`${imageSkeleton} ${loaded ? "opacity-0" : "opacity-100"}`} aria-hidden />
       <Image
         src={src}
         alt={alt}
         title={alt}
-        width={width}
-        height={height}
+        fill
         priority={priority}
         loading={priority ? undefined : "lazy"}
         decoding="async"
         {...ABOUT_IMAGE}
         sizes="(max-width: 640px) 92vw, 45vw"
-        className={`block h-auto w-auto max-w-full object-contain object-center ${imageReveal} max-h-[min(42vh,360px)] sm:max-h-[min(46vh,420px)] md:max-h-[min(50vh,480px)] ${loaded ? "opacity-100" : "opacity-0"}`}
-        style={{ width: "auto", height: "auto" }}
+        className={`object-cover object-top ${imageReveal} ${loaded ? "opacity-100" : "opacity-0"}`}
         onLoad={onLoad}
+        onLoadingComplete={onLoad}
         onError={() => setFallback(true)}
       />
     </figure>

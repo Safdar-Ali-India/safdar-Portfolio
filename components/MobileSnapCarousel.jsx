@@ -85,7 +85,7 @@ export default function MobileSnapCarousel({
     <div>
       <div
         ref={scrollerRef}
-        className={`-mx-1 flex ${alignClass} snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain scroll-px-1 px-1 pb-1 no-scrollbar ${bp.scroller} ${className}`}
+        className={`-mx-1 flex ${alignClass} snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain scroll-px-1 px-1 pb-1 no-scrollbar ${bp.scroller} ${className}`}
         role="region"
         aria-label={label}
         tabIndex={0}
@@ -95,7 +95,7 @@ export default function MobileSnapCarousel({
           return (
             <div
               key={child.key ?? i}
-              className={`flex w-[86%] shrink-0 snap-start ${bp.item} ${itemClassName} ${lifted}`}
+              className={`flex w-[min(100%,22.5rem)] max-w-[92%] shrink-0 snap-start self-stretch ${bp.item} ${itemClassName} ${lifted}`}
             >
               <div className="h-full w-full min-w-0">{child}</div>
             </div>

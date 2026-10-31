@@ -3,6 +3,7 @@ import Link from "next/link"
 import PageBackHeader from "../../components/PageBackHeader"
 import AboutHeroImage from "../../components/about/AboutHeroImage"
 import AboutPageJsonLd from "../../components/about/AboutPageJsonLd"
+import StatsRow from "../../components/StatsRow"
 import { ABOUT_PAGE_URL, ABOUT_PHOTOS, absoluteMediaUrl } from "../../lib/about-media-seo"
 
 const WhereImBasedSection = dynamic(() => import("../../components/about/WhereImBasedSection"), {
@@ -98,7 +99,7 @@ function page() {
         type="image/webp"
         fetchPriority="high"
       />
-    <div className="relative pb-36 sm:pb-40">
+    <div className="relative">
       <article className="relative mx-auto max-w-6xl px-4 pt-12 sm:pt-16 lg:px-6">
         <PageBackHeader className="mb-12 mt-10 sm:mt-14" back="home">
           <h1 className={pageTitleClass}>About Safdar Ali</h1>
@@ -127,19 +128,8 @@ function page() {
               ChatGPT for real work from early 2023; from 2024, Claude, Cursor, and v0 are how I prototype and ship every week.
               In 2026, skipping that stack is the outlier.
             </p>
-            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
-                <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">70+</p>
-                <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">YouTube Tutorials</p>
-              </div>
-              <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
-                <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">30+</p>
-                <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">Projects Shipped</p>
-              </div>
-              <div className="rounded-2xl border border-neutral-200/80 bg-white/60 p-4 text-center dark:border-white/10 dark:bg-white/[0.04]">
-                <p className="font-InterBlack text-2xl font-extrabold text-neutral-950 dark:text-ink">5 Yrs</p>
-                <p className="mt-1 text-xs text-neutral-500 dark:text-ink/60">Experience</p>
-              </div>
+            <div className="mt-8">
+              <StatsRow />
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contact" className={dockPill}>

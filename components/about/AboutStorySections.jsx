@@ -46,6 +46,7 @@ export default function AboutStorySections() {
           from="sm"
           label="YouTube studio photos and video"
           className={`${sectionMediaTop} sm:grid sm:grid-cols-2 sm:gap-6`}
+          itemClassName="about-equal-slide"
         >
           <StoryVideoSlot
             src="/about/clip-desk-loop.mp4"
@@ -79,9 +80,9 @@ export default function AboutStorySections() {
         </p>
         <MobileSnapCarousel
           from="sm"
-          align="start"
           label="Life beyond the keyboard"
           className={`${sectionMediaTop} sm:grid sm:w-full sm:grid-cols-2 sm:items-start sm:gap-4`}
+          itemClassName="about-equal-slide"
         >
           <div className="min-h-0 min-w-0 sm:col-start-1 sm:row-start-1">
             <StoryBentoVideo
@@ -128,9 +129,9 @@ export default function AboutStorySections() {
         </p>
         <MobileSnapCarousel
           from="sm"
-          align="start"
           label="Travel photos and video"
           className={`${sectionMediaTop} sm:grid sm:w-full sm:min-w-0 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:grid-rows-[auto_auto]`}
+          itemClassName="about-equal-slide"
         >
           <div className="min-h-0 min-w-0 lg:col-start-1 lg:row-start-1">
             <StoryBentoImage

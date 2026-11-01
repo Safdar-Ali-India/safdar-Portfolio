@@ -535,13 +535,19 @@ export function StoryBentoPortraitTile({ src, alt, objectPosition = "object-top"
 const portraitHeroFrame =
   "overflow-hidden rounded-3xl border border-neutral-200/90 dark:border-white/10";
 
-/** Tall portrait centered in grid; fill + cover so carousel equal-height slides stay full-frame. */
+/**
+ * Tall portrait centered in grid.
+ * Size by height (not max-w + max-h) so aspect stays 899/1599 — otherwise cover crops the bottom.
+ */
 export function StoryBentoPortraitCenter({ src, alt, width = 899, height = 1599, priority = false }) {
   const [fallback, setFallback] = useState(false);
   const { loaded, onLoad } = useImageLoaded();
+  // Height-first box: width follows aspect so object-cover does not chop heads/feet.
+  const frameClass = `relative mx-auto overflow-hidden ${portraitHeroFrame} aspect-[899/1599] h-[min(68vh,620px)] w-auto max-w-full`;
+
   if (fallback) {
     return (
-      <figure className={`relative mx-auto w-full max-w-md ${portraitHeroFrame} aspect-[899/1599] max-h-[min(50vh,480px)]`}>
+      <figure className={frameClass}>
         <div className={placeholderClass}>
           <span className="font-medium dark:text-ink/80">{alt}</span>
           <span className="mt-2 max-w-xs text-xs opacity-90">Place image at {src}</span>
@@ -551,21 +557,20 @@ export function StoryBentoPortraitCenter({ src, alt, width = 899, height = 1599,
   }
 
   return (
-    <figure
-      className={`relative mx-auto h-full w-full max-w-md overflow-hidden ${portraitHeroFrame} aspect-[899/1599] max-h-[min(42vh,360px)] bg-neutral-100/50 dark:bg-white/[0.06] sm:max-h-[min(46vh,420px)] md:max-h-[min(50vh,480px)]`}
-    >
+    <figure className={`${frameClass} bg-neutral-100/50 dark:bg-white/[0.06]`}>
       <div className={`${imageSkeleton} ${loaded ? "opacity-0" : "opacity-100"}`} aria-hidden />
       <Image
         src={src}
         alt={alt}
         title={alt}
-        fill
+        width={width}
+        height={height}
         priority={priority}
         loading={priority ? undefined : "lazy"}
         decoding="async"
         {...ABOUT_IMAGE}
-        sizes="(max-width: 640px) 92vw, 45vw"
-        className={`object-cover object-top ${imageReveal} ${loaded ? "opacity-100" : "opacity-0"}`}
+        sizes="(max-width: 640px) 92vw, min(100vw, 350px)"
+        className={`h-full w-full object-cover object-center ${imageReveal} ${loaded ? "opacity-100" : "opacity-0"}`}
         onLoad={onLoad}
         onLoadingComplete={onLoad}
         onError={() => setFallback(true)}
